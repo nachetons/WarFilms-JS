@@ -63,6 +63,10 @@ nav ul li a{
     border-radius: 50%;
   }
 
+  .boton-card:hover{
+    cursor: pointer;
+  }
+
 
 
 .menu ul li {
@@ -299,7 +303,7 @@ h1 {
   transform-style: preserve-3d;
 }
 
-.movie-card.flip {
+.movie-card.flipped {
   transform: rotateY(180deg);
 }
 
