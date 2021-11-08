@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/main.css" />
+  <title>Movie App</title>
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <nav>
+    <ul class="logo-ul">
+      <li class="logo"></li>
+      <li><a href="#">Categorias</a></li>
+      <li><a href="#">Peliculas</a></li>
+      <li><a href="#">Series</a></li>
+    </ul>
+    <ul class="icons-ul">
+      <form class="log">
+        <input type="text" placeholder="Search for any movies, shows" name="search" />
+        <button type="submit">Search</button>
+      </form>
+      <li><a href="#"><img class="nav-img-top" src="images/icons/user-alt.svg"></a></li>
+
+    </ul>
+  </nav>
+
+  <!-- Sidebar menu vertical with 5 elements -->
+
+  <div id="sidebar" class="sidebar">
+    <ul class="menu">
+      <li><a href="#"><img class="nav-img" src="images/icons/bomb.svg">Accion</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/theater-masks.svg">Comedia</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/dizzy.svg">Terror</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/hat-wizard.svg">Magia</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/car.svg">Coches</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/dragon.svg">Fantasia</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/car.svg">Comedia</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/dizzy.svg">Terror</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/hat-wizard.svg">Fantasia</a></li>
+      <li><a href="#"><img class="nav-img" src="images/icons/car.svg">Coches</a></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <div class="page-1">
+    <div class="container">
+      <div class="background">
+        <h1>Welcome</h1>
+        <h2>Este va a ser mi carrusel principal</h2>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <br>
+      <br>
+      <div class="freetowatch-cards">
+        <div class="spinner hide"></div>
+        <div class="movie-card card1">
+          <div class="delante">
+            <div class="movie-image"><img src="images/peaky.jpg"></div>
+            <h4 class="movie-title">Venom</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card" onclick="Animacion()">Sinopsis</button>
+          </div>
+
+          <div class="detras">
+            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam porro expedita culpa reiciendis
+              corrupti repudiandae,
+              fugit voluptate accusamus quae, exercitationem placeat facere cumque maxime saepe, molestias veniam illo
+              dolorem.</strong>
+            <br>
+            <button class="boton-card" onclick="Animacion()">Pelicula</button>
+          </div>
+        </div>
+
+
+
+        <div class="movie-card card2">
+          <div class="delante">
+            <div class="movie-image"><img src="images/peaky.jpg"></div>
+            <h4 class="movie-title">Venom</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card" onclick="Animacion2()">Sinopsis</button>
+          </div>
+
+          <div class="detras">
+            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam porro expedita culpa reiciendis
+              corrupti repudiandae,
+              fugit voluptate accusamus quae, exercitationem placeat facere cumque maxime saepe, molestias veniam illo
+              dolorem.</strong>
+            <br>
+            <button class="boton-card" onclick="Animacion2()">Pelicula</button>
+          </div>
+        </div>
+
+        <div class="movie-card card3">
+          <div class="delante">
+            <div class="movie-image"><img src="images/peaky.jpg"></div>
+            <h4 class="movie-title">Venom</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card" onclick="Animacion3()">Sinopsis</button>
+          </div>
+
+          <div class="detras">
+            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam porro expedita culpa reiciendis
+              corrupti repudiandae,
+              fugit voluptate accusamus quae, exercitationem placeat facere cumque maxime saepe, molestias veniam illo
+              dolorem.</strong>
+            <br>
+            <button class="boton-card" onclick="Animacion3()">Pelicula</button>
+          </div>
+        </div>
+
+        <div class="movie-card card4">
+          <div class="delante">
+            <div class="movie-image"><img src="images/peaky.jpg"></div>
+            <h4 class="movie-title">Venom</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card" onclick="Animacion4()">Sinopsis</button>
+          </div>
+
+          <div class="detras">
+            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam porro expedita culpa reiciendis
+              corrupti repudiandae,
+              fugit voluptate accusamus quae, exercitationem placeat facere cumque maxime saepe, molestias veniam illo
+              dolorem.</strong>
+            <br>
+            <button class="boton-card" onclick="Animacion4()">Pelicula</button>
+          </div>
+        </div>
+
+        <div class="movie-card card5">
+          <div class="delante">
+            <div class="movie-image"><img src="images/peaky.jpg"></div>
+            <h4 class="movie-title">Venom</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card" onclick="Animacion5()">Sinopsis</button>
+          </div>
+
+          <div class="detras">
+            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam porro expedita culpa reiciendis
+              corrupti repudiandae,
+              fugit voluptate accusamus quae, exercitationem placeat facere cumque maxime saepe, molestias veniam illo
+              dolorem.</strong>
+            <br>
+            <button class="boton-card" onclick="Animacion5()">Pelicula</button>
+          </div>
+        </div>
+
+        <div class="movie-card card6">
+          <div class="delante">
+            <div class="movie-image"><img src="images/peaky.jpg"></div>
+            <h4 class="movie-title">Venom</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card" onclick="Animacion6()">Sinopsis</button>
+          </div>
+
+          <div class="detras">
+            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam porro expedita culpa reiciendis
+              corrupti repudiandae,
+              fugit voluptate accusamus quae, exercitationem placeat facere cumque maxime saepe, molestias veniam illo
+              dolorem.</strong>
+            <br>
+            <button class="boton-card" onclick="Animacion6()">Pelicula</button>
+          </div>
+        </div>
+
+        <div class="movie-card card7">
+          <div class="delante">
+            <div class="movie-image"><img src="images/peaky.jpg"></div>
+            <h4 class="movie-title">Venom</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card" onclick="Animacion7()">Sinopsis</button>
+          </div>
+
+          <div class="detras">
+            <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam porro expedita culpa reiciendis
+              corrupti repudiandae,
+              fugit voluptate accusamus quae, exercitationem placeat facere cumque maxime saepe, molestias veniam illo
+              dolorem.</strong>
+            <br>
+            <button class="boton-card" onclick="Animacion7()">Pelicula</button>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+    </div>
+    <!-- Latest Trailers start-->
+
+    <div class="latest-cards card">
+    </div>
+    </section>
+  </div>
+  <!-- latest ends -->
+  <!-- trending begins -->
+
+  <div class="trending-cards">
+    <div class="spinner hide"></div>
+
+  </div>
+  </section>
+  </div>
+  </div>
+
+  <section class="search hide">
+    <i class="fas fa-arrow-left fa-2x"></i>
+    <div class="left">
+      <ul>
+        <li class="heading">Search Results</li>
+        <li>TV Shows</li>
+        <li class="selected">Movies</li>
+        <li>People</li>
+        <li>Companies</li>
+        <li>Collections</li>
+        <li>Keywords</li>
+        <li>Networks</li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="box">
+        <div class="movie-info">
+          <div class="movie-image">
+            <img src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/52eQfCm8yGEQHNZefyHr6uIysqt.jpg" alt=""
+              crossorigin="anonymous">
+          </div>
+          <div class="movie-details">
+            <h3>K-Project</h3>
+            <h3>October 5,2012</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis iusto accusantium voluptate, eaque
+              ipsa reprehenderit saepe atque recusandae maxime dignissimos.</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- 
+    <footer class="footer">
+      <div class="maindiv">
+        <div class="footerlogo"></div>
+        <div>
+          <h3>THE BASICS</h3>
+          <ul>
+            <li>About TMDB</li>
+            <li>Contact Us</li>
+            <li>Support Forums</li>
+            <li>API</li>
+            <li>System Status</li>
+          </ul>
+        </div>
+        <div>
+          <h3>GET INVOLVED</h3>
+          <ul>
+            <li>Contribution Bible</li>
+            <li>3rd Party Application</li>
+            <li>Add New Movie</li>
+            <li>Add New TV Show</li>
+          </ul>
+        </div>
+        <div>
+          <h3>COMMUNITY</h3>
+          <ul>
+            <li>Guidelines</li>
+            <li>Discussions</li>
+            <li>Leaderboard</li>
+            <li>Twitter</li>
+          </ul>
+        </div>
+        <div>
+          <h3>LEGAL</h3>
+          <ul>
+            <li>Terms ofUse API Terms of Use</li>
+            <li>Contact Us</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./index.js"></script>
+
+     -->
+
+  <script>
+
+    var vuelta  = document.querySelector(".card" + 1);
+    var vuelta2 = document.querySelector(".card" + 2);
+    var vuelta3 = document.querySelector(".card" + 3);
+    var vuelta4 = document.querySelector(".card" + 4);
+    var vuelta5 = document.querySelector(".card" + 5);
+    var vuelta6 = document.querySelector(".card" + 6);
+    var vuelta7 = document.querySelector(".card" + 7);
+
+
+    function Animacion() {
+      vuelta.classList.toggle("flip");
+
+    }
+    function Animacion2() {
+      vuelta2.classList.toggle("flip");
+
+    }
+    function Animacion3() {
+      vuelta3.classList.toggle("flip");
+
+
+    }
+    function Animacion4() {
+      vuelta4.classList.toggle("flip");
+
+
+    }
+    function Animacion5() {
+      vuelta5.classList.toggle("flip");
+
+
+    }
+    function Animacion6() {
+      vuelta6.classList.toggle("flip");
+
+
+    }
+    function Animacion7() {
+      vuelta7.classList.toggle("flip");
+
+
+    }
+  //create function animacion flip will toggle the class flip
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
+<!-- new comment -->
