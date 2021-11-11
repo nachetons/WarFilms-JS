@@ -30,7 +30,6 @@ nav {
   align-items: center;
   height: 9vh;
   width: 100%;
-  padding: 0 80px;
   position: fixed;
   z-index: 2;
   opacity: 0.9;
@@ -61,6 +60,13 @@ nav ul .logo {
     width: 195px;
   }
 
+  .toggle img{
+      height: 40px;
+      width:40px;
+      cursor: pointer;
+      visibility: hidden;
+  }
+
 .nav-img-top{
   width: 40px;
   height: 40px;
@@ -69,6 +75,40 @@ nav ul .logo {
 
 
 }
+
+.input-search{
+  border: 2px solid #dadada;
+    transition: box-shadow linear 1s;
+    padding: 10px;
+    font-size: 17px;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+}
+.input-search:focus{
+  outline: none;
+    border-color: rgb(0, 255, 76);
+    box-shadow: 0 0 10px rgb(0, 255, 76);
+}
+
+
+.boton-search{
+  float: left;
+  width: 25%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 2px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+.log::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 /* Menu lateral izquierdo */
 
@@ -154,7 +194,7 @@ nav ul .logo {
   flex-direction: column;
   justify-content: center;
   padding: 0 80px;
-  height: 50vh;
+  height: 40vh;
   color: white;
   width: 104%;
   margin-left: -2%;
@@ -207,6 +247,8 @@ nav ul .logo {
 .freetowatch-cards .movie-card {
   margin-right: 1.5rem;
   position: relative;
+
+  
   
   
 }
@@ -220,9 +262,12 @@ nav ul .logo {
   transform-style: preserve-3d;
 }
 
+
 .movie-card.flipped {
   transform: rotateY(180deg);
 }
+
+
 
 
 
@@ -352,7 +397,10 @@ nav ul .logo {
   }
   }
 @media (max-width: 1150px) {
-  #sidebar {
-      display: none;
+  .sidebar {
+      visibility: hidden;
+  }
+  .toggle img{
+    visibility: visible;
   }
   }
