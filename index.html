@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/login.css" />
+
   <title>Movie App</title>
 </head>
 
@@ -25,7 +27,7 @@
         <input type="text" class="input-search" placeholder="Search for any movies, shows" name="search" />
         <button class="boton-search" type="submit">Search</button>
       </form>
-      <li><a href="#"><img class="nav-img-top" src="images/icons/user-alt.svg"></a></li>
+      <li><a href="#"><img onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="nav-img-top" src="images/icons/user-alt.svg"></a></li>
 
     </ul>
   </nav>
@@ -57,7 +59,32 @@
       </div>
     </div>
 
-
+  
+  
+    <div id="id01" class="modal">
+  
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+                <img src="images/icons/user-alt.svg" alt="Avatar" class="avatar">
+            </div>
+  
+            <div class="container">
+                <label><b>Username</b></label>
+                <input class="input-form" type="text" placeholder="Enter Username" name="uname" required>
+  
+                <label><b>Password</b></label>
+                <input class="input-form" type="password" placeholder="Enter Password" name="psw" required>
+  
+                <button class="boton-form" type="submit">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
+  
+            <div class="container" style="background-color:#f1f1f1">
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
 
     <!-- Main Section -->
     <div class="container">
