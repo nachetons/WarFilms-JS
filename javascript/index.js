@@ -17,6 +17,10 @@ btn2.forEach(item => {
   });
 });
 
+
+
+
+//Funcion para mostrar menu lateral al dar click a un boton
 var contador = 1;
 
 let btn_menu=document.querySelectorAll('.toggle');   
@@ -35,7 +39,6 @@ btn_menu.forEach(item => {
       contador = 0;
     } else {
       menus.forEach(item => {
-        item.style.visibility = 'hidden';
         item.style.width = '0' 
 
       });
@@ -46,70 +49,49 @@ btn_menu.forEach(item => {
   });
 });
 
-  if (btn_menu.style.display === "none") {
-    menus.forEach(item => {
-      item.style.visibility = 'visible';
-      item.style.width =  '20%';
-
-
-    }); 
-
-  }
-
-
-  
-        var modal = document.getElementById('id01');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    
+//Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
+window.onload = function(){
+  var modal = document.getElementById('id01');
+  document.onclick = function(e){
+    if(e.target.id == 'id01'){
+      modal.style.display = "none";
+    }
+  };
+};
 
 
 
-/*var vuelta  = document.querySelector(".card" + 1);
-var vuelta2 = document.querySelector(".card" + 2);
-var vuelta3 = document.querySelector(".card" + 3);
-var vuelta4 = document.querySelector(".card" + 4);
-var vuelta5 = document.querySelector(".card" + 5);
-var vuelta6 = document.querySelector(".card" + 6);
-var vuelta7 = document.querySelector(".card" + 7);
 
 
-function Animacion() {
-  vuelta.classList.toggle("flip");
+//Funcion carrusel header
+var slideIndex = 0;
 
+showSlides();
+
+function showSlides() {
+       var i;
+       var slides = document.getElementsByClassName("mySlides");
+       for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+       }
+
+       slideIndex++;
+       if(slideIndex > slides.length) {slideIndex = 1}
+       slides[slideIndex-1].style.display = "block";
+       setTimeout(showSlides,2000);
 }
-function Animacion2() {
-  vuelta2.classList.toggle("flip");
-
-}
-function Animacion3() {
-  vuelta3.classList.toggle("flip");
 
 
-}
-function Animacion4() {
-  vuelta4.classList.toggle("flip");
 
 
-}
-function Animacion5() {
-  vuelta5.classList.toggle("flip");
 
 
-}
-function Animacion6() {
-  vuelta6.classList.toggle("flip");
 
 
-}
-function Animacion7() {
-  vuelta7.classList.toggle("flip");
 
 
-}*/
-//create function animacion flip will toggle the class flip
+ 
+
+
 
 

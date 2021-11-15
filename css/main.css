@@ -64,10 +64,13 @@ nav ul {
 nav ul li{
 margin: 30px;
 }
-
+.menu_options{
+  display: unset;
+}
 nav ul li a{
     color: white;
     text-decoration: none;
+
   
   }
 
@@ -77,6 +80,7 @@ nav ul .logo {
       no-repeat center center/cover;
     height: 25px;
     width: 195px;
+    display: unset;
   }
 
   .toggle img{
@@ -258,6 +262,8 @@ nav ul .logo {
   cursor: pointer;
 }
 
+
+
 .freetowatch-cards{
 
   display: flex;
@@ -265,6 +271,80 @@ nav ul .logo {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
+  
+}
+
+.slider{
+  display:flex;
+
+
+}
+
+.slideshow-container{
+  position:relative;
+  margin:auto;
+ }
+.text{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ .mySlides img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60vh;
+  color: white;
+  margin-left: 4%;
+  z-index: 2;
+  opacity: 0.9;
+  background-color: #D62929;
+ }
+
+
+ .fade{
+   opacity: .7;
+  -webkit-animation-name:fade;
+  -webkit-animation-duration:1.5s;
+  animation-name:fade;
+  animation-duration:1.5s;
+ }
+ 
+ @-webkit-keyframes fade{
+  from{opacity:.4}
+  to{opacity:.7}
+ }
+ 
+ @keyframes fade{
+  from{opacity:.4}
+  to{opacity:.7}
+ }
+
+.slider{
+  width: 100%;
+  animation: slider 20s infinite alternate ease-in-out;
+
+
+}
+
+@keyframes slider {
+  0% {margin-left:0%}
+  10% {margin-left:0%}
+
+  20% {margin-left:-25%}
+  30% {margin-left:-25%}
+
+  40% {margin-left:-50%}
+  50% {margin-left:-50%}
+
+  60% {margin-left:-75%}
+  70% {margin-left:-75%}
+
+  80% {margin-left:-100%}
+  90% {margin-left:-100%}
+
   
 }
 .freetowatch-cards .movie-card {
@@ -308,7 +388,7 @@ nav ul .logo {
 
 .detras {
   margin-right: 1.5rem;
-  width: 320px;
+  width: 292px;
   height: 250px;
   color: white;
   padding: 1rem;
@@ -400,6 +480,10 @@ nav ul .logo {
   nav ul{
     font-size: 32px;
   }
+
+  .sidebar{
+    width: 20px;
+  }
 }
 @media (min-width: 1900px) {
   .nav-img{
@@ -425,5 +509,14 @@ nav ul .logo {
   }
   .toggle img{
     display: unset;
+  }
+
+  .menu_options{
+    display: none;
+  
+  }
+  nav ul .logo {
+    
+    display: none;
   }
   }

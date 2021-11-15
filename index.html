@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="./css/main.css" />
   <link rel="stylesheet" href="./css/login.css" />
+  <link rel="" href="./sub-paginas/login.html" />
 
   <title>Movie App</title>
 </head>
@@ -18,9 +19,9 @@
     <ul class="logo-ul">
       <li class="toggle"><img src="images/menu.png" href="#"></img></a></li>
       <li class="logo"></li>
-      <li><a href="#">Categorias</a></li>
-      <li><a href="#">Peliculas</a></li>
-      <li><a href="#">Series</a></li>
+      <li class=menu_options><a href="#">Categorias</a></li>
+      <li class=menu_options><a href="#">Peliculas</a></li>
+      <li class=menu_options><a href="#">Series</a></li>
     </ul>
     <ul class="icons-ul">
       <form class="log">
@@ -49,8 +50,7 @@
     </ul>
   </div>
 
-  <!-- Header Section -->
-  <div class="page-1">
+  <!-- Header Section 
     <div class="container">
       <div class="background">
         <h1>Welcome</h1>
@@ -58,12 +58,83 @@
 
       </div>
     </div>
+-->
+<div class="container">
+    <div class="mySlides fade">
+      <div class="oscuro"></div>
+      <img src="./images/Pelis_grandes/1.jpg" style="width:90%;">
 
-  
-  
+      <div class="text">1</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+      <img src="./images/Pelis_grandes/2.jpg" style="width:90%;">
+      <div class="text">2</div>
+</div>
+
+<div class="container">
+  <div class="mySlides fade">
+    <div class="oscuro"></div>
+
+    <img src="./images/Pelis_grandes/3.jpg" style="width:90%;">
+    <div class="text">3</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+  <img src="./images/Pelis_grandes/4.jpg" style="width:90%;">
+  <div class="text">4</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+  <img src="./images/Pelis_grandes/5.jpg" style="width:90%;">
+  <div class="text">5</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+  <img src="./images/Pelis_grandes/6.jpg" style="width:90%;">
+  <div class="text">6</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+  <img src="./images/Pelis_grandes/7.jpg" style="width:90%;">
+  <div class="text">7</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+  <img src="./images/Pelis_grandes/8.jpg" style="width:90%;">
+  <div class="text">8</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+  <img src="./images/Pelis_grandes/9.jpg" style="width:90%;">
+  <div class="text">9</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="oscuro"></div>
+
+  <img src="./images/Pelis_grandes/10.jpg" style="width:90%;">
+  <div class="text">10</div>
+</div>
+</div>
+  <!-- Login -->
     <div id="id01" class="modal">
   
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate" id="content" action="#">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
                 <img src="images/icons/user-alt.svg" alt="Avatar" class="avatar">
@@ -94,15 +165,13 @@
           <!--Carrusel 1-->
 
       <div class="freetowatch-cards">
-
+        <div class="slider"></div>
 
 
         <!-- Card 1 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image">
-              <img src="images/photo1.jpg">
-            </div>
+            <div class="movie-image"><img src="images/pelis/1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -121,9 +190,9 @@
 
 
         <!-- Card 2 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/2.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -141,9 +210,9 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/3.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -161,9 +230,9 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/4.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -182,9 +251,9 @@
 
 
         <!-- Card 5 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/5.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -203,9 +272,9 @@
 
 
         <!-- Card 6 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/6.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -224,9 +293,9 @@
 
 
         <!-- Card 7 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/7.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -246,9 +315,9 @@
 
 
         <!-- Card 8 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel1">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/8.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -282,16 +351,14 @@
           <!--Carusel 2-->
           
       <div class="freetowatch-cards">
-        <div class="spinner hide"></div>
+        <div class="slider"></div>
 
 
 
         <!-- Card 1 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image">
-              <img src="images/photo1.jpg">
-            </div>
+            <div class="movie-image"><img src="images/pelis/8.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -308,11 +375,10 @@
           </div>
         </div>
 
-
         <!-- Card 2 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/7.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -330,9 +396,9 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/6.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -350,9 +416,9 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/5.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -371,9 +437,9 @@
 
 
         <!-- Card 5 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/4.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -392,9 +458,9 @@
 
 
         <!-- Card 6 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/3.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -413,9 +479,9 @@
 
 
         <!-- Card 7 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/2.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -435,9 +501,9 @@
 
 
         <!-- Card 8 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel2">
           <div class="delante">
-            <div class="movie-image"><img src="images/photo1.jpg"></div>
+            <div class="movie-image"><img src="images/pelis/1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">83%</div>
@@ -470,12 +536,12 @@
           <!-- Carrusel 3 -->
 
       <div class="freetowatch-cards">
-        <div class="spinner hide"></div>
+        <div class="slider"></div>
 
 
 
         <!-- Card 1 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image">
               <img src="images/photo1.jpg">
@@ -498,7 +564,7 @@
 
 
         <!-- Card 2 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="images/photo1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
@@ -518,7 +584,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="images/photo1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
@@ -538,7 +604,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="images/photo1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
@@ -559,7 +625,7 @@
 
 
         <!-- Card 5 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="images/photo1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
@@ -580,7 +646,7 @@
 
 
         <!-- Card 6 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="images/photo1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
@@ -601,7 +667,7 @@
 
 
         <!-- Card 7 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="images/photo1.jpg"></div>
             <h4 class="movie-title">Venom</h4>
@@ -623,7 +689,7 @@
 
 
         <!-- Card 8 -->
-        <div class="movie-card">
+        <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="images/peaky.jpg"></div>
             <h4 class="movie-title">Venom</h4>
@@ -655,10 +721,6 @@
 
     </div>
 
-
-  
-
-  
 
   
     <footer class="footer">
