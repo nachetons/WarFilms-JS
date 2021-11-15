@@ -8,6 +8,8 @@
 
 body {
   font-family: "Lato", sans-serif;
+  background-color:black;
+  color: white;
 }
 
 .container {
@@ -23,7 +25,7 @@ ul li {
 }
 
 nav {
-  background-color: rgba(3, 37, 65);
+  background-color: rgb(0, 0, 0);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -64,7 +66,8 @@ nav ul .logo {
       height: 40px;
       width:40px;
       cursor: pointer;
-      visibility: hidden;
+      display:none;
+      /*visibility: hidden;*/
   }
 
 .nav-img-top{
@@ -131,13 +134,14 @@ nav ul .logo {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: rgba(3, 37, 65);
+  background-color: rgb(0, 0, 0);
   opacity: 0.9;
   color: white;
   overflow-x: hidden;
   transition: 0.4s;
   padding: 1rem 0;
   box-sizing:border-box;
+  visibility: visible;
 }
 
 .sidebar ul {
@@ -194,7 +198,7 @@ nav ul .logo {
   flex-direction: column;
   justify-content: center;
   padding: 0 80px;
-  height: 40vh;
+  height: 57vh;
   color: white;
   width: 104%;
   margin-left: -2%;
@@ -226,7 +230,7 @@ nav ul .logo {
   text-align: center;
   padding: 15px 0;
   position: absolute;
-  bottom: 110px;
+  bottom: 60px;
   right: 10px;
   color: white;
   background-color:red;
@@ -243,6 +247,7 @@ nav ul .logo {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
+  
 }
 .freetowatch-cards .movie-card {
   margin-right: 1.5rem;
@@ -274,8 +279,6 @@ nav ul .logo {
 .delante,
 .detras {
   position: absolute;
-  width: 100%;
-  height: 100%;
   backface-visibility: hidden;
 }
 
@@ -287,14 +290,16 @@ nav ul .logo {
 
 .detras {
   margin-right: 1.5rem;
-  width: 200px;
-  height: 415px;
+  width: 320px;
+  height: 250px;
   color: white;
   padding: 1rem;
   background: linear-gradient(to top, white 0%, white 30%, black 70%, black 100% );
   position: relative;
   transform: rotateY(180deg);
 }
+
+
 
 
 
@@ -308,7 +313,7 @@ nav ul .logo {
   text-align: center;
   padding: 15px 0;
   position: absolute;
-  bottom: 110px;
+  bottom: 60px;
   left: 10px;
 }
 .movie-rating::after {
@@ -333,7 +338,7 @@ nav ul .logo {
 
 /* footer section */
 .footer {
-  background-color: rgba(3, 37, 65);
+  background-color: rgb(0, 0, 0);
   padding: 70px 0;
   color: white;
 }
@@ -401,6 +406,6 @@ nav ul .logo {
       visibility: hidden;
   }
   .toggle img{
-    visibility: visible;
+    display: unset;
   }
   }
