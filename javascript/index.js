@@ -46,7 +46,7 @@ btn_menu.forEach(item => {
   });
 });
 
-  /*if (btn_menu.style.display != "unset") {
+  if (btn_menu.style.display === "none") {
     menus.forEach(item => {
       item.style.visibility = 'visible';
       item.style.width =  '20%';
@@ -54,7 +54,7 @@ btn_menu.forEach(item => {
 
     }); 
 
-  }*/
+  }
 
 
 
