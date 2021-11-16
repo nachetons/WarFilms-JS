@@ -42,7 +42,7 @@ ul li {
 }
 
 nav {
-  background-color: rgba(14, 14, 14,0.8);
+  background-color: rgba(10, 10, 10, 0.8);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -159,7 +159,7 @@ nav ul .logo {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: rgba(14, 14, 14,0.8);
+  background-color: rgba(10, 10, 10,0.8);
   opacity: 0.9;
   color: white;
   overflow-x: hidden;
@@ -294,11 +294,20 @@ nav ul .logo {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.text_title{
+  position: absolute;
+  top: 50%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  left: 50%;
+  font-size: 50px;
+  transform: translate(-50%, -50%);
+}
 
  .mySlides img{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 6%;
   height: 60vh;
   color: white;
   margin-left: 4%;
@@ -349,7 +358,6 @@ nav ul .logo {
   80% {margin-left:-100%}
   90% {margin-left:-100%}
 
-  
 }
 .freetowatch-cards .movie-card {
   margin-right: 1.5rem;
@@ -440,7 +448,7 @@ nav ul .logo {
 
 /* footer section */
 .footer {
-  background-color: rgb(31, 31, 31);
+  background-color: rgba(10, 10, 10,0.8);
   padding: 70px 0;
   color: white;
 }

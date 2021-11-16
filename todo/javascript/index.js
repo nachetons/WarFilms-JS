@@ -71,8 +71,10 @@ showSlides();
 function showSlides() {
        var i;
        var slides = document.getElementsByClassName("mySlides");
+
        for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
+          slides[i].style.display = "none";
+        
        }
 
        slideIndex++;
@@ -82,8 +84,14 @@ function showSlides() {
 }
 
 
+//function showSlides()
 
 
+
+
+
+
+//Funcion para mostrar todos los componentes
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
