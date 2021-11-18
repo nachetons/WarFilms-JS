@@ -1,4 +1,20 @@
 //Funcion para dar la vuelta a las tarjetas
+
+
+
+
+
+window.onload = function(){
+
+ 
+  }
+
+//Funcion para mostrar menu lateral al dar click a un boton
+
+
+
+
+window.onload = function(){
 let btn = document.querySelectorAll('.flip');
 let btn2 = document.querySelectorAll('.flp');
 
@@ -20,7 +36,6 @@ btn2.forEach(item => {
 
 
 
-//Funcion para mostrar menu lateral al dar click a un boton
 var contador = 1;
 
 let btn_menu=document.querySelectorAll('.toggle');   
@@ -48,16 +63,27 @@ btn_menu.forEach(item => {
   
   });
 });
+};
+
+
+
+
+
 
 //Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
-window.onload = function(){
+
   var modal = document.getElementById('id01');
   document.onclick = function(e){
     if(e.target.id == 'id01'){
       modal.style.display = "none";
+
     }
+
+
+   
+
   };
-};
+
 
 
 

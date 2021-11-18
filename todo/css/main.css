@@ -87,6 +87,8 @@ nav ul .logo {
     color: white;
   }
 
+
+
   .toggle img{
       height: 40px;
       width:40px;
@@ -128,7 +130,7 @@ nav ul .logo {
   color: white;
   font-size: 17px;
   border: 2px solid grey;
-  border-left: none; /* Prevent double borders */
+  border-left: none; 
   cursor: pointer;
 }
 .log::after {
@@ -250,7 +252,10 @@ nav ul .logo {
 
 
 
-/* Boton animacion pelicula */
+
+
+
+
 .boton-card{
   text-align: center;
   padding: 15px 0;
@@ -288,6 +293,8 @@ nav ul .logo {
   position:relative;
   margin:auto;
  }
+
+ 
 .text{
   position: absolute;
   top: 60%;
@@ -338,27 +345,21 @@ nav ul .logo {
 .slider{
   width: 100%;
   animation: slider 20s infinite alternate ease-in-out;
+  
 
 
 }
 
-@keyframes slider {
-  0% {margin-left:0%}
-  10% {margin-left:0%}
 
-  20% {margin-left:-25%}
-  30% {margin-left:-25%}
 
-  40% {margin-left:-50%}
-  50% {margin-left:-50%}
 
-  60% {margin-left:-75%}
-  70% {margin-left:-75%}
 
-  80% {margin-left:-100%}
-  90% {margin-left:-100%}
 
-}
+
+
+
+
+
 .freetowatch-cards .movie-card {
   margin-right: 1.5rem;
   position: relative;
@@ -446,28 +447,6 @@ nav ul .logo {
 
 
 
-/* footer section */
-.footer {
-  background-color: rgba(10, 10, 10,0.8);
-  padding: 70px 0;
-  color: white;
-}
-
-.footer .maindiv {
-  margin: auto;
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer .maindiv .footerlogo {
-  background: url(../images/footerlogo.svg) center center no-repeat;
-  height: 70px;
-  width: 100px;
-}
-
-
-
 
 
 
@@ -493,9 +472,7 @@ nav ul .logo {
     font-size: 32px;
   }
 
-  .sidebar{
-    width: 20%;
-  }
+  
 }
 @media (min-width: 1900px) {
   .nav-img{
@@ -517,7 +494,8 @@ nav ul .logo {
   }
 @media (max-width: 1150px) {
   .sidebar {
-      visibility: hidden;
+    width: 0;
+    visibility: hidden;
   }
   .toggle img{
     display: unset;
