@@ -1,20 +1,13 @@
-//Funcion para dar la vuelta a las tarjetas
 
 
-
-
+//Funcion para que espere el javascript a que este todo el html
 
 window.onload = function(){
 
- 
-  }
-
-//Funcion para mostrar menu lateral al dar click a un boton
 
 
+  //Funcion para dar la vuelta a las tarjetas
 
-
-window.onload = function(){
 let btn = document.querySelectorAll('.flip');
 let btn2 = document.querySelectorAll('.flp');
 
@@ -36,18 +29,33 @@ btn2.forEach(item => {
 
 
 
+
+
+//Funcion para mostrar menu lateral al dar click a un boton
+
 var contador = 1;
 
 let btn_menu=document.querySelectorAll('.toggle');   
-let menus=document.querySelectorAll('.sidebar');    
+let menus=document.querySelectorAll('.menu__side');   
+let opciones=document.querySelectorAll('.options'); 
 
 
 btn_menu.forEach(item => {
   item.addEventListener('click', event => {
+    let widht_size=window.outerWidth;
+
     if (contador == 1) {
       menus.forEach(item => {
-        item.style.visibility = 'visible';
-        item.style.width =  '20%';
+
+        if (widht_size>900) {
+          item.style.visibility = 'visible';
+          item.style.width =  '20%';
+        }else{
+          item.style.visibility = 'visible';
+          item.style.width =  '100%';
+
+        }
+       
 
 
       });
@@ -63,33 +71,62 @@ btn_menu.forEach(item => {
   
   });
 });
-};
 
 
+let btn_menu2=document.querySelectorAll('.categorias');   
+
+
+btn_menu2.forEach(item => {
+  item.addEventListener('click', event => {
+    if (contador == 1) {
+      menus.forEach(item => {
+        let widht_size=window.outerWidth;
+
+
+        if (widht_size>900) {
+          item.style.visibility = 'visible';
+          item.style.width =  '20%';
+        }else{
+          item.style.visibility = 'visible';
+          item.style.width =  '100%';
+        }
+       
+
+
+      });
+      contador = 0;
+    } else {
+      menus.forEach(item => {
+        item.style.width = '4%' 
+
+      });
+      contador = 1;
+    }
+    
+  
+  });
+});
 
 
 
 
 //Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
 
-  var modal = document.getElementById('id01');
-  document.onclick = function(e){
-    if(e.target.id == 'id01'){
-      modal.style.display = "none";
+var modal = document.getElementById('id01');
+document.onclick = function(e){
+  if(e.target.id == 'id01'){
+    modal.style.display = "none";
 
-    }
-
-
-   
-
-  };
+  }
 
 
+ 
 
-
+};
 
 
 //Funcion carrusel header
+
 var slideIndex = 0;
 
 showSlides();
@@ -108,9 +145,23 @@ function showSlides() {
        slides[slideIndex-1].style.display = "block";
        setTimeout(showSlides,2000);
 }
+};
 
 
-//function showSlides()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

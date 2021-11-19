@@ -74,9 +74,9 @@
     /*style the model content box*/
     .modal-content {
         background-color: #fefefe;
-        margin: 5% auto 15% auto;
+        margin: 15% auto 15% auto;
         border: 1px solid #888;
-        width: 30%;
+        width: 40%;
         color:#000;
         text-decoration: none;
     }
