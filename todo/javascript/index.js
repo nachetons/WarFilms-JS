@@ -61,11 +61,22 @@ btn_menu.forEach(item => {
       });
       contador = 0;
     } else {
-      menus.forEach(item => {
-        item.style.width = '0' 
 
-      });
-      contador = 1;
+      if (widht_size <= 1040) {
+       menus.forEach(item => {
+         item.style.width = '8%' 
+ 
+       });
+       contador = 1;
+ 
+     }if (widht_size > 1040) {
+       menus.forEach(item => {
+         item.style.width = '5%' 
+ 
+       });
+       contador = 1;
+ 
+     }
     }
     
   
@@ -78,9 +89,10 @@ let btn_menu2=document.querySelectorAll('.categorias');
 
 btn_menu2.forEach(item => {
   item.addEventListener('click', event => {
+    let widht_size=window.outerWidth;
+
     if (contador == 1) {
       menus.forEach(item => {
-        let widht_size=window.outerWidth;
 
 
         if (widht_size>900) {
@@ -95,13 +107,18 @@ btn_menu2.forEach(item => {
 
       });
       contador = 0;
+
     } else {
+
       menus.forEach(item => {
-        item.style.width = '4%' 
+        item.style.width = '5%' 
 
       });
       contador = 1;
+
     }
+
+    
     
   
   });
@@ -125,7 +142,19 @@ document.onclick = function(e){
 };
 
 
+  
+
+
+
+
 //Funcion carrusel header
+
+/*for (let index = 0; index < 11; index++) {
+  var foto= document.getElementById("foto");
+  foto.src="../images/Pelis_grandes/"+index+".jpg";
+  
+}*/
+
 
 var slideIndex = 0;
 
@@ -143,7 +172,7 @@ function showSlides() {
        slideIndex++;
        if(slideIndex > slides.length) {slideIndex = 1}
        slides[slideIndex-1].style.display = "block";
-       setTimeout(showSlides,2000);
+       setTimeout(showSlides,2500);
 }
 };
 
