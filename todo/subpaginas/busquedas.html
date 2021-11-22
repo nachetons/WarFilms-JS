@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/carrusel.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/fontawesome.min.css" />
     <title>Document</title>
   </head>
   <body>
@@ -12,18 +18,15 @@
     <div w3-include-html="../componentes/login.html"></div>
 
 
+
     <h1 id="welcome"> </h1>
- 
-
-<script>
-  window.onload = function() {
-      document.getElementById('welcome').innerText = "Resultados de: , " + window.location.search;
-  };
-</script>
-
-
 
     <script type="text/javascript" src="../javascript/index.js"></script>
+    <script>
+      window.onload = function() {
+          document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
+      };
+    </script>
     <script>
       includeHTML();
     </script>

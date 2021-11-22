@@ -1,7 +1,6 @@
+<head>
 <link rel="stylesheet" href="../css/main.css" />
-<link rel="stylesheet" href="../css/login.css" />
-
-
+</head>
 
  <!-- Nav var horizontal -->
  <nav>
@@ -13,8 +12,8 @@
       <li class="menu_options"><a href="../subpaginas/series.html">Series</a></li>
     </ul>
     <ul class="icons-ul">
-      <form class="log" id="myForm" action="../subpaginas/busquedas.html" onsubmit="store()" method="GET">
-        <input type="search" class="input-search" id="mySearch" placeholder="Search for any movies, shows" name="search" />
+      <form class="log" id="myForm" action="../subpaginas/busquedas.html" onsubmit="store()">
+        <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" />
         <button class="boton-search" type="submit"><i class="fas fa-search"></i></button>
       </form>
 
@@ -101,15 +100,10 @@
 
     </div>
 
-
-
-
-    
-
     <script>
       function store(){
          var inputEmail= document.getElementById("mySearch").value;
-         localStorage.setItem("search", inputEmail);
+         sessionStorage.setItem("search", inputEmail);
       }
         </script>
 
