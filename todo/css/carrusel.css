@@ -140,7 +140,7 @@
 
 .slider2 {
   width: 100%;
-  animation: slider 20s infinite alternate ease-in-out;
+  animation: slider 20s infinite alternate ease-in;
 }
 
 .slider2:hover {
@@ -188,7 +188,7 @@
 
 .slider3 {
   width: 100%;
-  animation: slider 20s infinite alternate ease-in-out;
+  animation: slider 20s infinite alternate ease-out;
 }
 
 .slider3:hover {

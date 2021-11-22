@@ -85,9 +85,7 @@ nav ul .logo {
   color: white;
 }
 
-.toggle img {
-  height: 40px;
-  width: 40px;
+.toggle i {
   cursor: pointer;
   display: none;
   /*visibility: hidden;*/
@@ -513,7 +511,7 @@ nav ul .logo {
     width: 0;
     visibility: hidden;
   }
-  .toggle img {
+  .toggle i {
     display: unset;
   }
 
