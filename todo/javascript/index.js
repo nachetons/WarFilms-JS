@@ -141,6 +141,75 @@ document.onclick = function(e){
 
 };
 
+
+
+
+
+var login = document.getElementById("btn_login");
+var registro = document.getElementById("btn_registro");
+
+
+var modal = document.getElementById('id01');
+    var modal2 = document.getElementById('id02');
+
+
+
+
+
+  login.addEventListener("click", function() {
+    
+
+    //modal.style.visibility = "visible";
+ 
+      
+    
+    modal.style.display = "block";
+    modal2.style.display = "none";
+
+  });
+  registro.addEventListener("click", function() {
+
+   // modal2.style.visibility="visible";
+    modal.style.display = "none";
+    modal2.style.display = "block";
+
+
+  });
+
+
+
+
+
+  var login2 = document.getElementById("btn_login2");
+var registro2 = document.getElementById("btn_registro2");
+
+
+
+
+
+
+
+  login2.addEventListener("click", function() {
+    
+
+    //modal.style.visibility = "visible";
+ 
+      
+    
+    modal.style.display = "block";
+    modal2.style.display = "none";
+
+  });
+  registro2.addEventListener("click", function() {
+
+   // modal2.style.visibility="visible";
+    modal.style.display = "none";
+    modal2.style.display = "block";
+
+
+  });
+
+
 //Funcion carrusel header
 
 /*for (let index = 0; index < 11; index++) {
