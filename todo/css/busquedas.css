@@ -4,13 +4,7 @@
 
 }
 
-.freetowatch-cards {
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
+
 
   h1{
       margin-top: 50px;

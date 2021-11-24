@@ -83,20 +83,27 @@ img.avatar {
 }
 
 /*style the close button*/
-.close {
+#close {
   position: absolute;
   right: 25px;
   top: 0;
+  cursor: pointer;
   color: #000;
   font-size: 35px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: red;
+#close2 {
+  position: absolute;
+  right: 25px;
+  top: 0;
   cursor: pointer;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
 }
+
+
 
 /* add zoom animation*/
 .animate {

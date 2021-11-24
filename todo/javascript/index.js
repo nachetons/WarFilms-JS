@@ -129,13 +129,10 @@ btn_menu2.forEach(item => {
 
 
 
-
-
-
-
-
 //Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
 var button = document.getElementById('btn_login_nav');
+var closeButton = document.getElementById('close')
+
 var modal = document.getElementById('id01');
 var modalContent = document.getElementById('form_content');
 var modalContent2 = document.getElementById('form_content2');
@@ -152,11 +149,21 @@ buttonRegister.addEventListener('click', function() {
 
 });
 
+
+//Si pincho en el nav top aparece menu con la animacion
 button.addEventListener('click', function() {
   modalContent.classList.add("animations");
   modal.style.display = 'unset';
 
-  //modalContent2.classList.add("animations3");
+
+});
+
+
+closeButton.addEventListener('click', function() {
+  modal.style.display = "none";
+  modalContent.classList.remove("animations");
+  modalContent.classList.remove("animations2");
+  modalContent2.classList.remove("animations3");
 
 });
 
@@ -258,6 +265,7 @@ var registro2 = document.getElementById("btn_registro2");
   
 }*/
 
+document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
 
 };
 

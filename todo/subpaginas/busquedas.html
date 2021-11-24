@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="../css/busquedas.css" />
     <link rel="stylesheet" href="../css/navs.css" />
     <link rel="stylesheet" href="../css/fontawesome.min.css" />
+    <link rel="stylesheet" href="../css/carrusel.css" />
+
     <title>Document</title>
   </head>
   <body>
     
     <div w3-include-html="../componentes/navs.html"></div>
-    <div w3-include-html="../componentes/login.html"></div>
 
 
     <div class="container">
@@ -27,8 +28,8 @@
       <div class="peliculas_list">
         <img id="foto" src="../images/Pelis_grandes/1.jpg" style="width: 15%" />
         <div class="content_film">
-        <h3 class="titulo">Titulo</h3>
-        <p class="descripcion">Descripcion</p>
+          <h3 class="titulo">Titulo</h3>
+          <p class="descripcion">Descripcion</p>
       </div>
       </div>
   </a>
@@ -77,13 +78,10 @@
 
     </div>
 
+    <div w3-include-html="../componentes/login.html"></div>
 
     <script type="text/javascript" src="../javascript/index.js"></script>
-    <script>
-      window.onload = function() {
-          document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
-      };
-    </script>
+    
     <script>
       includeHTML();
     </script>
