@@ -245,12 +245,9 @@ body {
   }
 
   .menu__side a {
-    font-size: 140% !important;
+    font-size: 140%;
   }
 
-  nav ul {
-    font-size: 32px;
-  }
 
   .menu__side {
     width: 4%;
@@ -274,12 +271,10 @@ body {
   }
 
   .menu__side a {
-    font-size: 140% !important;
+    font-size: 140%;
   }
 
-  nav ul {
-    font-size: 32px;
-  }
+ 
 
   .menu__side {
     width: 5%;

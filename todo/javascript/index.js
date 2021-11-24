@@ -127,20 +127,60 @@ btn_menu2.forEach(item => {
 
 
 
-//Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
 
+
+
+
+
+
+
+//Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
+var button = document.getElementById('btn_login_nav');
 var modal = document.getElementById('id01');
+var modalContent = document.getElementById('form_content');
+var modalContent2 = document.getElementById('form_content2');
+
+var buttonLogin = document.getElementById('btn_login2');
+var buttonRegister = document.getElementById('btn_registro');
+
+
+buttonRegister.addEventListener('click', function() {
+  modalContent2.classList.add("animations3");
+  modalContent.classList.add("animations2");
+
+  modal.style.display = 'unset';
+
+});
+
+button.addEventListener('click', function() {
+  modalContent.classList.add("animations");
+  modal.style.display = 'unset';
+
+  //modalContent2.classList.add("animations3");
+
+});
+
+
 document.onclick = function(e){
   if(e.target.id == 'id01'){
     modal.style.display = "none";
+    modalContent.classList.remove("animations");
+    modalContent.classList.remove("animations2");
+    modalContent2.classList.remove("animations3");
+
 
   }
 
 
- 
-
 };
+buttonLogin.addEventListener("click", function() {
+  modalContent.classList.remove("animations");
+  modal.style.display = "unset";
+  modalContent.classList.add("animations2");
+  modalContent2.classList.remove("animations3");
 
+
+});
 
 
 

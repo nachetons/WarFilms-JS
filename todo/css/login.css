@@ -67,6 +67,9 @@ img.avatar {
   background-color: rgba(0, 0, 0, 0.8);
   padding-top: 60px;
   overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+
 }
 
 /*style the model content box*/
@@ -115,6 +118,9 @@ img.avatar {
   background-color: rgba(0, 0, 0, 0.8);
   padding-top: 60px;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
+  
 }
 
 .btn{
@@ -130,6 +136,10 @@ img.avatar {
   margin-bottom: 5%;
 }
 
+.allmodal{
+  
+}
+
 #btn_registro2{
   background-color:red;
 }
@@ -138,7 +148,27 @@ img.avatar {
   background-color:red;
 }
 
+.animations{
+  -webkit-animation-name: animatezoom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatezoom;
+  animation-duration: 1s;
+}
 
+
+.animations2{
+  -webkit-animation-name: animateSlide;
+  -webkit-animation-duration: 0.8s;
+  animation-name: animateSlide;
+  animation-duration: 0.8s;
+}
+.animations3{
+  -webkit-animation-name: animateSlide2;
+  -webkit-animation-duration: 0.8s;
+  animation-name: animateSlide2;
+  animation-duration: 0.8s;
+  
+}
 
 @-webkit-keyframes animatezoom {
   from {
@@ -157,6 +187,101 @@ img.avatar {
     transform: scale(1);
   }
 }
+
+
+
+
+@-webkit-keyframes animateSlide {
+  0% {
+    margin-left: 0%;
+    opacity: 0.5;
+
+  }
+  100% {
+    margin-left: 100px;
+    opacity: 0;
+
+  }
+}
+
+@keyframes animateSlide {
+  0% {
+    transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+    -webkit-perspective: 1000;
+    
+    }
+    
+    50% {
+      transform: perspective(1000) rotateX(0deg) rotateY(-90deg);
+      -webkit-transform: perspective(1000) rotateX(0deg) rotateY(-90deg);
+      
+      
+    } 
+
+    100% {
+      transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+      
+      
+    } 
+}
+
+
+@-webkit-keyframes animateSlide2 {
+  0% {
+    transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+    -webkit-perspective: 1000;
+    
+    }
+    
+    50% {
+      transform: perspective(1000) rotateX(0deg) rotateY(90deg);
+      -webkit-transform: perspective(1000) rotateX(0deg) rotateY(90deg);
+      
+      
+    } 
+
+    100% {
+      transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+      
+      
+    } 
+    
+}
+
+@keyframes animateSlide2 {
+  
+    0% {
+      transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+      -webkit-perspective: 1000;
+      
+      }
+      
+      50% {
+        transform: perspective(1000) rotateX(0deg) rotateY(90deg);
+        -webkit-transform: perspective(1000) rotateX(0deg) rotateY(90deg);
+        
+        
+      } 
+
+      100% {
+        transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+        
+        
+      } 
+      
+     
+
+
+  }
+ 
+
+
 
 @media screen and (max-width: 300px) {
   span.psw {
