@@ -1,0 +1,23 @@
+.columnas {
+  width: 90%;
+  height: 500px;
+  padding: 10px;
+  margin: 10px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.caja {
+  color: #fff;
+  margin: 5px;
+  display: inline-block;
+  /*4x200=800 de ancho en cuanto al with*/
+  width: 200px;
+  height: 50px;
+  background: #e67e22;
+  text-align: center;
+}
