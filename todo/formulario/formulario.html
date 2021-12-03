@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/carrusel.css" />
+    <link rel="stylesheet" href="../css/navs.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/fontawesome.min.css" />
+    <title>Formulario de contacto</title>
+</head>
+
+<body>
+    <div w3-include-html="../componentes/navs.html"></div>
+
+    <div class="container">
+        <div class="container-form">
+            <h2>Formulario de contacto</h2>
+            <p>Por favor, complete sus datos antes de enviar la información.</p>
+            
+            <form action="#">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="col-36">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                <!-- </div>
+                <div class="row"> -->
+                    <!-- <div class="col-25">
+                        <label for="apellidos">Apellidos</label>
+                    </div> -->
+                    <div class="col-36 right">
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="telefono">Teléfono</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="telefono" name="telefono" placeholder="Teléfono">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="asunto">Asunto del mensaje</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="asunto" id="asunto">Asunto del mensaje
+                            <option>Quejas y reclamaciones</option>
+                            <option>Sugerencia</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="mensaje">Mensaje</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje..."
+                            style="height:200px"></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row bottom">
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div w3-include-html="../componentes/login.html"></div>
+    <div w3-include-html="../componentes/footer.html"></div>
+
+    <script type="text/javascript" src="../javascript/index.js"></script>
+    <script>
+      var slideIndex = 0;
+
+      showSlides();
+
+      function showSlides() {
+       var i;
+       var slides = document.getElementsByClassName("mySlides");
+
+       for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        
+       }
+
+       slideIndex++;
+       if(slideIndex > slides.length) {slideIndex = 1}
+       slides[slideIndex-1].style.display = "block";
+       setTimeout(showSlides,2500);
+}
+    </script>
+
+    <script>
+      includeHTML();
+    </script>
+
+    <!-- <div class="formulario-contacto">
+            <h2>Formulario de contacto</h2>
+            <p>Por favor, complete sus datos antes de enviar la información.</p>
+        
+            <form action="#">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                <input type="text" name="apellidos" id="nombre" placeholder="Apellidos">
+                <br>
+        
+                <label for="correo">Email</label>
+                <input type="email" name="correo" id="correo">
+                <br>
+        
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono">
+                <br>
+        
+                <label for="asunto">Asunto del mensaje</label>
+                <select name="asunto" id="asunto">
+                    <option value="queja">Quejas y reclamaciones</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <br>
+        
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Escriba su mensaje..."></textarea>
+                <br>
+        
+                <label for="verificacion">Verificación</label>
+                <input type="checkbox" name="verificacion" id="verificacion">
+                <br>
+                
+                <input type="submit">
+            </form>
+        </div> -->
+
+</body>
+
+</html>
