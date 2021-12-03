@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <%= require('html-loader!./componentes/navs.html').default %>
+
+    <div class="container">
+      <div class="row">
+      <h1 id="welcome"></h1>
+      <!--create list movie cards search-->
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/1.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/2.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/8.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              quasi dolore fuga, sit reprehenderit nostrum quas enim atque
+              beatae nulla possimus et, maiores amet? Dicta est expedita minima
+              tempora officia. Sapiente cumque rerum enim blanditiis, cupiditate
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/6.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/5.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <button class="btn_mas">Mostrar mas</button>
+    </div>
+  </div>
+  <%= require('html-loader!./componentes/login.html').default %>
+
+    <div w3-include-html="../componentes/login.html"></div>
+
+    <script type="text/javascript" src="../javascript/index.js"></script>
+
+    <script>
+      includeHTML();
+    </script>
+  </body>
+</html>

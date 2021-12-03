@@ -1,27 +1,28 @@
 {
-  "name": "pruebaWebpack",
+  "name": "piano",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "author": "surtich <surtich@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack serve --open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "css-loader": "^6.5.1",
+    "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
-    "terser-webpack-plugin": "^5.2.5",
-    "webpack": "^5.64.1",
-    "webpack-cli": "^4.9.1"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "npm-watch": "^0.11.0",
-    "watch": "^1.0.2"
+    "sass": "^1.43.5",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.63.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
   }
 }

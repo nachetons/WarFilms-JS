@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: rgb(14, 14, 14);
+  color: white;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  background-color: rgb(14, 14, 14);
+  width: 0px;
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgb(14, 14, 14);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d62929;
+  background-image: -webkit-linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent,
+    transparent
+  );
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Barra de navegacion top */
+
+
+/* Header section */
+.background {
+ /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/header.jpg") no-repeat center center/cover;*/
+  background-color:red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 80px;
+  height: 57vh;
+  color: white;
+  width: 104%;
+  margin-left: -2%;
+}
+
+.background button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 120px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    rgba(30, 213, 169, 1) 0%,
+    rgba(1, 180, 228, 1) 100%
+  );
+}
+
+.boton-card {
+  text-align: center;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.boton-card:hover {
+  cursor: pointer;
+}
+
+.freetowatch-cards {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.slider {
+  display: flex;
+}
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text_title {
+  position: absolute;
+  top: 50%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  left: 50%;
+  font-size: 50px;
+  transform: translate(-50%, -50%);
+}
+
+.mySlides img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 6%;
+  height: 60vh;
+  color: white;
+  margin-left: 4%;
+  z-index: 2;
+  opacity: 0.9;
+  background-color: #d62929;
+}
+
+.fade {
+  opacity: 0.7;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+.slider {
+  width: 100%;
+  animation: slider 20s infinite alternate ease-in-out;
+}
+
+.freetowatch-cards .movie-card {
+  margin-right: 1.5rem;
+  position: relative;
+  margin-top: 2%;
+}
+
+/* Animacion de las cards de las peliculas */
+.movie-card {
+  transition: 1s ease;
+  transform-style: preserve-3d;
+}
+
+.movie-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.delante,
+.detras {
+  position: absolute;
+  backface-visibility: hidden;
+  margin-bottom: 50px;
+}
+
+.delante {
+  z-index: 2;
+  transform: translatey(-500px);
+}
+
+.detras {
+  margin-right: 1.5rem;
+  width: 292px;
+  height: 90%;
+  color: white;
+  padding: 1rem;
+  background: linear-gradient(
+    to top,
+    white 0%,
+    white 30%,
+    black 70%,
+    black 100%
+  );
+  position: relative;
+  transform: rotateY(180deg);
+}
+
+/* movies rating */
+.movie-rating {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(3, 37, 65);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+}
+.movie-rating::after {
+  content: "";
+  height: 10px;
+  width: 39px;
+  border-radius: 100%;
+  border: 3px solid gold;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Media querys */
+@media (max-width: 2500px) {
+  .nav-img {
+    width: 25%;
+    height: 25%;
+  }
+
+  .menu__side a {
+    font-size: 140%;
+  }
+
+
+  .menu__side {
+    width: 4%;
+    visibility: visible;
+  }
+
+  .options__menu .option i {
+    font-size: 1.7em;
+    cursor: pointer;
+  }
+}
+@media (max-width: 2200px) {
+  .nav-img {
+    width: 25%;
+    height: 25%;
+  }
+
+  .menu__side:hover .nav-img {
+    width: 20%;
+    height: 20%;
+  }
+
+  .menu__side a {
+    font-size: 140%;
+  }
+
+ 
+
+  .menu__side {
+    width: 5%;
+    visibility: visible;
+  }
+
+  .options__menu .option i {
+    font-size: 1.7em;
+    cursor: pointer;
+  }
+}
+@media (max-width: 1900px) {
+  .nav-img {
+    margin-left: 6%;
+  }
+
+  .options__menu .option i {
+    font-size: 1.7em;
+    cursor: pointer;
+    margin-left: -2%;
+  }
+
+  .menu__side {
+    width: 5%;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 1700px) {
+  .nav-img {
+    margin-left: 6%;
+  }
+
+  .options__menu .option i {
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: -2%;
+  }
+}
+@media (max-width: 1500px) {
+  .nav-img {
+    margin-left: 3%;
+  }
+  .options__menu .option i {
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: -5%;
+  }
+}
+@media (max-width: 1280px) {
+  .nav-img {
+    margin-left: 0%;
+  }
+  .menu__side {
+    width: 0;
+    visibility: hidden;
+  }
+  .toggle i {
+    display: unset;
+  }
+
+  .menu_options {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  nav ul .logo {
+    display: none;
+  }
+  .modal-content {
+    width: 60%;
+    margin-top: 20%;
+    text-align: center;
+  }
+
+}
+@media (max-width: 800px) {
+  nav ul .logo {
+    display: none;
+  }
+  .modal-content {
+    width: 60%;
+    margin-top: 20%;
+    text-align: center;
+  }
+  .options__menu {
+    margin-left: 35%;
+  }
+}
+@media (max-width: 420px) {
+  nav ul .logo {
+    display: none;
+  }
+  .modal-content {
+    width: 60%;
+    margin-top: 20%;
+    text-align: center;
+  }
+  .options__menu {
+    margin-left: 20%;
+  }
+}
