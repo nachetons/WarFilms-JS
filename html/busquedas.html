@@ -11,7 +11,7 @@
     <%= require('html-loader!./componentes/navs.html').default %>
 
     <div class="container">
-      <div class="row">
+      <div class="row" id="listas_pelis">
       <h1 id="welcome"></h1>
       <!--create list movie cards search-->
       <a href="#">
@@ -94,12 +94,7 @@
   </div>
   <%= require('html-loader!./componentes/login.html').default %>
 
-    <div w3-include-html="../componentes/login.html"></div>
 
-    <script type="text/javascript" src="../javascript/index.js"></script>
-
-    <script>
-      includeHTML();
-    </script>
+    <%= require('html-loader!./componentes/footer.html').default %>
   </body>
 </html>

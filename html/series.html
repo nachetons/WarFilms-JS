@@ -14,9 +14,10 @@
     <title>Document</title>
   </head>
   <body>
+    <%= require('html-loader!./componentes/navs.html').default %>
+    <%= require('html-loader!./componentes/login.html').default %>
+
     
-    <div w3-include-html="../componentes/navs.html"></div>
-    <div w3-include-html="../componentes/login.html"></div>
 
 
     <script type="text/javascript" src="../javascript/index.js"></script>
