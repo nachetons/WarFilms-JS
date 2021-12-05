@@ -14,13 +14,15 @@
     </ul>
     <ul class="icons-ul">
       <form class="log" id="myForm" action="./busquedas.html" onsubmit="store()">
-        <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" />
+        <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" onchange="predict()"/>
         <button class="boton-search" type="submit"><i class="fas fa-search"></i></button>
+
       </form>
 
       <li><a href="#"><i style="width:auto;" class="fas fa-user" id="btn_login_nav" title="Portafolio"></i></a></li>
 
-  
+      <div id="textoPredict" class="textoPredict"></div>
+
     </ul>
   </nav>
   

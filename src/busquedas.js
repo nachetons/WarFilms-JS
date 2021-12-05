@@ -30,6 +30,7 @@ const API_URL_POP = URL_BASE + 'discover/movie?sort_by=popularity.desc&include_a
 const SEARCH_URL = URL_BASE + 'search/movie?query=';
 const URL_IMG = "https://image.tmdb.org/t/p/w500";
 
+
 const main = document.getElementById("listas_pelis");
 
 
@@ -275,15 +276,106 @@ window.onload = function () {
 
 };
 
+const entrada = document.getElementById("mySearch");
+const textoPre = document.getElementById('textoPredict');
+
+
+if (entrada.value != "") {
+  
+}
+  
 
 const busqueda = window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
+
 document.getElementById('welcome').innerText = "Resultados de:  " + busqueda;
-  console.log(busqueda);
+console.log(busqueda);
 
 
-  const data_search = SEARCH_URL+busqueda+"&" + API_KEY;
-  console.log(data_search);
-getData(SEARCH_URL+busqueda+"&" + API_KEY);
+const data_search = SEARCH_URL + busqueda + "&" + API_KEY;
+console.log(data_search);
+getData(SEARCH_URL + busqueda + "&" + API_KEY);
+
+
+
+
+entrada.addEventListener('input', predict);
+//entrada.addEventListener('propertychange', data,predictTexts);
+
+function predict(e){
+    e.preventDefault();
+
+    
+    fetch(SEARCH_URL + e.target.value + "&" + API_KEY)
+    .then(response => response.json())
+    .then(data => {
+      if (!data.Error) {
+        console.log(data);
+       predictTexts(data.results);
+       // peliculas.push(data.results);
+        
+      }else{
+        predictTexts([]);
+      }
+    })
+    
+    }
+
+    /*function predictText(e){
+      if (peliculas.length > 0) {
+        peliculas.forEach(item => {
+          item.forEach(item => {
+            if (item.original_title.toLowerCase().includes(e.target.value.toLowerCase())) {
+              textoPre.innerHTML = "<li>"+item.original_title+"</li>";
+            }
+          });
+        
+        });
+      }
+        
+      
+      
+    }*/
+
+    function predictTexts(data){
+ 
+      clearPredict();
+
+      if (data.length > 0) {
+        textoPre.innerHTML += "<ul>";
+        data.forEach(item => {
+
+          if (item.title.toLowerCase().includes(entrada.value.toLowerCase())&&entrada.value!=null) {
+
+          textoPre.innerHTML += "<li>"+item.original_title+"</li>";
+          }
+        });
+        textoPre.innerHTML += "</ul>";
+      }else{
+        clearPredict()
+      }
+
+      if (entrada.length == 0) {
+        console.log("vacio");
+      }
+      if (entrada.length == entrada.length-1) {
+        clearPredict()
+      
+        
+      }
+
+      
+    }
+
+
+    function clearPredict(){
+      textoPre.innerHTML = "";
+
+    }
+      
+      
+    
+
+
 
 function getData(url) {
   fetch(url)
@@ -291,6 +383,7 @@ function getData(url) {
     .then(data => {
       console.log(data);
       showData(data.results);
+      
     })
     .catch(error => console.log(error));
 }
@@ -302,11 +395,11 @@ function showData(data) {
   data.forEach(movie => {
 
 
-    const {title, poster_path, overview}  = movie;
+    const { title, poster_path, overview } = movie;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
     movieEl.innerHTML = `
-    <img id="foto" src="${URL_IMG+poster_path}" style="width: 15%"/>
+    <img id="foto" src="${URL_IMG + poster_path}" style="width: 15%"/>
 
   <div class="content_film">
     <h3 class="titulo">${title}</h3>
