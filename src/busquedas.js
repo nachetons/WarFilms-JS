@@ -7,6 +7,8 @@ import "../css/footer.css";
 import "../css/login.css";
 import "../css/main.css";
 import "../css/navs.css";
+import "../css/mediaquerys.css";
+
 
 
 // Font Awesome 5 (Free)
@@ -335,27 +337,62 @@ function predict(e){
       
       
     }*/
+   
 
     function predictTexts(data){
  
       clearPredict();
 
+
+      
+    
+
       if (data.length > 0) {
-        textoPre.innerHTML += "<ul>";
+        textoPre.style.display = "block";
+        textoPredict.style.border = "thick solid red";
+     
+
+        const peliculas = [];
+
         data.forEach(item => {
-
           if (item.title.toLowerCase().includes(entrada.value.toLowerCase())&&entrada.value!=null) {
+            peliculas.push(item.title);
 
-          textoPre.innerHTML += "<li>"+item.original_title+"</li>";
+          //textoPre.innerHTML += "<li>"+item.original_title+"</li>";
           }
         });
-        textoPre.innerHTML += "</ul>";
+
+        removeDuplicates(peliculas);
+
+          //display 10 first elements to array of peliculas
+          if (peliculas.length > 10){
+
+            for (let index = 0; index < 10; index++) {
+              
+              textoPre.innerHTML += "<li>"+peliculas[index]+"</li>";
+            }
+          }else{
+            for (let index = 0; index < peliculas.length; index++) {
+              textoPre.innerHTML += "<li>"+peliculas[index]+"</li>";
+            }
+          }
+          textoPre.innerHTML += "</li></ul>";
+
+         
+          
+
+       
+      
+
+       // textoPre.innerHTML += "</ul>";
       }else{
         clearPredict()
       }
 
       if (entrada.length == 0) {
         console.log("vacio");
+        textoPre.style.display = "none";
+
       }
       if (entrada.length == entrada.length-1) {
         clearPredict()
@@ -366,9 +403,14 @@ function predict(e){
       
     }
 
+    function removeDuplicates(array) {
+      array.splice(0, array.length, ...(new Set(array)))
+    };
+
 
     function clearPredict(){
       textoPre.innerHTML = "";
+      textoPre.style.display = "none";
 
     }
       
@@ -392,29 +434,52 @@ function showData(data) {
 
   main.innerHTML = '';
 
+let count=0;
+
+
   data.forEach(movie => {
 
+      count=count+1;
 
-    const { title, poster_path, overview } = movie;
-    const movieEl = document.createElement("div");
-    movieEl.classList.add("movie");
-    movieEl.innerHTML = `
-    <img id="foto" src="${URL_IMG + poster_path}" style="width: 15%"/>
+      const { title, poster_path, overview } = movie;
+      const movieEl = document.createElement("div");
+      movieEl.classList.add("movie");
 
-  <div class="content_film">
-    <h3 class="titulo">${title}</h3>
-    <p class="descripcion">${overview}</p>
-  </div>
+
+      if (count<=6) {
+        
+ 
+          movieEl.innerHTML = `
+          <img id="foto" src="${URL_IMG + poster_path}" style="width: 8%"/>
+      
+        <div class="content_film">
+          <h3 class="titulo">${title}</h3>
+          <p class="descripcion">${overview}</p>
+        </div>
+          
+          
+          
+          `;   
+        
+
+      main.appendChild(movieEl);
+      
+      
+        
+      }
+
+      //display title, poster_path, overview to 10 first elements of array of movie
+        
+
+
+
     
     
+
     
-    `;
-
-    main.appendChild(movieEl);
-
   })
 
-
+  
 
 
 }

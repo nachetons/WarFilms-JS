@@ -7,6 +7,8 @@ import "../css/footer.css";
 import "../css/login.css";
 import "../css/main.css";
 import "../css/navs.css";
+import "../css/mediaquerys.css";
+
 
 
 // Font Awesome 5 (Free)
