@@ -1,1 +1,949 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Piano music generator</title><meta name="viewport" content="width=device-width,initial-scale=1"><script defer="defer" src="bundle.js"></script></head><body></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano music generator</title>
+  <script defer src="main.js"></script></head>
+
+  <body>
+    <head>
+
+
+</head>
+
+ <!-- Nav var horizontal -->
+ <nav>
+    <ul class="logo-ul">
+      <li class="toggle" id="btn_movil"><i class="fas fa-bars"></i></a></li>
+      <li class="logo" onclick="location.href='../index.html'"></li>
+      <li class="menu_options categorias"><a href="#">Categorias</a></li>
+      <li class="menu_options"><a href="./peliculas.html">Peliculas</a></li>
+      <li class="menu_options"><a href="./series.html">Series</a></li>
+      <li class="menu_options"><a href="./formulario.html">Contacto</a></li>
+    </ul>
+    <ul class="icons-ul">
+      <form class="log" id="myForm" action="./busquedas.html" onsubmit="store()">
+        <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" onchange="predict()"autocomplete="off"/>
+        <button class="boton-search" type="submit"><i class="fas fa-search"></i></button>
+        <div id="textoPredict" class="textoPredict"></div>
+
+      </form>
+
+      <li><a href="#"><i style="width:auto;" class="fas fa-user" id="btn_login_nav" title="Portafolio"></i></a></li>
+
+     
+
+    </ul>
+  </nav>
+  
+    <!-- Sidebar menu vertical con categorias -->
+  
+    <div class="menu__side" id="menu_side">
+      
+
+    <div class="options__menu">	
+
+        <a href="#">
+          <div class="option">
+            <i class="fas fa-theater-masks fa-2x" title="Portafolio"></i>
+              <h4>Comedia</h4>
+          </div>
+      </a>
+      
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-dizzy fa-2x" title="Cursos"></i>
+              <h4>Terror</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+              <h4>Magia</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-car fa-2x" title="Contacto"></i>
+              <h4>Coches</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+              <h4>Fantasia</h4>
+          </div>
+      </a>
+
+      <a href="#">
+        <div class="option">
+          <i class="fas fa-fighter-jet fa-2x" title="Cursos"></i>
+            <h4>Guerra</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+            <h4>Blog</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-car fa-2x" title="Contacto"></i>
+            <h4>Contacto</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+            <h4>Nosotros</h4>
+        </div>
+    </a>
+        
+</div>
+
+
+
+
+    </div>
+
+    <script>
+      function store(){
+         var inputEmail= document.getElementById("mySearch").value;
+         sessionStorage.setItem("search", inputEmail);
+      }
+        </script>
+
+    
+
+    
+
+    <!-- Header Section 
+    <div class="container">
+      <div class="background">
+        <h1>Welcome</h1>
+        <h2>Este va a ser mi carrusel principal</h2>
+
+      </div>
+    </div>
+-->
+    <div class="container">
+      <div class="mySlides fade">
+        <img id="foto" src="./images/static/1.jpg" style="width: 90%" />
+        <div class="text_title">Batman</div>
+        <div class="text">1</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="/static/images/Pelis_grandes/2.jpg" style="width: 90%" />
+        <div class="text_title">V de Vendetta</div>
+        <div class="text">2</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/3.jpg" style="width: 90%" />
+        <div class="text_title">Los Vengadores</div>
+        <div class="text">3</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/4.jpg" style="width: 90%" />
+        <div class="text_title">Anime Random</div>
+        <div class="text">4</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/5.jpg" style="width: 90%" />
+        <div class="text_title">Escuadron suicida</div>
+        <div class="text">5</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/6.jpg" style="width: 90%" />
+        <div class="text_title">Transformers</div>
+        <div class="text">6</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/7.jpg" style="width: 90%" />
+        <div class="text_title">Fate</div>
+        <div class="text">7</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/8.jpg" style="width: 90%" />
+        <div class="text_title">Alien vs Predator</div>
+        <div class="text">8</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/9.jpg" style="width: 90%" />
+        <div class="text_title">Harry Potter</div>
+        <div class="text">9</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./images/Pelis_grandes/10.jpg" style="width: 90%" />
+        <div class="text_title">El Motorista Fantasma</div>
+        <div class="text">10</div>
+      </div>
+    </div>
+
+
+    
+
+<div class="container">
+  <br />
+
+  <h1>Estrenos</h1>
+  <!--Carrusel 1-->
+
+  <div class="freetowatch-cards">
+    <div class="slider" data-pause="false">
+      <!-- Card 1 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/2.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/3.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/4.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/5.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/6.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/8.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <br />
+
+  <h1>Mas populares</h1>
+
+  <!--Carusel 2-->
+
+  <div class="freetowatch-cards">
+    <div class="slider2">
+      <!-- Card 1 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/8.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/6.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/5.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/4.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/3.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/2.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <br />
+  <h1>Mejor valoradas</h1>
+
+  <!-- Carrusel 3 -->
+
+  <div class="freetowatch-cards">
+    <div class="slider3">
+      <!-- Card 1 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image">
+            <img src="images/static/photo1.jpg" />
+          </div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/photo1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/photo1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/photo1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/photo1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/photo1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/photo1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="movie-card carrusel3">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/photo1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Login -->
+
+<div class="all-modal">
+<div id="id01" class="modal login">
+  
+  <form class="modal-content" id="form_content" action="#">
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('id01').style.display='none'"
+        id="close2"
+        title="Close Modal"
+        >×</span
+      >
+      <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+      <br />
+      <span class="btn" id="btn_login">Login</span>
+        <span class="btn" id="btn_registro">Registro</span>
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input
+        class="input-form"
+        type="text"
+        placeholder="Enter Username"
+        name="uname"
+        
+      />
+
+      <label><b>Password</b></label>
+      <input
+        class="input-form"
+        type="password"
+        placeholder="Enter Password"
+        name="psw"
+        
+      />
+
+      <button class="boton-form" type="submit">Login</button>
+      <input type="checkbox" checked="checked" /> Remember me
+    </div>
+
+    <div class="container" style="background-color: #f1f1f1">
+      <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+
+<div id="id02" class="modal registro">
+  <form class="modal-content" id="form_content2" action="#">
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('id02').style.display='none'"
+        id="close"
+        title="Close Modal"
+        >×</span
+      >
+      <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+      <br />
+      <span class="btn" id="btn_login2">Login</span>
+      <span class="btn" id="btn_registro2">Registro</span>
+
+    </div>
+
+    <div class="container">
+      <label><b>Name</b></label>
+      <input
+        class="input-form"
+        type="text"
+        placeholder="Enter Name"
+        name="uname"
+        required
+      />
+
+      <label><b>Email</b></label>
+      <input
+        class="input-form"
+        type="Email" placeholder="prueba@123.com"
+        placeholder="Enter Password"
+        name="psw"
+        required
+      />
+
+      <label><b>Password</b></label>
+      <input
+        class="input-form"
+        type="password"
+        placeholder="Enter Password"
+        name="psw"
+        required
+      />
+
+      <button class="boton-form" type="submit">Registrarse</button>
+    </div>
+
+    <div class="container" style="background-color: #f1f1f1">
+      <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+    
+
+<footer class="footer">
+  <div class="maindiv">
+    <div class="footerlogo"></div>
+    <div>
+      <h3>THE BASICS</h3>
+      <ul>
+        <li>About TMDB</li>
+        <li>Contact Us</li>
+        <li>Support Forums</li>
+        <li>API</li>
+        <li>System Status</li>
+      </ul>
+    </div>
+    <div>
+      <h3>GET INVOLVED</h3>
+      <ul>
+        <li>Contribution Bible</li>
+        <li>3rd Party Application</li>
+        <li>Add New Movie</li>
+        <li>Add New TV Show</li>
+      </ul>
+    </div>
+    <div>
+      <h3>COMMUNITY</h3>
+      <ul>
+        <li>Guidelines</li>
+        <li>Discussions</li>
+        <li>Leaderboard</li>
+        <li>Twitter</li>
+      </ul>
+    </div>
+    <div>
+      <h3>LEGAL</h3>
+      <ul>
+        <li>Terms ofUse API Terms of Use</li>
+        <li>Contact Us</li>
+        <li>Privacy Policy</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  
+
+    <script type="text/javascript" src="./javascript/index.js"></script>
+    <script>
+      var slideIndex = 0;
+
+      showSlides();
+
+      function showSlides() {
+       var i;
+       var slides = document.getElementsByClassName("mySlides");
+
+       for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        
+       }
+
+       slideIndex++;
+       if(slideIndex > slides.length) {slideIndex = 1}
+       slides[slideIndex-1].style.display = "block";
+       setTimeout(showSlides,30000);
+}
+    </script>
+
+   
+  </body>
+</html>
+<!-- new comment -->

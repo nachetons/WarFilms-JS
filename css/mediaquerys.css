@@ -63,6 +63,23 @@
       visibility: visible;
     }
   }
+
+  @media (max-width: 1840px) {
+    .nav-img {
+      margin-left: 6%;
+    }
+  
+    .options__menu .option i {
+      font-size: 1.7em;
+      cursor: pointer;
+      margin-left: -2%;
+    }
+  
+    .menu__side {
+      width: 5%;
+      visibility: visible;
+    }
+  }
   
   @media (max-width: 1700px) {
     .nav-img {

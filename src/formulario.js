@@ -8,6 +8,7 @@ import "../css/login.css";
 import "../css/main.css";
 import "../css/navs.css";
 import "../css/mediaquerys.css";
+import "../css/formulario.css";
 
 
 // Font Awesome 5 (Free)
@@ -30,23 +31,7 @@ window.onload = function(){
 
   //Funcion para dar la vuelta a las tarjetas
 
-let btn = document.querySelectorAll('.flip');
-let btn2 = document.querySelectorAll('.flp');
 
-
-btn.forEach(item => {
-  item.addEventListener('click', event => {
-    const cc = event.target.parentElement.parentElement;
-    cc.classList.toggle('flipped');
-  });
-});
-
-btn2.forEach(item => {
-  item.addEventListener('click', event => {
-    const cc = event.target.parentElement.parentElement;
-    cc.classList.toggle('flipped');
-  });
-});
 
 
 
@@ -294,3 +279,21 @@ if(entrada.value!="")  {
 }
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+

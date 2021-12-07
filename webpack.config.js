@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let htmlPageNames = ['busquedas', 'categorias', 'peliculas', 'series'];
+let htmlPageNames = ['busquedas', 'categorias', 'peliculas', 'series', 'formulario'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     template: `./html/${name}.html`, // relative path to the HTML files
@@ -19,6 +19,7 @@ module.exports = {
     categorias: './src/categorias.js',
     peliculas: './src/peliculas.js',
     series: './src/series.js',
+    formulario: './src/formulario.js',
   },
   devtool: 'inline-source-map',
   output: {
@@ -40,15 +41,7 @@ module.exports = {
   module: {
     rules: [
 
-      {
-        test: /\.svg$/,
-        use: {
-          loader: 'svg-inline-loader',
-          options: {
-            name: '[name]-[hash].[ext]',
-          },
-        },
-      },
+      
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
@@ -83,7 +76,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/static/[hash][ext]'
+          filename: 'images/static/[name][ext]'
         },
       },
     

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  <script defer src="busquedas.js"></script></head>
+  <body>
+    <head>
+
+
+</head>
+
+ <!-- Nav var horizontal -->
+ <nav>
+    <ul class="logo-ul">
+      <li class="toggle" id="btn_movil"><i class="fas fa-bars"></i></a></li>
+      <li class="logo" onclick="location.href='../index.html'"></li>
+      <li class="menu_options categorias"><a href="#">Categorias</a></li>
+      <li class="menu_options"><a href="./peliculas.html">Peliculas</a></li>
+      <li class="menu_options"><a href="./series.html">Series</a></li>
+      <li class="menu_options"><a href="./formulario.html">Contacto</a></li>
+    </ul>
+    <ul class="icons-ul">
+      <form class="log" id="myForm" action="./busquedas.html" onsubmit="store()">
+        <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" onchange="predict()"autocomplete="off"/>
+        <button class="boton-search" type="submit"><i class="fas fa-search"></i></button>
+        <div id="textoPredict" class="textoPredict"></div>
+
+      </form>
+
+      <li><a href="#"><i style="width:auto;" class="fas fa-user" id="btn_login_nav" title="Portafolio"></i></a></li>
+
+     
+
+    </ul>
+  </nav>
+  
+    <!-- Sidebar menu vertical con categorias -->
+  
+    <div class="menu__side" id="menu_side">
+      
+
+    <div class="options__menu">	
+
+        <a href="#">
+          <div class="option">
+            <i class="fas fa-theater-masks fa-2x" title="Portafolio"></i>
+              <h4>Comedia</h4>
+          </div>
+      </a>
+      
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-dizzy fa-2x" title="Cursos"></i>
+              <h4>Terror</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+              <h4>Magia</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-car fa-2x" title="Contacto"></i>
+              <h4>Coches</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+              <h4>Fantasia</h4>
+          </div>
+      </a>
+
+      <a href="#">
+        <div class="option">
+          <i class="fas fa-fighter-jet fa-2x" title="Cursos"></i>
+            <h4>Guerra</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+            <h4>Blog</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-car fa-2x" title="Contacto"></i>
+            <h4>Contacto</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+            <h4>Nosotros</h4>
+        </div>
+    </a>
+        
+</div>
+
+
+
+
+    </div>
+
+    <script>
+      function store(){
+         var inputEmail= document.getElementById("mySearch").value;
+         sessionStorage.setItem("search", inputEmail);
+      }
+        </script>
+
+    
+
+    
+
+    <div class="container">
+      <div class="row" id="listas_pelis">
+      <h1 id="welcome"></h1>
+      <!--create list movie cards search-->
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/1.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/2.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/8.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              quasi dolore fuga, sit reprehenderit nostrum quas enim atque
+              beatae nulla possimus et, maiores amet? Dicta est expedita minima
+              tempora officia. Sapiente cumque rerum enim blanditiis, cupiditate
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/6.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="peliculas_list">
+          <img
+            id="foto"
+            src="/images/static/Pelis_grandes/5.jpg"
+            style="width: 15%"
+          />
+          <div class="content_film">
+            <h3 class="titulo">Titulo</h3>
+            <p class="descripcion">Descripcion</p>
+          </div>
+        </div>
+      </a>
+
+      <button class="btn_mas">Mostrar mas</button>
+    </div>
+  </div>
+  <!-- Login -->
+
+<div class="all-modal">
+<div id="id01" class="modal login">
+  
+  <form class="modal-content" id="form_content" action="#">
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('id01').style.display='none'"
+        id="close2"
+        title="Close Modal"
+        >×</span
+      >
+      <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+      <br />
+      <span class="btn" id="btn_login">Login</span>
+        <span class="btn" id="btn_registro">Registro</span>
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input
+        class="input-form"
+        type="text"
+        placeholder="Enter Username"
+        name="uname"
+        
+      />
+
+      <label><b>Password</b></label>
+      <input
+        class="input-form"
+        type="password"
+        placeholder="Enter Password"
+        name="psw"
+        
+      />
+
+      <button class="boton-form" type="submit">Login</button>
+      <input type="checkbox" checked="checked" /> Remember me
+    </div>
+
+    <div class="container" style="background-color: #f1f1f1">
+      <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+
+<div id="id02" class="modal registro">
+  <form class="modal-content" id="form_content2" action="#">
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('id02').style.display='none'"
+        id="close"
+        title="Close Modal"
+        >×</span
+      >
+      <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+      <br />
+      <span class="btn" id="btn_login2">Login</span>
+      <span class="btn" id="btn_registro2">Registro</span>
+
+    </div>
+
+    <div class="container">
+      <label><b>Name</b></label>
+      <input
+        class="input-form"
+        type="text"
+        placeholder="Enter Name"
+        name="uname"
+        required
+      />
+
+      <label><b>Email</b></label>
+      <input
+        class="input-form"
+        type="Email" placeholder="prueba@123.com"
+        placeholder="Enter Password"
+        name="psw"
+        required
+      />
+
+      <label><b>Password</b></label>
+      <input
+        class="input-form"
+        type="password"
+        placeholder="Enter Password"
+        name="psw"
+        required
+      />
+
+      <button class="boton-form" type="submit">Registrarse</button>
+    </div>
+
+    <div class="container" style="background-color: #f1f1f1">
+      <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    
+
+<footer class="footer">
+  <div class="maindiv">
+    <div class="footerlogo"></div>
+    <div>
+      <h3>THE BASICS</h3>
+      <ul>
+        <li>About TMDB</li>
+        <li>Contact Us</li>
+        <li>Support Forums</li>
+        <li>API</li>
+        <li>System Status</li>
+      </ul>
+    </div>
+    <div>
+      <h3>GET INVOLVED</h3>
+      <ul>
+        <li>Contribution Bible</li>
+        <li>3rd Party Application</li>
+        <li>Add New Movie</li>
+        <li>Add New TV Show</li>
+      </ul>
+    </div>
+    <div>
+      <h3>COMMUNITY</h3>
+      <ul>
+        <li>Guidelines</li>
+        <li>Discussions</li>
+        <li>Leaderboard</li>
+        <li>Twitter</li>
+      </ul>
+    </div>
+    <div>
+      <h3>LEGAL</h3>
+      <ul>
+        <li>Terms ofUse API Terms of Use</li>
+        <li>Contact Us</li>
+        <li>Privacy Policy</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

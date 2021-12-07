@@ -13,8 +13,7 @@
 }
 
 .footer .maindiv .footerlogo {
-  /*background: url(../images/footerlogo.svg) center center no-repeat;*/
-  background-color: beige;
+  background: url(../src/images/static/footerlogo.svg) center center no-repeat;
   height: 70px;
   width: 100px;
 }
