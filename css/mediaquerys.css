@@ -15,10 +15,7 @@
       visibility: visible;
     }
   
-    .options__menu .option i {
-      font-size: 1.7em;
-      cursor: pointer;
-    }
+    
   }
   @media (max-width: 2200px) {
     .nav-img {
@@ -42,21 +39,14 @@
       visibility: visible;
     }
   
-    .options__menu .option i {
-      font-size: 1.7em;
-      cursor: pointer;
-    }
+    
   }
   @media (max-width: 1900px) {
     .nav-img {
       margin-left: 6%;
     }
   
-    .options__menu .option i {
-      font-size: 1.7em;
-      cursor: pointer;
-      margin-left: -2%;
-    }
+    
   
     .menu__side {
       width: 5%;
@@ -69,11 +59,6 @@
       margin-left: 6%;
     }
   
-    .options__menu .option i {
-      font-size: 1.7em;
-      cursor: pointer;
-      margin-left: -2%;
-    }
   
     .menu__side {
       width: 5%;
@@ -86,33 +71,39 @@
       margin-left: 6%;
     }
   
-    .options__menu .option i {
-      font-size: 1.2em;
-      cursor: pointer;
-      margin-left: -2%;
-    }
+    
 
     .input-search{
-        width: 24rem;
+        width: 15rem;
     }
     .boton-search{
         width: 7rem;
     }
   }
-  @media (max-width: 1530px) {
+  @media (max-width: 1550px) {
     .nav-img {
       margin-left: 3%;
     }
-    .options__menu .option i {
-      font-size: 1.2em;
-      cursor: pointer;
-      margin-left: -5%;
-    }
+   
     .input-search{
         width: 20rem;
     }
     .boton-search{
         width: 4rem;
+    }
+    .nav-img {
+      margin-left: 0%;
+    }
+    .menu__side {
+      width: 0;
+      visibility: hidden;
+    }
+    .toggle i {
+      display: unset;
+    }
+  
+    .menu_options {
+      display: none;
     }
   }
   @media (max-width: 1400px) {
@@ -149,6 +140,7 @@
       margin-top: 20%;
       text-align: center;
     }
+    
   
   }
   @media (max-width: 800px) {
@@ -160,20 +152,27 @@
       margin-top: 20%;
       text-align: center;
     }
+   
     .options__menu {
-      margin-left: 35%;
+      margin-left: 40%;
     }
+  } @media (max-width: 600px) {
+    .input-search{
+display: none;  }
+  .boton-search{
+display: none;  
+}
+   
   }
   @media (max-width: 420px) {
     nav ul .logo {
       display: none;
     }
+   
     .modal-content {
       width: 60%;
       margin-top: 20%;
       text-align: center;
     }
-    .options__menu {
-      margin-left: 20%;
-    }
+   
   }

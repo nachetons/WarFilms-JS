@@ -110,31 +110,31 @@
   }
 
   20% {
-    margin-left: -25%;
+    margin-left: -75%;
   }
   30% {
-    margin-left: -25%;
+    margin-left: -75%;
   }
 
   40% {
-    margin-left: -50%;
+    margin-left: -100%;
   }
   50% {
-    margin-left: -50%;
+    margin-left: -100%;
   }
 
   60% {
-    margin-left: -75%;
+    margin-left: -125%;
   }
   70% {
-    margin-left: -75%;
+    margin-left: -125%;
   }
 
   80% {
-    margin-left: -100%;
+    margin-left: -150%;
   }
   90% {
-    margin-left: -100%;
+    margin-left: -150%;
   }
 }
 

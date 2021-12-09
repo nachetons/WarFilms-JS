@@ -3,7 +3,7 @@ ul li {
   }
   
   nav {
-    background-color: rgba(10, 10, 10, 0.8);
+    background-color: rgba(10, 10, 10);
     color: white;
     display: flex;
     align-items: center;
@@ -12,7 +12,6 @@ ul li {
     width: 100%;
     position: fixed;
     z-index: 2;
-    opacity: 0.9;
   }
   
   nav ul {
@@ -68,7 +67,7 @@ ul li {
     font-size: 17px;
     border-right: none;
     float: left;
-    width: 30rem;
+    width: 20vw;
     background: transparent;
   }
   .input-search:focus {
@@ -172,6 +171,7 @@ ul li {
   
   .options__menu {
     padding: 5px 15px;
+    font-size: 0.5vw;
     position: absolute;
     top: 0;  }
   

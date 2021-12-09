@@ -1,0 +1,115 @@
+<head>
+<link rel="stylesheet" href="../css/main.css" />
+<link rel="stylesheet" href="../css/navs.css" />
+
+</head>
+
+ <!-- Nav var horizontal -->
+ <nav>
+    <ul class="logo-ul">
+      <li class="toggle" id="btn_movil"><i class="fas fa-bars"></i></a></li>
+      <li class="logo" onclick="location.href='../index.html'"></li>
+      <li class="menu_options categorias"><a href="#">Categorias</a></li>
+      <li class="menu_options"><a href="../subpaginas/peliculas.html">Peliculas</a></li>
+      <li class="menu_options"><a href="../subpaginas/series.html">Series</a></li>
+    </ul>
+    <ul class="icons-ul">
+      <form class="log" id="myForm" action="../subpaginas/busquedas.html" onsubmit="store()">
+        <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" />
+        <button class="boton-search" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+
+      <li><a href="#"><i style="width:auto;" class="fas fa-user" id="btn_login_nav" title="Portafolio"></i></a></li>
+
+  
+    </ul>
+  </nav>
+  
+    <!-- Sidebar menu vertical con categorias -->
+  
+    <div class="menu__side" id="menu_side">
+      
+
+    <div class="options__menu">	
+        <a class="cat" href="./categorias.html">
+          <div class="option">
+            <i class="fas fa-theater-masks fa-2x" title="Portafolio"></i>
+              <h4>Comedia</h4>
+          </div>
+      </a>
+      
+      <a class="cat" href="./categorias.html">
+          <div class="option">
+            <i class="fas fa-dizzy fa-2x" title="Cursos"></i>
+              <h4>Terror</h4>
+          </div>
+      </a>
+
+      <a class="cat"  href="./categorias.html">
+          <div class="option">
+            <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+              <h4>Magia</h4>
+          </div>
+      </a>
+
+      <a  class="cat" href="./categorias.html">
+          <div class="option">
+            <i class="fas fa-car fa-2x" title="Contacto"></i>
+              <h4>Coches</h4>
+          </div>
+      </a>
+
+      <a class="cat"  href="./categorias.html">
+          <div class="option">
+            <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+              <h4>Fantasia</h4>
+          </div>
+      </a>
+
+      <a class="cat"  href="./categorias.html">
+        <div class="option">
+          <i class="fas fa-fighter-jet fa-2x" title="Cursos"></i>
+            <h4>Guerra</h4>
+        </div>
+    </a>
+
+    <a class="cat" href="./categorias.html">
+        <div class="option">
+          <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+            <h4>Blog</h4>
+        </div>
+    </a>
+
+    <a class="cat" href="./categorias.html">
+        <div class="option">
+          <i class="fas fa-car fa-2x" title="Contacto"></i>
+            <h4>Contacto</h4>
+        </div>
+    </a>
+
+    <a class="cat" href="./categorias.html">
+        <div class="option">
+          <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+            <h4>Nosotros</h4>
+        </div>
+    </a>
+        
+</div>
+
+
+
+
+    </div>
+
+
+    
+    <script>
+      function store(){
+         var inputEmail= document.getElementById("mySearch").value;
+         sessionStorage.setItem("search", inputEmail);
+      }
+        </script>
+
+    
+
+    

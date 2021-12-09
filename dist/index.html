@@ -135,66 +135,14 @@
       </div>
     </div>
 -->
-    <div class="container">
+    <div class="container" id="contenedor">
+      <div id="pelis_header">
       <div class="mySlides fade">
-        <img id="foto" src="./images/static/1.jpg" style="width: 90%" />
+        <img id="foto" src="./images/static/big_1.jpg" style="width: 90%" />
         <div class="text_title">Batman</div>
         <div class="text">1</div>
       </div>
-
-      <div class="mySlides fade">
-        <img src="/static/images/Pelis_grandes/2.jpg" style="width: 90%" />
-        <div class="text_title">V de Vendetta</div>
-        <div class="text">2</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/3.jpg" style="width: 90%" />
-        <div class="text_title">Los Vengadores</div>
-        <div class="text">3</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/4.jpg" style="width: 90%" />
-        <div class="text_title">Anime Random</div>
-        <div class="text">4</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/5.jpg" style="width: 90%" />
-        <div class="text_title">Escuadron suicida</div>
-        <div class="text">5</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/6.jpg" style="width: 90%" />
-        <div class="text_title">Transformers</div>
-        <div class="text">6</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/7.jpg" style="width: 90%" />
-        <div class="text_title">Fate</div>
-        <div class="text">7</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/8.jpg" style="width: 90%" />
-        <div class="text_title">Alien vs Predator</div>
-        <div class="text">8</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/9.jpg" style="width: 90%" />
-        <div class="text_title">Harry Potter</div>
-        <div class="text">9</div>
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/10.jpg" style="width: 90%" />
-        <div class="text_title">El Motorista Fantasma</div>
-        <div class="text">10</div>
-      </div>
+    </div>
     </div>
 
 
@@ -920,26 +868,40 @@
     <script type="text/javascript" src="./javascript/index.js"></script>
     <script>
       var slideIndex = 0;
-
+      let tiempocambio = 3000;
+      let xD = 0;
       showSlides();
-
       function showSlides() {
+        
        var i;
+
        var slides = document.getElementsByClassName("mySlides");
 
        for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
+        
+       
+         
+
+if (i==0) {
+  
+  tiempocambio=0;
+
+}else{
+  tiempocambio=3000;
+}
         
        }
 
        slideIndex++;
        if(slideIndex > slides.length) {slideIndex = 1}
        slides[slideIndex-1].style.display = "block";
-       setTimeout(showSlides,30000);
-}
+
+       setTimeout(showSlides,tiempocambio);
+       }
+    
     </script>
 
    
   </body>
 </html>
-<!-- new comment -->

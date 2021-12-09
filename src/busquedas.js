@@ -344,9 +344,6 @@ function predict(e){
       clearPredict();
 
 
-      
-    
-
       if (data.length > 0) {
         textoPre.style.display = "block";
         textoPredict.style.border = "thick solid red";
@@ -377,12 +374,6 @@ function predict(e){
             }
           }
           textoPre.innerHTML += "</li></ul>";
-
-         
-          
-
-       
-      
 
        // textoPre.innerHTML += "</ul>";
       }else{

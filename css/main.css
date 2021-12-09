@@ -8,7 +8,9 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: rgb(14, 14, 14);
+ /* background:url(../src/images/static/lava.jpg) no-repeat center center fixed;*/
+ /*background gradient top black and bottom grey*/
+  background: linear-gradient(to bottom, #3b3b3b 0%, #000000 100%);
   color: white;
   overflow-y: scroll;
 }
@@ -95,6 +97,16 @@ body {
   overflow-x: scroll;
   overflow-y: hidden;
 }
+#contenedor {
+  border-color: rgb(255, 51, 0);
+  box-shadow: 0 0 10px rgb(255, 51, 0);
+  background-color: rgb(31, 31, 31);
+  width: 80%;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 10%;
+}
 
 .slider {
   display: flex;
@@ -107,15 +119,22 @@ body {
 
 .text {
   position: absolute;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.genre {
+  position: absolute;
   top: 60%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
 }
 .text_title {
   position: absolute;
-  top: 50%;
+  top: 20%;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  left: 50%;
+  left: 60%;
   font-size: 50px;
   transform: translate(-50%, -50%);
 }
