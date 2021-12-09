@@ -24,9 +24,26 @@ dom.i2svg()
 
 
 
+//Obtener la fecha actual y restarle 3 meses
+let date = new Date();
+let day = `0${date.getDate()}`.slice(-2);
+let month = `0${date.getMonth() - 2}`.slice(-2);
+let year = date.getFullYear();
+const last3months = year+"-"+month+"-"+day;
+console.log(last3months);
+
 const API_KEY = 'api_key=cfe422613b250f702980a3bbf9e90716';
 const URL_BASE = 'https://api.themoviedb.org/3/';
+
+//Peliculas mas populares
 const API_URL_POP = URL_BASE + 'discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&page=1&' + API_KEY;
+
+//Peliculas de los 3 ultimos meses y mas populares
+const API_URL_NEW = URL_BASE + 'discover/movie?sort_by=popularity.desc&primary_release_date.lte='+last3months+'&include_adult=false&include_video=false&page=1&' + API_KEY;
+
+//Peliculas mas valoradas
+const API_URL_RATED = URL_BASE + 'discover/movie?sort_by=popularity.desc&vote_count.gte=2000&include_adult=false&include_video=false&page=1&' + API_KEY;
+
 const SEARCH_URL = URL_BASE + 'search/movie?query=';
 const URL_IMG = "https://image.tmdb.org/t/p/w500";
 
@@ -326,9 +343,19 @@ if(entrada.value!="")  {
 };
 
 const main = document.getElementById("pelis_header");
+const car1 = document.getElementById("carruseles1");
+const car2 = document.getElementById("carruseles2");
+const car3 = document.getElementById("carruseles3");
+
+
+
 
 
 getData(API_URL_POP);
+getData2(API_URL_NEW);
+getData3(API_URL_RATED);
+
+
 
 const image = document.getElementById('foto');
 const title = document.getElementById('title');
@@ -337,9 +364,7 @@ function getData(url) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       showData(data.results);
-      
     })
     .catch(error => console.log(error));
 }
@@ -347,6 +372,7 @@ function getData(url) {
 function showData(data) {
 
   main.innerHTML = '';
+  car1.innerHTML = '';
 
 let count=0;
 
@@ -355,76 +381,202 @@ let count=0;
 
       count=count+1;
 
-      const { title, poster_path, vote_average, genre_ids } = movie;
+      const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
+
+      //Header principal
       const movieEl = document.createElement("div");
       movieEl.classList.add("mySlides");
       movieEl.classList.add("fade");
 
 
-     
+      //carrusel1
+      const car1El = document.createElement("div");
+      car1El.classList.add("movie-card");
+      car1El.classList.add("carrusel1");
 
 
       if (count<=10) {
-       /* genre_ids.forEach(genre => {
-          arrayMovies[genre]
-          
-          
-          const generos=document.createElement('div').innerText = arrayMovies[genre];
-          generos.classList.add("genre");
-        });*/
-
-        //change genre_ids for arrayMovies[genre]
-
-
-          /*if (count==2) {
-            genre_ids.forEach(genre => {
-              arrayMovies[genre]
-              
-              console.log(arrayMovies[genre]);
-            
-            });
-  
-  
-  
-            }*/
-          
-        
-  
-
-        
+      
         movieEl.innerHTML = `
-          
-          
-          
       
         <img src="${URL_IMG + poster_path}" style="width: 25%" />
         <div class="text_title">${title}</div>
         <div class="text">${vote_average}</div>
         <div class="genre">${genre_ids}</div>
           `;   
-        
+
+
+
+        car1El.innerHTML = `
+
+        <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
+          <h4 class="movie-title">${title}</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+        `;
 
       main.appendChild(movieEl);
+      car1.appendChild(car1El);
       
-      
+
         
       }
 
       //display title, poster_path, overview to 10 first elements of array of movie
         
-
-
-
-    
-    
-
-    
   })
 
-  
 
+ 
 
 }
+function getData2(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      showData2(data.results);
+    })
+    .catch(error => console.log(error));
+}
+
+function showData2(data) {
+    
+    car2.innerHTML = '';
+    let count=0;
+
+    data.forEach(movie => {
+
+      count=count+1;
+
+      const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
+
+      //carrusel2
+      const car2El = document.createElement("div");
+      car2El.classList.add("movie-card");
+      car2El.classList.add("carrusel2");
+
+      if (count<=10) {
+      
+        car2El.innerHTML = `
+
+        <div class="movie-card carrusel2">
+        <div class="delante">
+          <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
+          <h4 class="movie-title">${title}</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+        `;
+
+      car2.appendChild(car2El);
+      
+
+        
+      }
+
+      //display title, poster_path, overview to 10 first elements of array of movie
+        
+    })
+  }
+
+  function getData3(url) {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        showData3(data.results);
+      })
+      .catch(error => console.log(error));
+  }
+  
+  function showData3(data) {
+      
+      car3.innerHTML = '';
+      let count=0;
+  
+      data.forEach(movie => {
+  
+        count=count+1;
+  
+        const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
+  
+        //carrusel2
+        const car3El = document.createElement("div");
+        car3El.classList.add("movie-card");
+        car3El.classList.add("carrusel3");
+  
+        if (count<=10) {
+        
+          car3El.innerHTML = `
+  
+          <div class="movie-card carrusel3">
+          <div class="delante">
+            <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
+            <h4 class="movie-title">${title}</h4>
+            <h6>Sep 28,2018</h6>
+            <div class="movie-rating">83%</div>
+            <button class="boton-card flip">Sinopsis</button>
+          </div>
+  
+          <div class="detras">
+            <strong
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+              porro expedita culpa reiciendis corrupti repudiandae, fugit
+              voluptate accusamus quae, exercitationem placeat facere cumque
+              maxime saepe, molestias veniam illo dolorem.</strong
+            >
+            <br />
+            <button class="boton-card flp">Pelicula</button>
+          </div>
+        </div>
+  
+          `;
+  
+        car3.appendChild(car3El);
+        
+  
+          
+        }
+  
+        //display title, poster_path, overview to 10 first elements of array of movie
+          
+      })
+    }
+
+
+
+
+
 
 
 /*MOVIE
