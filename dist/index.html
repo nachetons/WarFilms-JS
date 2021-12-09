@@ -137,61 +137,61 @@
 -->
     <div class="container">
       <div class="mySlides fade">
-        <img id="foto" src="./images/static/1.jpg" style="width: 90%" />
+        <img id="foto" src="./images/static/big_1.jpg" style="width: 90%" />
         <div class="text_title">Batman</div>
         <div class="text">1</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="/static/images/Pelis_grandes/2.jpg" style="width: 90%" />
+        <img src="./images/static/big_2.jpg" style="width: 90%" />
         <div class="text_title">V de Vendetta</div>
         <div class="text">2</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/3.jpg" style="width: 90%" />
+        <img src="./images/static/3.jpg" style="width: 90%" />
         <div class="text_title">Los Vengadores</div>
         <div class="text">3</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/4.jpg" style="width: 90%" />
+        <img src="./images/static/4.jpg" style="width: 90%" />
         <div class="text_title">Anime Random</div>
         <div class="text">4</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/5.jpg" style="width: 90%" />
+        <img src="./images/static/5.jpg" style="width: 90%" />
         <div class="text_title">Escuadron suicida</div>
         <div class="text">5</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/6.jpg" style="width: 90%" />
+        <img src="./images/static/6.jpg" style="width: 90%" />
         <div class="text_title">Transformers</div>
         <div class="text">6</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/7.jpg" style="width: 90%" />
+        <img src="./images/static/7.jpg" style="width: 90%" />
         <div class="text_title">Fate</div>
         <div class="text">7</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/8.jpg" style="width: 90%" />
+        <img src="./images/static/8.jpg" style="width: 90%" />
         <div class="text_title">Alien vs Predator</div>
         <div class="text">8</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/9.jpg" style="width: 90%" />
+        <img src="./images/static/9.jpg" style="width: 90%" />
         <div class="text_title">Harry Potter</div>
         <div class="text">9</div>
       </div>
 
       <div class="mySlides fade">
-        <img src="./images/Pelis_grandes/10.jpg" style="width: 90%" />
+        <img src="./images/static/10.jpg" style="width: 90%" />
         <div class="text_title">El Motorista Fantasma</div>
         <div class="text">10</div>
       </div>
@@ -766,113 +766,109 @@
     <!-- Login -->
 
 <div class="all-modal">
-<div id="id01" class="modal login">
+  <div id="id01" class="modal login">
+    
+    <form class="modal-content" id="form_content" action="#">
+      <div class="imgcontainer">
+        <span
+          onclick="document.getElementById('id01').style.display='none'"
+          id="close2"
+          title="Close Modal"
+          >×</span
+        >
+        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+        <br />
+        <span class="btn" id="btn_login">Login</span>
+          <span class="btn" id="btn_registro">Registro</span>
+      </div>
   
-  <form class="modal-content" id="form_content" action="#">
-    <div class="imgcontainer">
-      <span
-        onclick="document.getElementById('id01').style.display='none'"
-        id="close2"
-        title="Close Modal"
-        >×</span
-      >
-      <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
-      <br />
-      <span class="btn" id="btn_login">Login</span>
-        <span class="btn" id="btn_registro">Registro</span>
-    </div>
-
-    <div class="container">
-      <label><b>Username</b></label>
-      <input
-        class="input-form"
-        type="text"
-        placeholder="Enter Username"
-        name="uname"
-        
-      />
-
-      <label><b>Password</b></label>
-      <input
-        class="input-form"
-        type="password"
-        placeholder="Enter Password"
-        name="psw"
-        
-      />
-
-      <button class="boton-form" type="submit">Login</button>
-      <input type="checkbox" checked="checked" /> Remember me
-    </div>
-
-    <div class="container" style="background-color: #f1f1f1">
-      <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
-    </div>
-  </form>
-</div>
-
-
-<div id="id02" class="modal registro">
-  <form class="modal-content" id="form_content2" action="#">
-    <div class="imgcontainer">
-      <span
-        onclick="document.getElementById('id02').style.display='none'"
-        id="close"
-        title="Close Modal"
-        >×</span
-      >
-      <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
-      <br />
-      <span class="btn" id="btn_login2">Login</span>
-      <span class="btn" id="btn_registro2">Registro</span>
-
-    </div>
-
-    <div class="container">
-      <label><b>Name</b></label>
-      <input
-        class="input-form"
-        type="text"
-        placeholder="Enter Name"
-        name="uname"
-        required
-      />
-
-      <label><b>Email</b></label>
-      <input
-        class="input-form"
-        type="Email" placeholder="prueba@123.com"
-        placeholder="Enter Password"
-        name="psw"
-        required
-      />
-
-      <label><b>Password</b></label>
-      <input
-        class="input-form"
-        type="password"
-        placeholder="Enter Password"
-        name="psw"
-        required
-      />
-
-      <button class="boton-form" type="submit">Registrarse</button>
-    </div>
-
-    <div class="container" style="background-color: #f1f1f1">
-      <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
-    </div>
-  </form>
-</div>
-
-</div>
-
-
-
-
-
-
-
+      <div class="container">
+        <label><b>Username</b></label>
+        <input
+          class="input-form"
+          type="text"
+          placeholder="Enter Username"
+          name="uname"
+          
+        />
+  
+        <label><b>Password</b></label>
+        <input
+          class="input-form"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          
+        />
+  
+        <button class="boton-form" type="submit">Login</button>
+        <input type="checkbox" checked="checked" /> Remember me
+      </div>
+  
+      <div class="container" style="background-color: #f1f1f1">
+        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+      </div>
+    </form>
+  </div>
+  
+  
+  <div id="id02" class="modal registro">
+    <form class="modal-content" id="form_content2" action="#">
+      <div class="imgcontainer">
+        <span
+          onclick="document.getElementById('id02').style.display='none'"
+          id="close"
+          title="Close Modal"
+          >×</span
+        >
+        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+        <br />
+        <span class="btn" id="btn_login2">Login</span>
+        <span class="btn" id="btn_registro2">Registro</span>
+  
+      </div>
+  
+      <div class="container">
+        <label><b>Name</b></label>
+        <input
+          class="input-form"
+          type="text"
+          placeholder="Enter Name"
+          name="uname"
+          required
+        />
+  
+        <label><b>Email</b></label>
+        <input
+          class="input-form"
+          type="Email" placeholder="prueba@123.com"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+  
+        <label><b>Password</b></label>
+        <input
+          class="input-form"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+  
+        <button class="boton-form" type="submit">Registrarse</button>
+      </div>
+  
+      <div class="container" style="background-color: #f1f1f1">
+        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+      </div>
+    </form>
+  </div>
+  
+  </div>
+  
+  
+  
 
     
 

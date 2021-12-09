@@ -107,15 +107,22 @@ body {
 
 .text {
   position: absolute;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.genre {
+  position: absolute;
   top: 60%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
 }
 .text_title {
   position: absolute;
-  top: 50%;
+  top: 20%;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  left: 50%;
+  left: 60%;
   font-size: 50px;
   transform: translate(-50%, -50%);
 }

@@ -216,12 +216,14 @@ img.avatar {
     transform: perspective(1000) rotateX(0deg) rotateY(0deg);
     -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
     -webkit-perspective: 1000;
+    -webkit-filter: blur(0px);
     
     }
     
     50% {
       transform: perspective(1000) rotateX(0deg) rotateY(-90deg);
       -webkit-transform: perspective(1000) rotateX(0deg) rotateY(-90deg);
+      -webkit-filter: blur(5px);
       
       
     } 
@@ -229,6 +231,8 @@ img.avatar {
     100% {
       transform: perspective(1000) rotateX(0deg) rotateY(0deg);
       -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
+      -webkit-filter: blur(0px);
+
       
       
     } 
@@ -240,20 +244,24 @@ img.avatar {
     transform: perspective(1000) rotateX(0deg) rotateY(0deg);
     -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
     -webkit-perspective: 1000;
+    -webkit-filter: blur(0px);
+
     
     }
     
     50% {
       transform: perspective(1000) rotateX(0deg) rotateY(90deg);
       -webkit-transform: perspective(1000) rotateX(0deg) rotateY(90deg);
-      
+      -webkit-filter: blur(5px);
+
       
     } 
 
     100% {
       transform: perspective(1000) rotateX(0deg) rotateY(0deg);
       -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
-      
+      -webkit-filter: blur(0px);
+
       
     } 
     
@@ -265,20 +273,23 @@ img.avatar {
       transform: perspective(1000) rotateX(0deg) rotateY(0deg);
       -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
       -webkit-perspective: 1000;
-      
+      -webkit-filter: blur(0px);
+
       }
       
       50% {
         transform: perspective(1000) rotateX(0deg) rotateY(90deg);
         -webkit-transform: perspective(1000) rotateX(0deg) rotateY(90deg);
-        
+        -webkit-filter: blur(5px);
+
         
       } 
 
       100% {
         transform: perspective(1000) rotateX(0deg) rotateY(0deg);
         -webkit-transform: perspective(1000) rotateX(0deg) rotateY(0deg);
-        
+        -webkit-filter: blur(0px);
+
         
       } 
       

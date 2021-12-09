@@ -93,13 +93,13 @@
     }
 
     .input-search{
-        width: 24rem;
+        width: 15rem;
     }
     .boton-search{
         width: 7rem;
     }
   }
-  @media (max-width: 1530px) {
+  @media (max-width: 1550px) {
     .nav-img {
       margin-left: 3%;
     }
@@ -113,6 +113,20 @@
     }
     .boton-search{
         width: 4rem;
+    }
+    .nav-img {
+      margin-left: 0%;
+    }
+    .menu__side {
+      width: 0;
+      visibility: hidden;
+    }
+    .toggle i {
+      display: unset;
+    }
+  
+    .menu_options {
+      display: none;
     }
   }
   @media (max-width: 1400px) {

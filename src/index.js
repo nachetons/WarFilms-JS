@@ -22,6 +22,35 @@ library.add(fas, far, fab)
 
 dom.i2svg() 
 
+
+
+const API_KEY = 'api_key=cfe422613b250f702980a3bbf9e90716';
+const URL_BASE = 'https://api.themoviedb.org/3/';
+const API_URL_POP = URL_BASE + 'discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&page=1&' + API_KEY;
+const SEARCH_URL = URL_BASE + 'search/movie?query=';
+const URL_IMG = "https://image.tmdb.org/t/p/w500";
+
+
+
+const arrayMovies = {
+  28:"Action",
+  12:"Adventure",
+  16: "Animation",
+  35: "Comedy",
+  80: "Crime",
+  99: "Documentary",
+  18: "Drama",
+  10751:  "Family",
+  14:   "Fantasy",
+  36:  "History",
+  27: "Horror",
+  10402: "Music",
+  9: "Mystery",
+  10751:  "Romance",
+  53: "Thriller",
+  10752: "War",
+  10759:  "Action & Adventure",
+  37:  "Western"};
 //Funcion para que espere el javascript a que este todo el html
 
 window.onload = function(){
@@ -288,9 +317,135 @@ var registro2 = document.getElementById("btn_registro2");
 }*/
 const entrada = document.getElementById('mySearch');
 
+
 if(entrada.value!="")  {
   document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
 
 }
 
 };
+
+const main = document.getElementById("pelis_header");
+
+
+getData(API_URL_POP);
+
+const image = document.getElementById('foto');
+const title = document.getElementById('title');
+
+function getData(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      showData(data.results);
+      
+    })
+    .catch(error => console.log(error));
+}
+
+function showData(data) {
+
+  main.innerHTML = '';
+
+let count=0;
+
+
+  data.forEach(movie => {
+
+      count=count+1;
+
+      const { title, poster_path, vote_average, genre_ids } = movie;
+      const movieEl = document.createElement("div");
+      movieEl.classList.add("mySlides");
+      movieEl.classList.add("fade");
+
+
+     
+
+
+      if (count<=10) {
+       /* genre_ids.forEach(genre => {
+          arrayMovies[genre]
+          
+          
+          const generos=document.createElement('div').innerText = arrayMovies[genre];
+          generos.classList.add("genre");
+        });*/
+
+        //change genre_ids for arrayMovies[genre]
+
+
+          /*if (count==2) {
+            genre_ids.forEach(genre => {
+              arrayMovies[genre]
+              
+              console.log(arrayMovies[genre]);
+            
+            });
+  
+  
+  
+            }*/
+          
+        
+  
+
+        
+        movieEl.innerHTML = `
+          
+          
+          
+      
+        <img src="${URL_IMG + poster_path}" style="width: 25%" />
+        <div class="text_title">${title}</div>
+        <div class="text">${vote_average}</div>
+        <div class="genre">${genre_ids}</div>
+          `;   
+        
+
+      main.appendChild(movieEl);
+      
+      
+        
+      }
+
+      //display title, poster_path, overview to 10 first elements of array of movie
+        
+
+
+
+    
+    
+
+    
+  })
+
+  
+
+
+}
+
+
+/*MOVIE
+Action          28
+Adventure       12
+Animation       16
+Comedy          35
+Crime           80
+Documentary     99
+Drama           18
+Family          10751
+Fantasy         14
+History         36
+Horror          27
+Music           10402
+Mystery         9648
+Romance         10749
+Science Fiction 878
+TV Movie        10770
+Thriller        53
+War             10752
+Western         37*/
+
+//create array of movies

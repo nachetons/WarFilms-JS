@@ -267,8 +267,19 @@ var registro2 = document.getElementById("btn_registro2");
 
 document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
 
+
+
+
+
+
+
+//var dir = loc.substring(0, loc.lastIndexOf('/'));
 };
 
+
+
+    
+  
 
 
 //Funcion para mostrar todos los componentes
