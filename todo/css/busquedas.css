@@ -1,32 +1,47 @@
 
-.row{
+.contenedor-busqueda{
     margin-top: 10%;
     margin-left: 6%;
 }
 
+.row {
+    width: 100%;
+}
 
-  h1{
-  }
-  .peliculas_list {
-      display: flex;
-      margin: 12px;
-  }
+h1{
+}
 
-  .content_film{
-      text-decoration: none;
-      color:white;
-  }
-  .descripcion{
-        margin-top: 10px;
-    }
+.peliculas_list {
+    display: flex;
+    margin: 12px;
+}
 
-    .btn_mas {
-        margin-top: 10px;
-        width:80px;
-        height: 40px;
-        background-color: red;
-        color: white;
-        border-radius: 10%;
-        margin: 0 auto;
-        display: block;
-    }
+.content_film{
+    text-decoration: none;
+    color:white;
+    padding: 2%;
+    background: rgba(255, 255, 255, 0.1);
+}
+.content_film .titulo {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.content_film .titulo-secundario {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+.content_film .descripcion {
+    font-size: 1.4rem;
+    margin-top: 20px;
+}
+
+.btn_mas {
+    margin-top: 10px;
+    width:80px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border-radius: 10%;
+    margin: 0 auto;
+    display: block;
+}

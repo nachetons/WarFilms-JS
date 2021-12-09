@@ -11,15 +11,129 @@
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/carrusel.css" />
     <link rel="stylesheet" href="../css/navs.css" />
-    <link rel="stylesheet" href="../css/all.min.css" />
-    <link rel="stylesheet" href="../css/fontawesome.min.css" />
     <title>Formulario de contacto</title>
 <script defer src="formulario.js"></script></head>
 
 <body>
-    <div w3-include-html="../componentes/navs.html"></div>
+    <head>
 
-    <div class="container">
+
+</head>
+
+ <!-- Nav var horizontal -->
+ <nav>
+    <ul class="logo-ul">
+      <li class="toggle" id="btn_movil"><i class="fas fa-bars"></i></a></li>
+      <li class="logo" onclick="location.href='../index.html'"></li>
+      <li class="menu_options categorias"><a href="#">Categorias</a></li>
+      <li class="menu_options"><a href="./peliculas.html">Peliculas</a></li>
+      <li class="menu_options"><a href="./series.html">Series</a></li>
+      <li class="menu_options"><a href="./formulario.html">Contacto</a></li>
+    </ul>
+    <ul class="icons-ul">
+      <form class="log" id="myForm" action="./busquedas.html" onsubmit="store()">
+        <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" onchange="predict()"autocomplete="off"/>
+        <button class="boton-search" type="submit"><i class="fas fa-search"></i></button>
+        <div id="textoPredict" class="textoPredict"></div>
+
+      </form>
+
+      <li><a href="#"><i style="width:auto;" class="fas fa-user" id="btn_login_nav" title="Portafolio"></i></a></li>
+
+     
+
+    </ul>
+  </nav>
+  
+    <!-- Sidebar menu vertical con categorias -->
+  
+    <div class="menu__side" id="menu_side">
+      
+
+    <div class="options__menu">	
+
+        <a href="#">
+          <div class="option">
+            <i class="fas fa-theater-masks fa-2x" title="Portafolio"></i>
+              <h4>Comedia</h4>
+          </div>
+      </a>
+      
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-dizzy fa-2x" title="Cursos"></i>
+              <h4>Terror</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+              <h4>Magia</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-car fa-2x" title="Contacto"></i>
+              <h4>Coches</h4>
+          </div>
+      </a>
+
+      <a href="#">
+          <div class="option">
+            <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+              <h4>Fantasia</h4>
+          </div>
+      </a>
+
+      <a href="#">
+        <div class="option">
+          <i class="fas fa-fighter-jet fa-2x" title="Cursos"></i>
+            <h4>Guerra</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
+            <h4>Blog</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-car fa-2x" title="Contacto"></i>
+            <h4>Contacto</h4>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="option">
+          <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
+            <h4>Nosotros</h4>
+        </div>
+    </a>
+        
+</div>
+
+
+
+
+    </div>
+
+    <script>
+      function store(){
+         var inputEmail= document.getElementById("mySearch").value;
+         sessionStorage.setItem("search", inputEmail);
+      }
+        </script>
+
+    
+
+    
+
+    <div class="container" id="cajaPrincipal">
         <div class="container-form">
             <h2>Formulario de contacto</h2>
             <p>Por favor, complete sus datos antes de enviar la información.</p>
@@ -85,9 +199,158 @@
             </form>
         </div>
     </div>
+    <!-- Login -->
 
-    <div w3-include-html="../componentes/login.html"></div>
-    <div w3-include-html="../componentes/footer.html"></div>
+<div class="all-modal">
+  <div id="id01" class="modal login">
+    
+    <form class="modal-content" id="form_content" action="#">
+      <div class="imgcontainer">
+        <span
+          onclick="document.getElementById('id01').style.display='none'"
+          id="close2"
+          title="Close Modal"
+          >×</span
+        >
+        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+        <br />
+        <span class="btn" id="btn_login">Login</span>
+          <span class="btn" id="btn_registro">Registro</span>
+      </div>
+  
+      <div class="container">
+        <label><b>Username</b></label>
+        <input
+          class="input-form"
+          type="text"
+          placeholder="Enter Username"
+          name="uname"
+          
+        />
+  
+        <label><b>Password</b></label>
+        <input
+          class="input-form"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          
+        />
+  
+        <button class="boton-form" type="submit">Login</button>
+        <input type="checkbox" checked="checked" /> Remember me
+      </div>
+  
+      <div class="container" style="background-color: #f1f1f1">
+        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+      </div>
+    </form>
+  </div>
+  
+  
+  <div id="id02" class="modal registro">
+    <form class="modal-content" id="form_content2" action="#">
+      <div class="imgcontainer">
+        <span
+          onclick="document.getElementById('id02').style.display='none'"
+          id="close"
+          title="Close Modal"
+          >×</span
+        >
+        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+        <br />
+        <span class="btn" id="btn_login2">Login</span>
+        <span class="btn" id="btn_registro2">Registro</span>
+  
+      </div>
+  
+      <div class="container">
+        <label><b>Name</b></label>
+        <input
+          class="input-form"
+          type="text"
+          placeholder="Enter Name"
+          name="uname"
+          required
+        />
+  
+        <label><b>Email</b></label>
+        <input
+          class="input-form"
+          type="Email" placeholder="prueba@123.com"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+  
+        <label><b>Password</b></label>
+        <input
+          class="input-form"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+  
+        <button class="boton-form" type="submit">Registrarse</button>
+      </div>
+  
+      <div class="container" style="background-color: #f1f1f1">
+        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+      </div>
+    </form>
+  </div>
+  
+  </div>
+  
+  
+  
+
+    
+
+<footer class="footer">
+  <div class="maindiv">
+    <div class="footerlogo"></div>
+    <div>
+      <h3>THE BASICS</h3>
+      <ul>
+        <li>About TMDB</li>
+        <li>Contact Us</li>
+        <li>Support Forums</li>
+        <li>API</li>
+        <li>System Status</li>
+      </ul>
+    </div>
+    <div>
+      <h3>GET INVOLVED</h3>
+      <ul>
+        <li>Contribution Bible</li>
+        <li>3rd Party Application</li>
+        <li>Add New Movie</li>
+        <li>Add New TV Show</li>
+      </ul>
+    </div>
+    <div>
+      <h3>COMMUNITY</h3>
+      <ul>
+        <li>Guidelines</li>
+        <li>Discussions</li>
+        <li>Leaderboard</li>
+        <li>Twitter</li>
+      </ul>
+    </div>
+    <div>
+      <h3>LEGAL</h3>
+      <ul>
+        <li>Terms ofUse API Terms of Use</li>
+        <li>Contact Us</li>
+        <li>Privacy Policy</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
 
     <script type="text/javascript" src="../javascript/index.js"></script>
     <script>
@@ -111,9 +374,7 @@
 }
     </script>
 
-    <script>
-      includeHTML();
-    </script>
+   
 
     <!-- <div class="formulario-contacto">
             <h2>Formulario de contacto</h2>

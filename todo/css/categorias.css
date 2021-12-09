@@ -1,14 +1,32 @@
+.container {
+  border: 2px solid red;
+}
+.peliculas {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10%;
+  background: red;
+}
+.peliculas .titulo {
+  font-size: 3rem;
+  background: blue;
+  padding-bottom: 2rem;
+}
 .columnas {
   width: 90%;
   height: 500px;
   padding: 10px;
-  margin: 10px;
+  /* margin: 10px; */
   display: -webkit-flex;
   display: -ms-flexbox;
+
+  margin: 0 auto;
 
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+
+  background: pink;
 }
 
 .caja {
@@ -21,3 +39,4 @@
   background: #e67e22;
   text-align: center;
 }
+
