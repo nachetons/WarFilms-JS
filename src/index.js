@@ -94,11 +94,6 @@ btn2.forEach(item => {
   });
 });
 
-
-
-
-
-
 //Funcion para mostrar menu lateral al dar click a un boton
 
 var contador = 1;
@@ -399,7 +394,7 @@ let count=0;
       
         movieEl.innerHTML = `
       
-        <img src="${URL_IMG + poster_path}" style="width: 25%" />
+        <img src="${URL_IMG + poster_path}" style="width: 20%" />
         <div class="text_title">${title}</div>
         <div class="text">${vote_average}</div>
         <div class="genre">${genre_ids}</div>
@@ -572,8 +567,113 @@ function showData2(data) {
           
       })
     }
+    const entrada = document.getElementById("mySearch");
+    const textoPre = document.getElementById('textoPredict');
 
-
+    entrada.addEventListener('input', predict);
+    //entrada.addEventListener('propertychange', data,predictTexts);
+    
+    function predict(e){
+        e.preventDefault();
+    
+        
+        fetch(SEARCH_URL + e.target.value + "&" + API_KEY)
+        .then(response => response.json())
+        .then(data => {
+          if (!data.Error) {
+            console.log(data);
+           predictTexts(data.results);
+           // peliculas.push(data.results);
+            
+          }else{
+            predictTexts([]);
+          }
+        })
+        
+        }
+    
+        /*function predictText(e){
+          if (peliculas.length > 0) {
+            peliculas.forEach(item => {
+              item.forEach(item => {
+                if (item.original_title.toLowerCase().includes(e.target.value.toLowerCase())) {
+                  textoPre.innerHTML = "<li>"+item.original_title+"</li>";
+                }
+              });
+            
+            });
+          }
+            
+          
+          
+        }*/
+       
+    
+        function predictTexts(data){
+     
+          clearPredict();
+    
+    
+          if (data.length > 0) {
+            textoPre.style.display = "block";
+            textoPredict.style.border = "thick solid red";
+         
+    
+            const peliculas = [];
+    
+            data.forEach(item => {
+              if (item.title.toLowerCase().includes(entrada.value.toLowerCase())&&entrada.value!=null) {
+                peliculas.push(item.title);
+    
+              //textoPre.innerHTML += "<li>"+item.original_title+"</li>";
+              }
+            });
+    
+            removeDuplicates(peliculas);
+    
+              //display 10 first elements to array of peliculas
+              if (peliculas.length > 10){
+    
+                for (let index = 0; index < 10; index++) {
+                  
+                  textoPre.innerHTML += "<li>"+peliculas[index]+"</li>";
+                }
+              }else{
+                for (let index = 0; index < peliculas.length; index++) {
+                  textoPre.innerHTML += "<li>"+peliculas[index]+"</li>";
+                }
+              }
+              textoPre.innerHTML += "</li></ul>";
+    
+           // textoPre.innerHTML += "</ul>";
+          }else{
+            clearPredict()
+          }
+    
+          if (entrada.length == 0) {
+            console.log("vacio");
+            textoPre.style.display = "none";
+    
+          }
+          if (entrada.length == entrada.length-1) {
+            clearPredict()
+          
+            
+          }
+    
+          
+        }
+    
+        function removeDuplicates(array) {
+          array.splice(0, array.length, ...(new Set(array)))
+        };
+    
+    
+        function clearPredict(){
+          textoPre.innerHTML = "";
+          textoPre.style.display = "none";
+    
+        }
 
 
 

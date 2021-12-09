@@ -8,7 +8,9 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: rgb(14, 14, 14);
+ /* background:url(../src/images/static/lava.jpg) no-repeat center center fixed;*/
+ /*background gradient top black and bottom grey*/
+  background: linear-gradient(to bottom, #3b3b3b 0%, #000000 100%);
   color: white;
   overflow-y: scroll;
 }
@@ -94,6 +96,16 @@ body {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
+}
+#contenedor {
+  border-color: rgb(255, 51, 0);
+  box-shadow: 0 0 10px rgb(255, 51, 0);
+  background-color: rgb(31, 31, 31);
+  width: 80%;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 10%;
 }
 
 .slider {
