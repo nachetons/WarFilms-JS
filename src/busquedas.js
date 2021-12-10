@@ -1,6 +1,5 @@
 //import "../css/all.min.css";
 import "../css/busquedas.css";
-import "../css/carrusel.css";
 import "../css/categorias.css";
 //import "../css/fontawesome.min.css";
 import "../css/footer.css";
@@ -275,7 +274,13 @@ window.onload = function () {
     foto.src="../images/Pelis_grandes/"+index+".jpg";
     
   }*/
-
+  const navs = document.querySelectorAll('.option');
+  navs.forEach(nav => {
+    nav.addEventListener('click', function (e) {
+      window.location.href = "./categorias.html?search=" + e.target.textContent;
+      console.log(e.target.textContent);
+    })
+  })
 };
 
 const entrada = document.getElementById("mySearch");
@@ -471,7 +476,17 @@ let count=0;
     
   })
 
-  
+  textoPre.addEventListener('click', (e) => {
+
+    window.location.href = "./busquedas.html?search=" + e.target.textContent;
+
+
+
+    console.log(e.target.textContent);
+
+
+
+  });
 
 
 }

@@ -1,23 +1,22 @@
-.columnas {
-  width: 90%;
-  height: 500px;
-  padding: 10px;
-  margin: 10px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+.peliculas{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  border: 1px solid #ccc;
+    
 }
 
-.caja {
-  color: #fff;
-  margin: 5px;
-  display: inline-block;
-  /*4x200=800 de ancho en cuanto al with*/
-  width: 200px;
-  height: 50px;
-  background: #e67e22;
+.titulo{
+  grid-column: 1/5;
+  grid-row: 1;
   text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(192, 75, 75);
+  background-color: rgb(14, 14, 14);
+  padding: 10px;
+  border: 1px solid #ccc;
 }
+
+

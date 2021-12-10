@@ -15,28 +15,12 @@ body {
   overflow-y: scroll;
 }
 ::-webkit-scrollbar {
-  background-color: rgb(14, 14, 14);
-  width: 0px;
-  background: transparent;
-}
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: rgb(14, 14, 14);
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: #d62929;
-  background-image: -webkit-linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 0, 0, 0.4) 50%,
-    transparent,
-    transparent
-  );
+  display: none;
 }
 
+
 .container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
 }
 
@@ -44,36 +28,9 @@ body {
 
 
 /* Header section */
-.background {
- /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./images/header.jpg") no-repeat center center/cover;*/
-  background-color:red;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 80px;
-  height: 57vh;
-  color: white;
-  width: 104%;
-  margin-left: -2%;
-}
 
-.background button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 120px;
-  border-radius: 50px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: linear-gradient(
-    to right,
-    rgba(30, 213, 169, 1) 0%,
-    rgba(1, 180, 228, 1) 100%
-  );
-}
+
+
 
 .boton-card {
   text-align: center;
@@ -101,11 +58,14 @@ body {
   border-color: rgb(255, 51, 0);
   box-shadow: 0 0 10px rgb(255, 51, 0);
   background-color: rgb(31, 31, 31);
-  width: 80%;
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-left: 10%;
+  width: 85%;
+  position: relative;
+  margin-top: 18%;
+  height: 22vw;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: -10%;
+  
 }
 
 .slider {
@@ -119,34 +79,34 @@ body {
 
 .text {
   position: absolute;
-  top: 40%;
-  left: 60%;
+  top: 70%;
+  left:65%;
   transform: translate(-50%, -50%);
 }
 
 .genre {
   position: absolute;
-  top: 60%;
-  left: 60%;
+  top: 50%;
+  left: 65%;
   transform: translate(-50%, -50%);
+  display: none;
 }
 .text_title {
   position: absolute;
-  top: 20%;
+  top: 35%;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  left: 60%;
+  left: 65%;
   font-size: 50px;
   transform: translate(-50%, -50%);
 }
 
 .mySlides img {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  margin-top: 6%;
-  height: 60vh;
+  height: 22vw;
+  width: 50vh;
   color: white;
-  margin-left: 4%;
+  margin-left: -0.1%;
   z-index: 2;
   opacity: 0.9;
   background-color: #d62929;
@@ -189,72 +149,8 @@ body {
   margin-top: 2%;
 }
 
+
 /* Animacion de las cards de las peliculas */
-.movie-card {
-  transition: 1s ease;
-  transform-style: preserve-3d;
-}
 
-.movie-card.flipped {
-  transform: rotateY(180deg);
-}
-
-.delante,
-.detras {
-  position: absolute;
-  backface-visibility: hidden;
-  margin-bottom: 50px;
-}
-
-.delante {
-  z-index: 2;
-  transform: translatey(-500px);
-}
-
-.detras {
-  margin-right: 1.5rem;
-  width: 292px;
-  height: 90%;
-  color: white;
-  padding: 1rem;
-  background: linear-gradient(
-    to top,
-    white 0%,
-    white 30%,
-    black 70%,
-    black 100%
-  );
-  position: relative;
-  transform: rotateY(180deg);
-}
-
-/* movies rating */
-.movie-rating {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: rgba(3, 37, 65);
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  position: absolute;
-  bottom: 60px;
-  left: 10px;
-}
-.movie-rating::after {
-  content: "";
-  height: 10px;
-  width: 39px;
-  border-radius: 100%;
-  border: 3px solid gold;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 

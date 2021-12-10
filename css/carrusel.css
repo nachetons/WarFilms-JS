@@ -92,7 +92,7 @@
 
 .slider {
   width: 100%;
-  animation: slider 20s infinite alternate ease-in-out;
+  animation: slider 20s infinite backwards ease-in-out;
 
 }
 
@@ -106,36 +106,36 @@
   0% {
     margin-left: 0%;
   }
-  10% {
+  20% {
     margin-left: 0%;
   }
 
   20% {
-    margin-left: -75%;
+    margin-left: -45%;
   }
-  30% {
-    margin-left: -75%;
+  40% {
+    margin-left: -45%;
   }
 
   40% {
-    margin-left: -100%;
+    margin-left: -67.5%;
   }
-  50% {
-    margin-left: -100%;
+  60% {
+    margin-left: -67.5%;
   }
 
   60% {
-    margin-left: -125%;
+    margin-left: -115%;
   }
-  70% {
-    margin-left: -125%;
+  80% {
+    margin-left: -115%;
   }
 
   80% {
-    margin-left: -150%;
+    margin-left: -138%;
   }
   90% {
-    margin-left: -150%;
+    margin-left: -138%;
   }
 }
 
@@ -154,38 +154,39 @@
   0% {
     margin-left: 0%;
   }
-  10% {
+  20% {
     margin-left: 0%;
   }
 
   20% {
-    margin-left: -25%;
+    margin-left: -45%;
   }
-  30% {
-    margin-left: -25%;
+  40% {
+    margin-left: -45%;
   }
 
   40% {
-    margin-left: -50%;
+    margin-left: -67.5%;
   }
-  50% {
-    margin-left: -50%;
+  60% {
+    margin-left: -67.5%;
   }
 
   60% {
-    margin-left: -75%;
+    margin-left: -115%;
   }
-  70% {
-    margin-left: -75%;
+  80% {
+    margin-left: -115%;
   }
 
   80% {
-    margin-left: -100%;
+    margin-left: -138%;
   }
   90% {
-    margin-left: -100%;
+    margin-left: -138%;
   }
 }
+
 
 .slider3 {
   width: 100%;
@@ -202,38 +203,39 @@
   0% {
     margin-left: 0%;
   }
-  10% {
+  20% {
     margin-left: 0%;
   }
 
   20% {
-    margin-left: -25%;
+    margin-left: -45%;
   }
-  30% {
-    margin-left: -25%;
+  40% {
+    margin-left: -45%;
   }
 
   40% {
-    margin-left: -50%;
+    margin-left: -67.5%;
   }
-  50% {
-    margin-left: -50%;
+  60% {
+    margin-left: -67.5%;
   }
 
   60% {
-    margin-left: -75%;
+    margin-left: -115%;
   }
-  70% {
-    margin-left: -75%;
+  80% {
+    margin-left: -115%;
   }
 
   80% {
-    margin-left: -100%;
+    margin-left: -138%;
   }
   90% {
-    margin-left: -100%;
+    margin-left: -138%;
   }
 }
+
 
 .freetowatch-cards .movie-card {
   margin-right: 1.5rem;

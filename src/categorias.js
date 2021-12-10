@@ -22,6 +22,47 @@ library.add(fas, far, fab)
 dom.i2svg() 
 
 //Funcion para que espere el javascript a que este todo el html
+const busqueda = document.getElementById('titulos');
+const main = document.getElementById("list_pelis");
+main.classList.add("peliculas");
+
+//https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
+const API_KEY = 'api_key=cfe422613b250f702980a3bbf9e90716';
+const URL_BASE = 'https://api.themoviedb.org/3/';
+
+//Peliculas mas populares
+const API_URL_CATEGORY = URL_BASE + 'discover/movie?sort_by=popularity.desc&vote_count.gte=2000&'+API_KEY+'&with_genres=';
+console.log(API_URL_CATEGORY);
+const URL_IMG = "https://image.tmdb.org/t/p/w500";
+const SEARCH_URL = URL_BASE + 'search/movie?query=';
+
+
+const arrayMovies = {
+  "Action":28,
+  "Adventure":12,
+  "Animation":16,
+  "Comedy":35,
+  "Crime":80,
+  "Documentary":99,
+  "Drama":18,
+  "Family":10751,
+  "Fantasy":14,
+  "History":36,
+  "Horror":27,
+  "Music":10402,
+  "Mystery":9,
+  "Romance":10751,
+  "Thriller":53,
+  "War":10752,
+  "Action & Adventure":10759,
+  "Western":37
+};
+
+
+const url_category = window.location.search.substring(1).split('=')[1].replace('+', ' ').trim();
+busqueda.innerText = url_category;
+console.log(arrayMovies[url_category]);
+
 
 window.onload = function(){
 
@@ -29,23 +70,7 @@ window.onload = function(){
 
   //Funcion para dar la vuelta a las tarjetas
 
-let btn = document.querySelectorAll('.flip');
-let btn2 = document.querySelectorAll('.flp');
 
-
-btn.forEach(item => {
-  item.addEventListener('click', event => {
-    const cc = event.target.parentElement.parentElement;
-    cc.classList.toggle('flipped');
-  });
-});
-
-btn2.forEach(item => {
-  item.addEventListener('click', event => {
-    const cc = event.target.parentElement.parentElement;
-    cc.classList.toggle('flipped');
-  });
-});
 
 
 
@@ -261,7 +286,6 @@ var registro2 = document.getElementById("btn_registro2");
     
 
     //modal.style.visibility = "visible";
- 
       
     
     modal.style.display = "block";
@@ -286,40 +310,187 @@ var registro2 = document.getElementById("btn_registro2");
   
 }*/
 
-document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
+
+
+
+
+const navs = document.querySelectorAll('.option');
+navs.forEach(nav => {
+  nav.addEventListener('click', function (e) {
+    window.location.href = "./categorias.html?search=" + e.target.textContent;
+    console.log(e.target.textContent);
+  })
+})
+
 
 };
 
 
+getData(API_URL_CATEGORY+arrayMovies[url_category]);
 
-//Funcion para mostrar todos los componentes
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /* Loop through a collection of all HTML elements: */
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /* Exit the function: */
-      return;
-    }
-  }
+function getData(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      showData(data.results);
+    })
+    .catch(error => console.log(error));
 }
+
+function showData(data) {
+
+  main.innerHTML = '';
+  let count = 0;
+
+  data.forEach(movie => {
+
+    count = count + 1;
+
+    const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
+
+    //carrusel2
+
+
+
+    const mainEl = document.createElement("div");
+  
+
+    
+    
+    
+    if (count <= 16) {
+
+      mainEl.innerHTML = `
+      
+      <a href="#">
+      <div class="poster">
+        <img src="${URL_IMG + poster_path}" style="width: 100%" alt="Imagen portada">
+      </div>
+    </a>
+
+        `;
+
+      main.appendChild(mainEl);
+
+
+
+    }
+
+    //display title, poster_path, overview to 10 first elements of array of movie
+
+  })
+}
+
+//Predict text search
+const entrada = document.getElementById("mySearch");
+const textoPre = document.getElementById('textoPredict');
+
+entrada.addEventListener('input', predict);
+//entrada.addEventListener('propertychange', data,predictTexts);
+
+function predict(e) {
+  e.preventDefault();
+
+
+  fetch(SEARCH_URL + e.target.value + "&" + API_KEY)
+    .then(response => response.json())
+    .then(data => {
+      if (!data.Error) {
+        console.log(data);
+        predictTexts(data.results);
+        // peliculas.push(data.results);
+
+      } else {
+        predictTexts([]);
+      }
+    })
+
+}
+
+function predictTexts(data) {
+
+
+
+  clearPredict();
+
+
+  if (data.length > 0) {
+    textoPre.style.display = "block";
+    textoPredict.style.border = "thick solid red";
+
+
+    const peliculas = [];
+
+    data.forEach(item => {
+      if (item.title.toLowerCase().includes(entrada.value.toLowerCase()) && entrada.value != null) {
+        peliculas.push(item.title);
+
+        //textoPre.innerHTML += "<li>"+item.original_title+"</li>";
+      }
+    });
+
+    removeDuplicates(peliculas);
+
+    //display 10 first elements to array of peliculas
+    if (peliculas.length > 10) {
+
+      for (let index = 0; index < 10; index++) {
+
+        textoPre.innerHTML += "<li class='lista_predict'>" + peliculas[index] + "</li>";
+      }
+    } else {
+      for (let index = 0; index < peliculas.length; index++) {
+        textoPre.innerHTML += "<li class='lista_predict'>" + peliculas[index] + "</li>";
+      }
+    }
+    textoPre.innerHTML += "</li></ul>";
+
+    const forms = document.getElementById('myForm');
+
+
+    textoPre.addEventListener('click', (e) => {
+
+      window.location.href = "./busquedas.html?search=" + e.target.textContent;
+
+
+
+      console.log(e.target.textContent);
+
+
+
+    });
+
+    // textoPre.innerHTML += "</ul>";
+  } else {
+    clearPredict()
+  }
+
+  if (entrada.length == 0) {
+    console.log("vacio");
+    textoPre.style.display = "none";
+
+  }
+  if (entrada.length == entrada.length - 1) {
+    clearPredict()
+
+
+  }
+
+
+}
+
+function removeDuplicates(array) {
+  array.splice(0, array.length, ...(new Set(array)))
+};
+
+
+function clearPredict() {
+  textoPre.innerHTML = "";
+  textoPre.style.display = "none";
+
+};
+
+
 
 
 

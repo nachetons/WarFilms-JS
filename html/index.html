@@ -8,7 +8,10 @@
   </head>
 
   <body>
+
+
     <%= require('html-loader!./componentes/navs.html').default %>
+    <%= require('html-loader!./componentes/login.html').default %>
 
     <!-- Header Section 
     <div class="container">
@@ -22,7 +25,7 @@
     <div id="contenedor">
       <div id="pelis_header">
       <div class="mySlides fade">
-        <img id="foto" src="./images/static/big_1.jpg" style="width: 90%" />
+        <img id="foto" src="./images/static/1.jpg" style="width: 90%" />
         <div class="text_title">Batman</div>
         <div class="text">1</div>
       </div>
@@ -31,16 +34,13 @@
 
 
     <%= require('html-loader!./componentes/carruseles.html').default %>
-    <%= require('html-loader!./componentes/login.html').default %>
     <%= require('html-loader!./componentes/footer.html').default %>
 
   
 
-    <script type="text/javascript" src="./javascript/index.js"></script>
     <script>
       var slideIndex = 0;
       let tiempocambio = 3000;
-      let xD = 0;
       showSlides();
       function showSlides() {
         
@@ -51,9 +51,6 @@
        for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
         
-       
-         
-
 if (i==0) {
   
   tiempocambio=0;
@@ -63,7 +60,6 @@ if (i==0) {
 }
         
        }
-
        slideIndex++;
        if(slideIndex > slides.length) {slideIndex = 1}
        slides[slideIndex-1].style.display = "block";

@@ -18,9 +18,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(fas, far, fab) 
+library.add(fas, far, fab)
 
-dom.i2svg() 
+dom.i2svg()
 
 
 
@@ -29,7 +29,7 @@ let date = new Date();
 let day = `0${date.getDate()}`.slice(-2);
 let month = `0${date.getMonth() - 2}`.slice(-2);
 let year = date.getFullYear();
-const last3months = year+"-"+month+"-"+day;
+const last3months = year + "-" + month + "-" + day;
 console.log(last3months);
 
 const API_KEY = 'api_key=cfe422613b250f702980a3bbf9e90716';
@@ -39,7 +39,7 @@ const URL_BASE = 'https://api.themoviedb.org/3/';
 const API_URL_POP = URL_BASE + 'discover/movie?sort_by=popularity.desc&include_adult=false&include_video=false&page=1&' + API_KEY;
 
 //Peliculas de los 3 ultimos meses y mas populares
-const API_URL_NEW = URL_BASE + 'discover/movie?sort_by=popularity.desc&primary_release_date.lte='+last3months+'&include_adult=false&include_video=false&page=1&' + API_KEY;
+const API_URL_NEW = URL_BASE + 'discover/movie?sort_by=popularity.desc&primary_release_date.lte=' + last3months + '&include_adult=false&include_video=false&page=1&' + API_KEY;
 
 //Peliculas mas valoradas
 const API_URL_RATED = URL_BASE + 'discover/movie?sort_by=popularity.desc&vote_count.gte=2000&include_adult=false&include_video=false&page=1&' + API_KEY;
@@ -52,244 +52,245 @@ const URL_IMG = "https://image.tmdb.org/t/p/w500";
 
 
 const arrayMovies = {
-  28:"Action",
-  12:"Adventure",
+  28: "Action",
+  12: "Adventure",
   16: "Animation",
   35: "Comedy",
   80: "Crime",
   99: "Documentary",
   18: "Drama",
-  10751:  "Family",
-  14:   "Fantasy",
-  36:  "History",
+  10751: "Family",
+  14: "Fantasy",
+  36: "History",
   27: "Horror",
   10402: "Music",
   9: "Mystery",
-  10751:  "Romance",
+  10751: "Romance",
   53: "Thriller",
   10752: "War",
-  10759:  "Action & Adventure",
-  37:  "Western"};
+  10759: "Action & Adventure",
+  37: "Western"
+};
 //Funcion para que espere el javascript a que este todo el html
 
-window.onload = function(){
+window.onload = function () {
 
 
 
   //Funcion para dar la vuelta a las tarjetas
 
-let btn = document.querySelectorAll('.flip');
-let btn2 = document.querySelectorAll('.flp');
-let boton_count=0;
+  let btn = document.querySelectorAll('.flip');
+  let btn2 = document.querySelectorAll('.flp');
+  let boton_count = 0;
 
-btn.forEach(item => {
-  boton_count=boton_count+1;
-  item.addEventListener('click', event => {
-    event.preventDefault();
-    const cc = event.target.parentElement.parentElement;
-    cc.classList.toggle('flipped');
-    console.log("mi boton",boton_count);
-    if (boton_count==1) {
+  btn.forEach(item => {
+    boton_count = boton_count + 1;
+    item.addEventListener('click', event => {
+      //event.preventDefault();
+      const cc = event.target.parentElement.parentElement;
+      cc.classList.toggle('flipped');
+      //console.log("mi boton",boton_count);
+      //if (boton_count==1) {
 
-      cargarFrame(1);
+      // cargarFrame(1);
 
-    }
+      // }
+    });
   });
-});
 
-btn2.forEach(item => {
-  item.addEventListener('click', event => {
-    const cc = event.target.parentElement.parentElement;
-    cc.classList.toggle('flipped');
+  btn2.forEach(item => {
+    item.addEventListener('click', event => {
+      const cc = event.target.parentElement.parentElement;
+      cc.classList.toggle('flipped');
+    });
   });
-});
 
-//Funcion para mostrar menu lateral al dar click a un boton
+  //Funcion para mostrar menu lateral al dar click a un boton
 
-var contador = 1;
+  var contador = 1;
 
-let btn_menu=document.querySelectorAll('.toggle');   
-let menus=document.querySelectorAll('.menu__side');   
-let opciones=document.querySelectorAll('.options'); 
+  let btn_menu = document.querySelectorAll('.toggle');
+  let menus = document.querySelectorAll('.menu__side');
+  let opciones = document.querySelectorAll('.options');
 
 
-btn_menu.forEach(item => {
-  item.addEventListener('click', event => {
-    let widht_size=window.outerWidth;
+  btn_menu.forEach(item => {
+    item.addEventListener('click', event => {
+      let widht_size = window.outerWidth;
 
-    if (contador == 1) {
-      menus.forEach(item => {
+      if (contador == 1) {
+        menus.forEach(item => {
 
-        if (widht_size>900) {
-          item.style.visibility = 'visible';
-          item.style.width =  '20%';
-        }else{
-          item.style.visibility = 'visible';
-          item.style.width =  '100%';
+          if (widht_size > 900) {
+            item.style.visibility = 'visible';
+            item.style.width = '20%';
+          } else {
+            item.style.visibility = 'visible';
+            item.style.width = '100%';
+
+          }
+
+
+
+        });
+        contador = 0;
+      } else {
+
+        if (widht_size <= 1040) {
+          menus.forEach(item => {
+            item.style.width = '8%'
+
+          });
+          contador = 1;
+
+        } if (widht_size > 1040) {
+          menus.forEach(item => {
+            item.style.width = '5%'
+
+          });
+          contador = 1;
 
         }
-       
+      }
 
 
-      });
-      contador = 0;
-    } else {
-
-      if (widht_size <= 1040) {
-       menus.forEach(item => {
-         item.style.width = '8%' 
- 
-       });
-       contador = 1;
- 
-     }if (widht_size > 1040) {
-       menus.forEach(item => {
-         item.style.width = '5%' 
- 
-       });
-       contador = 1;
- 
-     }
-    }
-    
-  
+    });
   });
-});
 
 
-let btn_menu2=document.querySelectorAll('.categorias');   
+  let btn_menu2 = document.querySelectorAll('.categorias');
 
 
-btn_menu2.forEach(item => {
-  item.addEventListener('click', event => {
-    let widht_size=window.outerWidth;
+  btn_menu2.forEach(item => {
+    item.addEventListener('click', event => {
+      let widht_size = window.outerWidth;
 
-    if (contador == 1) {
-      menus.forEach(item => {
-
-
-        if (widht_size>900) {
-          item.style.visibility = 'visible';
-          item.style.width =  '20%';
-        }else{
-          item.style.visibility = 'visible';
-          item.style.width =  '100%';
-        }
-       
+      if (contador == 1) {
+        menus.forEach(item => {
 
 
-      });
-      contador = 0;
+          if (widht_size > 900) {
+            item.style.visibility = 'visible';
+            item.style.width = '20%';
+          } else {
+            item.style.visibility = 'visible';
+            item.style.width = '100%';
+          }
 
-    } else {
 
-      menus.forEach(item => {
-        item.style.width = '5%' 
 
-      });
-      contador = 1;
+        });
+        contador = 0;
 
-    }
+      } else {
 
-    
-    
-  
+        menus.forEach(item => {
+          item.style.width = '5%'
+
+        });
+        contador = 1;
+
+      }
+
+
+
+
+    });
   });
-});
 
 
 
 
 
 
-//Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
-var button = document.getElementById('btn_login_nav');
-var closeButton = document.getElementById('close')
+  //Funcion para quitar el modal del login en caso de que se pinche fuera del cuadro
+  var button = document.getElementById('btn_login_nav');
+  var closeButton = document.getElementById('close')
 
-var modal = document.getElementById('id01');
-var modalContent = document.getElementById('form_content');
-var modalContent2 = document.getElementById('form_content2');
+  var modal = document.getElementById('id01');
+  var modalContent = document.getElementById('form_content');
+  var modalContent2 = document.getElementById('form_content2');
 
-var buttonLogin = document.getElementById('btn_login2');
-var buttonRegister = document.getElementById('btn_registro');
-
-
-buttonRegister.addEventListener('click', function() {
-  modalContent2.classList.add("animations3");
-  modalContent.classList.add("animations2");
-
-  modal.style.display = 'unset';
-
-});
+  var buttonLogin = document.getElementById('btn_login2');
+  var buttonRegister = document.getElementById('btn_registro');
 
 
-//Si pincho en el nav top aparece menu con la animacion
-button.addEventListener('click', function() {
-  modalContent.classList.add("animations");
-  modal.style.display = 'unset';
+  buttonRegister.addEventListener('click', function () {
+    modalContent2.classList.add("animations3");
+    modalContent.classList.add("animations2");
+
+    modal.style.display = 'unset';
+
+  });
 
 
-});
+  //Si pincho en el nav top aparece menu con la animacion
+  button.addEventListener('click', function () {
+    modalContent.classList.add("animations");
+    modal.style.display = 'unset';
 
 
-closeButton.addEventListener('click', function() {
-  modal.style.display = "none";
-  modalContent.classList.remove("animations");
-  modalContent.classList.remove("animations2");
-  modalContent2.classList.remove("animations3");
-
-});
+  });
 
 
-document.onclick = function(e){
-  if(e.target.id == 'id01'){
+  closeButton.addEventListener('click', function () {
     modal.style.display = "none";
     modalContent.classList.remove("animations");
     modalContent.classList.remove("animations2");
     modalContent2.classList.remove("animations3");
 
-
-  }
-
-
-};
-buttonLogin.addEventListener("click", function() {
-  modalContent.classList.remove("animations");
-  modal.style.display = "unset";
-  modalContent.classList.add("animations2");
-  modalContent2.classList.remove("animations3");
+  });
 
 
-});
+  document.onclick = function (e) {
+    if (e.target.id == 'id01') {
+      modal.style.display = "none";
+      modalContent.classList.remove("animations");
+      modalContent.classList.remove("animations2");
+      modalContent2.classList.remove("animations3");
 
 
+    }
 
 
-var login = document.getElementById("btn_login");
-var registro = document.getElementById("btn_registro");
+  };
+  buttonLogin.addEventListener("click", function () {
+    modalContent.classList.remove("animations");
+    modal.style.display = "unset";
+    modalContent.classList.add("animations2");
+    modalContent2.classList.remove("animations3");
 
 
-var modal = document.getElementById('id01');
-    var modal2 = document.getElementById('id02');
-
-
+  });
 
 
 
-  login.addEventListener("click", function() {
-    
+
+  var login = document.getElementById("btn_login");
+  var registro = document.getElementById("btn_registro");
+
+
+  var modal = document.getElementById('id01');
+  var modal2 = document.getElementById('id02');
+
+
+
+
+
+  login.addEventListener("click", function () {
+
 
     //modal.style.visibility = "visible";
- 
-      
-    
+
+
+
     modal.style.display = "block";
     modal2.style.display = "none";
 
   });
-  registro.addEventListener("click", function() {
+  registro.addEventListener("click", function () {
 
-   // modal2.style.visibility="visible";
+    // modal2.style.visibility="visible";
     modal.style.display = "none";
     modal2.style.display = "block";
 
@@ -301,7 +302,7 @@ var modal = document.getElementById('id01');
 
 
   var login2 = document.getElementById("btn_login2");
-var registro2 = document.getElementById("btn_registro2");
+  var registro2 = document.getElementById("btn_registro2");
 
 
 
@@ -309,20 +310,20 @@ var registro2 = document.getElementById("btn_registro2");
 
 
 
-  login2.addEventListener("click", function() {
-    
+  login2.addEventListener("click", function () {
+
 
     //modal.style.visibility = "visible";
- 
-      
-    
+
+
+
     modal.style.display = "block";
     modal2.style.display = "none";
 
   });
-  registro2.addEventListener("click", function() {
+  registro2.addEventListener("click", function () {
 
-   // modal2.style.visibility="visible";
+    // modal2.style.visibility="visible";
     modal.style.display = "none";
     modal2.style.display = "block";
 
@@ -330,26 +331,28 @@ var registro2 = document.getElementById("btn_registro2");
   });
 
 
-//Funcion carrusel header
+  //Funcion carrusel header
 
-/*for (let index = 0; index < 11; index++) {
-  var foto= document.getElementById("foto");
-  foto.src="../images/Pelis_grandes/"+index+".jpg";
-  
-}*/
-const entrada = document.getElementById('mySearch');
-
-
-if(entrada.value!="")  {
-  const busquedas = document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replace('+', ' ').trim();
+  /*for (let index = 0; index < 11; index++) {
+    var foto= document.getElementById("foto");
+    foto.src="../images/Pelis_grandes/"+index+".jpg";
     
+  }*/
+  const entrada = document.getElementById('mySearch');
 
 
-    
+  if (entrada.value != "") {
+    const busquedas = document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replace('+', ' ').trim();
 
+  }
 
-  
-}
+  const navs = document.querySelectorAll('.option');
+  navs.forEach(nav => {
+    nav.addEventListener('click', function (e) {
+      window.location.href = "./categorias.html?search=" + e.target.textContent;
+      console.log(e.target.textContent);
+    })
+  })
 
 };
 
@@ -390,57 +393,55 @@ function showData(data) {
   main.innerHTML = '';
   car1.innerHTML = '';
 
-let count=0;
+  let count = 0;
 
 
   data.forEach(movie => {
 
-      count=count+1;
+    count = count + 1;
 
-      const { title, poster_path, vote_average, genre_ids, backdrop_path, id } = movie;
+    const { title, poster_path, vote_average, genre_ids, backdrop_path, id ,overview} = movie;
 
-      //Header principal
-      const movieEl = document.createElement("div");
-      movieEl.classList.add("mySlides");
-      movieEl.classList.add("fade");
-
-
-      //carrusel1
-      const car1El = document.createElement("div");
-      car1El.classList.add("movie-card");
-      car1El.classList.add("carrusel1");
+    //Header principal
+    const movieEl = document.createElement("div");
+    movieEl.classList.add("mySlides");
+    movieEl.classList.add("fade");
 
 
-      if (count<=10) {
+    //carrusel1
+    const car1El = document.createElement("div");
+    car1El.classList.add("movie-card");
+    car1El.classList.add("carrusel1");
+
+
+    if (count <= 10) {
+
+      movieEl.innerHTML = `
       
-        movieEl.innerHTML = `
-      
-        <img src="${URL_IMG + poster_path}" style="width: 20%" />
+        <img src="${URL_IMG + poster_path}" />
         <div class="text_title">${title}</div>
-        <div class="text">${vote_average}</div>
+        <div class="text movie-rating">${vote_average}</div>
+
         <div class="genre">${genre_ids}</div>
-          `;   
+          `;
 
 
-          arrayID.push(id);
-          
-        car1El.innerHTML = `
+      arrayID.push(id);
+
+      car1El.innerHTML = `
 
         <div class="movie-card carrusel1">
         <div class="delante">
           <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
           <h4 class="movie-title">${title}</h4>
           <h6 class="id" style="visibility: hidden">${id}</h6>
-          <div class="movie-rating">83%</div>
+          <div class="movie-rating">${vote_average}</div>
           <button class="boton-card flip">Sinopsis</button>
         </div>
 
         <div class="detras" >
         <strong id="car1_id_${count}">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
-        porro expedita culpa reiciendis corrupti repudiandae, fugit
-        voluptate accusamus quae, exercitationem placeat facere cumque
-        maxime saepe, molestias veniam illo dolorem.</strong>
+        ${overview}</strong>
           <br />
           <button class="boton-card flp">Pelicula</button>
         </div>
@@ -448,24 +449,24 @@ let count=0;
 
         `;
 
-        /*<iframe width="100%" height="100%" src="https://www.youtube.com/embed/togmdDHG3Pw" title="YouTube video player" frameborder="0" allow="accelerometer;
-         autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */
+      /*<iframe width="100%" height="100%" src="https://www.youtube.com/embed/togmdDHG3Pw" title="YouTube video player" frameborder="0" allow="accelerometer;
+       autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */
 
       main.appendChild(movieEl);
       car1.appendChild(car1El);
-      
 
-        
-      }
 
-      //display title, poster_path, overview to 10 first elements of array of movie
-        
+
+    }
+
+    //display title, poster_path, overview to 10 first elements of array of movie
+
   })
 
-for (let z = 0; z < arrayID.length; z++) {
-  getData4(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");
-  console.log(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");  
-}
+  /*for (let z = 0; z < arrayID.length; z++) {
+    getData4(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");
+    console.log(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");  
+  }*/
 
 }
 function getData2(url) {
@@ -478,40 +479,37 @@ function getData2(url) {
 }
 
 function showData2(data) {
-    
-    car2.innerHTML = '';
-    let count=0;
 
-    data.forEach(movie => {
+  car2.innerHTML = '';
+  let count = 0;
 
-      count=count+1;
+  data.forEach(movie => {
 
-      const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
+    count = count + 1;
 
-      //carrusel2
-      const car2El = document.createElement("div");
-      car2El.classList.add("movie-card");
-      car2El.classList.add("carrusel2");
+    const { title, poster_path, vote_average, genre_ids, backdrop_path,overview } = movie;
 
-      if (count<=10) {
-      
-        car2El.innerHTML = `
+    //carrusel2
+    const car2El = document.createElement("div");
+    car2El.classList.add("movie-card");
+    car2El.classList.add("carrusel2");
+
+    if (count <= 10) {
+
+      car2El.innerHTML = `
 
         <div class="movie-card carrusel2">
         <div class="delante">
           <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
           <h4 class="movie-title">${title}</h4>
           <h6>Sep 28,2018</h6>
-          <div class="movie-rating">83%</div>
+          <div class="movie-rating">${vote_average}</div>
           <button class="boton-card flip">Sinopsis</button>
         </div>
 
         <div class="detras">
           <strong
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
-            porro expedita culpa reiciendis corrupti repudiandae, fugit
-            voluptate accusamus quae, exercitationem placeat facere cumque
-            maxime saepe, molestias veniam illo dolorem.</strong
+            >${overview}</strong
           >
           <br />
           <button class="boton-card flp">Pelicula</button>
@@ -521,60 +519,57 @@ function showData2(data) {
         `;
 
       car2.appendChild(car2El);
-      
 
-        
-      }
 
-      //display title, poster_path, overview to 10 first elements of array of movie
-        
+
+    }
+
+    //display title, poster_path, overview to 10 first elements of array of movie
+
+  })
+}
+
+function getData3(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      showData3(data.results);
     })
-  }
+    .catch(error => console.log(error));
+}
 
-  function getData3(url) {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        showData3(data.results);
-      })
-      .catch(error => console.log(error));
-  }
-  
-  function showData3(data) {
-      
-      car3.innerHTML = '';
-      let count=0;
-  
-      data.forEach(movie => {
-  
-        count=count+1;
-  
-        const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
-  
-        //carrusel2
-        const car3El = document.createElement("div");
-        car3El.classList.add("movie-card");
-        car3El.classList.add("carrusel3");
-  
-        if (count<=10) {
-        
-          car3El.innerHTML = `
+function showData3(data) {
+
+  car3.innerHTML = '';
+  let count = 0;
+
+  data.forEach(movie => {
+
+    count = count + 1;
+
+    const { title, poster_path, vote_average, genre_ids, backdrop_path,overview } = movie;
+
+    //carrusel2
+    const car3El = document.createElement("div");
+    car3El.classList.add("movie-card");
+    car3El.classList.add("carrusel3");
+
+    if (count <= 10) {
+
+      car3El.innerHTML = `
   
           <div class="movie-card carrusel3">
           <div class="delante">
             <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
             <h4 class="movie-title">${title}</h4>
             <h6>Sep 28,2018</h6>
-            <div class="movie-rating">83%</div>
+            <div class="movie-rating">${vote_average}</div>
             <button class="boton-card flip">Sinopsis</button>
           </div>
   
           <div class="detras">
             <strong
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
-              porro expedita culpa reiciendis corrupti repudiandae, fugit
-              voluptate accusamus quae, exercitationem placeat facere cumque
-              maxime saepe, molestias veniam illo dolorem.</strong
+              >${overview}</strong
             >
             <br />
             <button class="boton-card flp">Pelicula</button>
@@ -582,173 +577,173 @@ function showData2(data) {
         </div>
   
           `;
-  
-        car3.appendChild(car3El);
-        
-  
-          
-        }
-  
-        //display title, poster_path, overview to 10 first elements of array of movie
-          
-      })
+
+      car3.appendChild(car3El);
+
+
+
     }
 
+    //display title, poster_path, overview to 10 first elements of array of movie
 
-    function getData4(url) {
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data.videos.results);
-          showData4(data.videos.results);
-        })
-        .catch(error => console.log(error));
-    }
-    
-    function showData4(data) {
-        
-        let count=0;
-    
-        data.forEach(movie => {
-
-          const { key, type, site } = movie;
-
-          if (type=="Trailer" && site=="YouTube") {
-            count=count+1;
-            if (count==1) {
-              arrayYouTube.push(key);
+  })
+}
 
 
-            console.log(key);
-            }
-          }
-    
-    
-         //obtain id of movie
+function getData4(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.videos.results);
+      showData4(data.videos.results);
+    })
+    .catch(error => console.log(error));
+}
 
-          
-    
-          //display title, poster_path, overview to 10 first elements of array of movie
-            
-        })
+function showData4(data) {
 
+  let count = 0;
+
+  data.forEach(movie => {
+
+    const { key, type, site } = movie;
+
+    if (type == "Trailer" && site == "YouTube") {
+      count = count + 1;
+      if (count == 1) {
+        arrayYouTube.push(key);
+
+
+        console.log(key);
       }
+    }
 
-      function cargarFrame(idKey) {
-        console.log(arrayYouTube[idKey]);
-        document.getElementById("car1_id_1").innerHTML=`<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${arrayYouTube[idKey]}" title="YouTube video player" frameborder="0" allow="accelerometer;
+
+    //obtain id of movie
+
+
+
+    //display title, poster_path, overview to 10 first elements of array of movie
+
+  })
+
+}
+
+function cargarFrame(idKey) {
+  console.log(arrayYouTube[idKey]);
+  document.getElementById("car1_id_1").innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${arrayYouTube[idKey]}" title="YouTube video player" frameborder="0" allow="accelerometer;
         autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+
+
+//Predict text search
+const entrada = document.getElementById("mySearch");
+const textoPre = document.getElementById('textoPredict');
+
+entrada.addEventListener('input', predict);
+//entrada.addEventListener('propertychange', data,predictTexts);
+
+function predict(e) {
+  e.preventDefault();
+
+
+  fetch(SEARCH_URL + e.target.value + "&" + API_KEY)
+    .then(response => response.json())
+    .then(data => {
+      if (!data.Error) {
+        console.log(data);
+        predictTexts(data.results);
+        // peliculas.push(data.results);
+
+      } else {
+        predictTexts([]);
       }
+    })
+
+}
+
+function predictTexts(data) {
 
 
-    //Predict text search
-    const entrada = document.getElementById("mySearch");
-    const textoPre = document.getElementById('textoPredict');
-  
-    entrada.addEventListener('input', predict);
-    //entrada.addEventListener('propertychange', data,predictTexts);
-    
-    function predict(e){
-        e.preventDefault();
-    
-        
-        fetch(SEARCH_URL + e.target.value + "&" + API_KEY)
-        .then(response => response.json())
-        .then(data => {
-          if (!data.Error) {
-            console.log(data);
-           predictTexts(data.results);
-           // peliculas.push(data.results);
-            
-          }else{
-            predictTexts([]);
-          }
-        })
-        
-        }
-    
-        function predictTexts(data){
-          
-      
 
-          clearPredict();
-    
-    
-          if (data.length > 0) {
-            textoPre.style.display = "block";
-            textoPredict.style.border = "thick solid red";
-         
-    
-            const peliculas = [];
-    
-            data.forEach(item => {
-              if (item.title.toLowerCase().includes(entrada.value.toLowerCase())&&entrada.value!=null) {
-                peliculas.push(item.title);
-    
-              //textoPre.innerHTML += "<li>"+item.original_title+"</li>";
-              }
-            });
-    
-            removeDuplicates(peliculas);
-    
-              //display 10 first elements to array of peliculas
-              if (peliculas.length > 10){
-    
-                for (let index = 0; index < 10; index++) {
-                  
-                  textoPre.innerHTML += "<li class='lista_predict'>"+peliculas[index]+"</li>";
-                }
-              }else{
-                for (let index = 0; index < peliculas.length; index++) {
-                  textoPre.innerHTML += "<li class='lista_predict'>"+peliculas[index]+"</li>";
-                }
-              }
-              textoPre.innerHTML += "</li></ul>";
+  clearPredict();
 
-              const forms=document.getElementById('myForm');
 
-              
-                textoPre.addEventListener('click',(e)=>{
+  if (data.length > 0) {
+    textoPre.style.display = "block";
+    textoPredict.style.border = "thick solid red";
 
-                  window.location.href = "./busquedas.html?search="+e.target.textContent;
 
-              
+    const peliculas = [];
 
-                console.log(e.target.textContent);
+    data.forEach(item => {
+      if (item.title.toLowerCase().includes(entrada.value.toLowerCase()) && entrada.value != null) {
+        peliculas.push(item.title);
 
-               
+        //textoPre.innerHTML += "<li>"+item.original_title+"</li>";
+      }
+    });
 
-              });
-        
-           // textoPre.innerHTML += "</ul>";
-          }else{
-            clearPredict()
-          }
-    
-          if (entrada.length == 0) {
-            console.log("vacio");
-            textoPre.style.display = "none";
-    
-          }
-          if (entrada.length == entrada.length-1) {
-            clearPredict()
-          
-            
-          }
-    
-          
-        }
-    
-        function removeDuplicates(array) {
-          array.splice(0, array.length, ...(new Set(array)))
-        };
-    
-    
-        function clearPredict(){
-          textoPre.innerHTML = "";
-          textoPre.style.display = "none";
-    
-        };
+    removeDuplicates(peliculas);
+
+    //display 10 first elements to array of peliculas
+    if (peliculas.length > 10) {
+
+      for (let index = 0; index < 10; index++) {
+
+        textoPre.innerHTML += "<li class='lista_predict'>" + peliculas[index] + "</li>";
+      }
+    } else {
+      for (let index = 0; index < peliculas.length; index++) {
+        textoPre.innerHTML += "<li class='lista_predict'>" + peliculas[index] + "</li>";
+      }
+    }
+    textoPre.innerHTML += "</li></ul>";
+
+    const forms = document.getElementById('myForm');
+
+
+    textoPre.addEventListener('click', (e) => {
+
+      window.location.href = "./busquedas.html?search=" + e.target.textContent;
+
+
+
+      console.log(e.target.textContent);
+
+
+
+    });
+
+    // textoPre.innerHTML += "</ul>";
+  } else {
+    clearPredict()
+  }
+
+  if (entrada.length == 0) {
+    console.log("vacio");
+    textoPre.style.display = "none";
+
+  }
+  if (entrada.length == entrada.length - 1) {
+    clearPredict()
+
+
+  }
+
+
+}
+
+function removeDuplicates(array) {
+  array.splice(0, array.length, ...(new Set(array)))
+};
+
+
+function clearPredict() {
+  textoPre.innerHTML = "";
+  textoPre.style.display = "none";
+
+};
 
 /*MOVIE
 Action          28
