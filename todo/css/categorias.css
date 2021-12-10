@@ -1,17 +1,32 @@
-.container {
-  border: 2px solid red;
-}
 .peliculas {
   width: 90%;
   margin: 0 auto;
   margin-top: 10%;
-  background: red;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
 }
 .peliculas .titulo {
-  font-size: 3rem;
-  background: blue;
+  font-size: 2.5rem;
   padding-bottom: 2rem;
+  flex-basis: 100%;
 }
+.peliculas a {
+  display: inline-block;
+  width: calc(96% / 4);
+}
+.peliculas a .poster {
+  width: 100%;
+}
+.peliculas a .poster img {
+  width: 100%;
+  height: auto;
+}
+
+
 .columnas {
   width: 90%;
   height: 500px;

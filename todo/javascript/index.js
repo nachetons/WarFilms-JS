@@ -4,6 +4,13 @@
 
 window.onload = function(){
 
+  const navs = document.querySelectorAll('.option');
+  navs.forEach(nav => {
+    nav.addEventListener('click', function(e){
+      window.location.href = "./categorias.html?search="+e.target.textContent;
+      console.log(e.target.textContent);
+    })
+  })
 
 
   //Funcion para dar la vuelta a las tarjetas
