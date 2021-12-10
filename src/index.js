@@ -45,6 +45,8 @@ const API_URL_NEW = URL_BASE + 'discover/movie?sort_by=popularity.desc&primary_r
 const API_URL_RATED = URL_BASE + 'discover/movie?sort_by=popularity.desc&vote_count.gte=2000&include_adult=false&include_video=false&page=1&' + API_KEY;
 
 const SEARCH_URL = URL_BASE + 'search/movie?query=';
+const SEARCH_URL_ID = URL_BASE + 'movie/';
+
 const URL_IMG = "https://image.tmdb.org/t/p/w500";
 
 
@@ -78,12 +80,20 @@ window.onload = function(){
 
 let btn = document.querySelectorAll('.flip');
 let btn2 = document.querySelectorAll('.flp');
-
+let boton_count=0;
 
 btn.forEach(item => {
+  boton_count=boton_count+1;
   item.addEventListener('click', event => {
+    event.preventDefault();
     const cc = event.target.parentElement.parentElement;
     cc.classList.toggle('flipped');
+    console.log("mi boton",boton_count);
+    if (boton_count==1) {
+
+      cargarFrame(1);
+
+    }
   });
 });
 
@@ -331,8 +341,14 @@ const entrada = document.getElementById('mySearch');
 
 
 if(entrada.value!="")  {
-  document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replaceAll('+', ' ').trim();
+  const busquedas = document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replace('+', ' ').trim();
+    
 
+
+    
+
+
+  
 }
 
 };
@@ -344,11 +360,16 @@ const car3 = document.getElementById("carruseles3");
 
 
 
-
+const arrayID = [];
+const arrayYouTube = [];
 
 getData(API_URL_POP);
 getData2(API_URL_NEW);
 getData3(API_URL_RATED);
+
+console.log(arrayID);
+
+//getData4(SEARCH_URL_ID+arrayID[1]+"&"+API_KEY);
 
 
 
@@ -376,7 +397,7 @@ let count=0;
 
       count=count+1;
 
-      const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
+      const { title, poster_path, vote_average, genre_ids, backdrop_path, id } = movie;
 
       //Header principal
       const movieEl = document.createElement("div");
@@ -401,31 +422,34 @@ let count=0;
           `;   
 
 
-
+          arrayID.push(id);
+          
         car1El.innerHTML = `
 
         <div class="movie-card carrusel1">
         <div class="delante">
           <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
           <h4 class="movie-title">${title}</h4>
-          <h6>Sep 28,2018</h6>
+          <h6 class="id" style="visibility: hidden">${id}</h6>
           <div class="movie-rating">83%</div>
           <button class="boton-card flip">Sinopsis</button>
         </div>
 
-        <div class="detras">
-          <strong
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
-            porro expedita culpa reiciendis corrupti repudiandae, fugit
-            voluptate accusamus quae, exercitationem placeat facere cumque
-            maxime saepe, molestias veniam illo dolorem.</strong
-          >
+        <div class="detras" >
+        <strong id="car1_id_${count}">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+        porro expedita culpa reiciendis corrupti repudiandae, fugit
+        voluptate accusamus quae, exercitationem placeat facere cumque
+        maxime saepe, molestias veniam illo dolorem.</strong>
           <br />
           <button class="boton-card flp">Pelicula</button>
         </div>
       </div>
 
         `;
+
+        /*<iframe width="100%" height="100%" src="https://www.youtube.com/embed/togmdDHG3Pw" title="YouTube video player" frameborder="0" allow="accelerometer;
+         autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */
 
       main.appendChild(movieEl);
       car1.appendChild(car1El);
@@ -438,8 +462,10 @@ let count=0;
         
   })
 
-
- 
+for (let z = 0; z < arrayID.length; z++) {
+  getData4(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");
+  console.log(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");  
+}
 
 }
 function getData2(url) {
@@ -567,9 +593,58 @@ function showData2(data) {
           
       })
     }
+
+
+    function getData4(url) {
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.videos.results);
+          showData4(data.videos.results);
+        })
+        .catch(error => console.log(error));
+    }
+    
+    function showData4(data) {
+        
+        let count=0;
+    
+        data.forEach(movie => {
+
+          const { key, type, site } = movie;
+
+          if (type=="Trailer" && site=="YouTube") {
+            count=count+1;
+            if (count==1) {
+              arrayYouTube.push(key);
+
+
+            console.log(key);
+            }
+          }
+    
+    
+         //obtain id of movie
+
+          
+    
+          //display title, poster_path, overview to 10 first elements of array of movie
+            
+        })
+
+      }
+
+      function cargarFrame(idKey) {
+        console.log(arrayYouTube[idKey]);
+        document.getElementById("car1_id_1").innerHTML=`<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${arrayYouTube[idKey]}" title="YouTube video player" frameborder="0" allow="accelerometer;
+        autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      }
+
+
+    //Predict text search
     const entrada = document.getElementById("mySearch");
     const textoPre = document.getElementById('textoPredict');
-
+  
     entrada.addEventListener('input', predict);
     //entrada.addEventListener('propertychange', data,predictTexts);
     
@@ -592,25 +667,10 @@ function showData2(data) {
         
         }
     
-        /*function predictText(e){
-          if (peliculas.length > 0) {
-            peliculas.forEach(item => {
-              item.forEach(item => {
-                if (item.original_title.toLowerCase().includes(e.target.value.toLowerCase())) {
-                  textoPre.innerHTML = "<li>"+item.original_title+"</li>";
-                }
-              });
-            
-            });
-          }
-            
-          
-          
-        }*/
-       
-    
         function predictTexts(data){
-     
+          
+      
+
           clearPredict();
     
     
@@ -636,15 +696,30 @@ function showData2(data) {
     
                 for (let index = 0; index < 10; index++) {
                   
-                  textoPre.innerHTML += "<li>"+peliculas[index]+"</li>";
+                  textoPre.innerHTML += "<li class='lista_predict'>"+peliculas[index]+"</li>";
                 }
               }else{
                 for (let index = 0; index < peliculas.length; index++) {
-                  textoPre.innerHTML += "<li>"+peliculas[index]+"</li>";
+                  textoPre.innerHTML += "<li class='lista_predict'>"+peliculas[index]+"</li>";
                 }
               }
               textoPre.innerHTML += "</li></ul>";
-    
+
+              const forms=document.getElementById('myForm');
+
+              
+                textoPre.addEventListener('click',(e)=>{
+
+                  window.location.href = "./busquedas.html?search="+e.target.textContent;
+
+              
+
+                console.log(e.target.textContent);
+
+               
+
+              });
+        
            // textoPre.innerHTML += "</ul>";
           }else{
             clearPredict()
@@ -673,11 +748,7 @@ function showData2(data) {
           textoPre.innerHTML = "";
           textoPre.style.display = "none";
     
-        }
-
-
-
-
+        };
 
 /*MOVIE
 Action          28

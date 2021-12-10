@@ -93,6 +93,7 @@
 .slider {
   width: 100%;
   animation: slider 20s infinite alternate ease-in-out;
+
 }
 
 .slider:hover {

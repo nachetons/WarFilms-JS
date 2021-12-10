@@ -11,6 +11,7 @@ ul li {
     height: 9vh;
     width: 100%;
     position: fixed;
+    top: 0;
     z-index: 2;
   }
   
@@ -46,7 +47,7 @@ ul li {
     color: white;
   }
   
-  .toggle i {
+  .toggle {
     cursor: pointer;
     display: none;
     /*visibility: hidden;*/

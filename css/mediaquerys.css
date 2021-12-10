@@ -94,12 +94,9 @@
     .nav-img {
       margin-left: 0%;
     }
-    .menu__side {
-      width: 0;
-      visibility: hidden;
-    }
-    .toggle i {
-      display: unset;
+    
+    .toggle {
+      display: block;
     }
   
     .menu_options {
@@ -123,9 +120,7 @@
       width: 0;
       visibility: hidden;
     }
-    .toggle i {
-      display: unset;
-    }
+    
   
     .menu_options {
       display: none;

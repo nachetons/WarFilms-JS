@@ -1,20 +1,22 @@
 
 .row{
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 6%;
 }
 
 
-  h1{
-  }
   .peliculas_list {
       display: flex;
-      margin: 12px;
   }
 
   .content_film{
-      text-decoration: none;
-      color:white;
+    text-decoration: none;
+    color:white;
+    padding: 2%;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+
   }
   .descripcion{
         margin-top: 10px;

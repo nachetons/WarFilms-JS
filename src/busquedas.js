@@ -445,6 +445,7 @@ let count=0;
       
         <div class="content_film">
           <h3 class="titulo">${title}</h3>
+          <p class="titulo-secundario">Sinopsis:</p>
           <p class="descripcion">${overview}</p>
         </div>
           
