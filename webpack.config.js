@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let htmlPageNames = ['busquedas', 'categorias', 'peliculas', 'series', 'formulario', 'pelicula'];
+let htmlPageNames = ['busquedas', 'categorias', 'peliculas', 'series', 'formulario', 'pelicula','serie'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     favicon: "./src/images/static/favicon.png",
@@ -22,7 +22,8 @@ module.exports = {
     peliculas: './src/peliculas.js',
     series: './src/series.js',
     formulario: './src/formulario.js',
-    pelicula: './src/pelicula.js'
+    pelicula: './src/pelicula.js',
+    serie: './src/serie.js'
   },
   devtool: 'inline-source-map',
   output: {
