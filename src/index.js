@@ -640,6 +640,8 @@ function showData4(data, ids) {
         console.log(key);
         count=0;
       }
+    }else{
+      console.log("no hay trailer");
     }
 
 
