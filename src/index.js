@@ -84,7 +84,6 @@ window.onload = function () {
   let boton_count = 0;
 
   btn.forEach(item => {
-    boton_count = boton_count + 1;
     item.addEventListener('click', event => {
       //event.preventDefault();
       const cc = event.target.parentElement.parentElement;
@@ -434,13 +433,12 @@ function showData(data) {
         <div class="delante">
           <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
           <h4 class="movie-title">${title}</h4>
-          <h6 class="id" style="visibility: hidden">${id}</h6>
           <div class="movie-rating">${vote_average}</div>
-          <button class="boton-card flip">Sinopsis</button>
+          <button class="boton-card flip" id="${id}">Trailer</button>
         </div>
 
-        <div class="detras" >
-        <strong id="car1_id_${count}">
+        <div class="detras">
+        <strong id="detras_${id}">
         ${overview}</strong>
           <br />
           <button class="boton-card flp">Pelicula</button>
@@ -456,17 +454,15 @@ function showData(data) {
       car1.appendChild(car1El);
 
 
-
+      document.getElementById(id).addEventListener("click", () => {
+        getData4(SEARCH_URL_ID + id + "?" + API_KEY + "&append_to_response=videos", id);
+      });
     }
 
-    //display title, poster_path, overview to 10 first elements of array of movie
 
   })
 
-  /*for (let z = 0; z < arrayID.length; z++) {
-    getData4(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");
-    console.log(SEARCH_URL_ID+arrayID[z]+"?"+API_KEY+"&append_to_response=videos");  
-  }*/
+
 
 }
 function getData2(url) {
@@ -487,7 +483,7 @@ function showData2(data) {
 
     count = count + 1;
 
-    const { title, poster_path, vote_average, genre_ids, backdrop_path,overview } = movie;
+    const { title, poster_path, vote_average, genre_ids, backdrop_path,overview, id } = movie;
 
     //carrusel2
     const car2El = document.createElement("div");
@@ -504,23 +500,25 @@ function showData2(data) {
           <h4 class="movie-title">${title}</h4>
           <h6>Sep 28,2018</h6>
           <div class="movie-rating">${vote_average}</div>
-          <button class="boton-card flip">Sinopsis</button>
+          <button class="boton-card flip" id="${id}">Trailer</button>
         </div>
 
         <div class="detras">
-          <strong
-            >${overview}</strong
-          >
+        <strong id="detras_${id}">
+        ${overview}</strong>
           <br />
           <button class="boton-card flp">Pelicula</button>
         </div>
       </div>
 
         `;
+        
 
       car2.appendChild(car2El);
 
-
+      document.getElementById(id).addEventListener("click", () => {
+        getData4(SEARCH_URL_ID + id + "?" + API_KEY + "&append_to_response=videos", id);
+      });
 
     }
 
@@ -547,7 +545,7 @@ function showData3(data) {
 
     count = count + 1;
 
-    const { title, poster_path, vote_average, genre_ids, backdrop_path,overview } = movie;
+    const { title, poster_path, vote_average, genre_ids, backdrop_path,overview, id } = movie;
 
     //carrusel2
     const car3El = document.createElement("div");
@@ -564,23 +562,24 @@ function showData3(data) {
             <h4 class="movie-title">${title}</h4>
             <h6>Sep 28,2018</h6>
             <div class="movie-rating">${vote_average}</div>
-            <button class="boton-card flip">Sinopsis</button>
-          </div>
-  
-          <div class="detras">
-            <strong
-              >${overview}</strong
-            >
-            <br />
-            <button class="boton-card flp">Pelicula</button>
-          </div>
+            <button class="boton-card flip" id="${id}">Trailer</button>
         </div>
-  
-          `;
+
+        <div class="detras">
+        <strong id="detras_${id}">
+        ${overview}</strong>
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+        `;
 
       car3.appendChild(car3El);
 
-
+      document.getElementById(id).addEventListener("click", () => {
+        getData4(SEARCH_URL_ID + id + "?" + API_KEY + "&append_to_response=videos", id);
+      });
 
     }
 
@@ -590,29 +589,29 @@ function showData3(data) {
 }
 
 
-function getData4(url) {
+function getData4(url, id) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data.videos.results);
-      showData4(data.videos.results);
+      console.log(url);
+      //console.log(data.videos.results);
+      showData4(data.videos.results, id);
     })
     .catch(error => console.log(error));
 }
 
-function showData4(data) {
+function showData4(data, ids) {
 
   let count = 0;
 
   data.forEach(movie => {
 
-    const { key, type, site } = movie;
+    const { key, type, site, id } = movie;
 
     if (type == "Trailer" && site == "YouTube") {
       count = count + 1;
       if (count == 1) {
-        arrayYouTube.push(key);
-
+        cargarFrame(key, ids);
 
         console.log(key);
       }
@@ -629,9 +628,10 @@ function showData4(data) {
 
 }
 
-function cargarFrame(idKey) {
-  console.log(arrayYouTube[idKey]);
-  document.getElementById("car1_id_1").innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${arrayYouTube[idKey]}" title="YouTube video player" frameborder="0" allow="accelerometer;
+function cargarFrame(idKey, id) {
+  console.log(idKey);
+  console.log(id);
+  document.getElementById("detras_"+id).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${idKey}" title="YouTube video player" frameborder="0" allow="accelerometer;
         autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 }
 
