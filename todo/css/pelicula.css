@@ -1,0 +1,42 @@
+.container {
+    background: red;
+}
+
+.contenedor-pelicula {
+    width: 100%;
+    margin-top: 10%;
+    padding: 5% 10%;
+    background-image: linear-gradient(
+        90deg, 
+        rgba(255,255,255,0.1) 0%, 
+        rgba(1,1,1,0.6) 40%, 
+        rgba(1,1,1,0.8) 80%, 
+        rgba(1,1,1,1) 100%),
+        url("../images/Pelis-pelicula/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.contenedor-pelicula .poster {
+    width: 25%;
+    float: left;
+}
+.contenedor-pelicula .poster img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.introduccion {
+    float: right;
+    width: 70%;
+    text-align: justify;
+}
+.introduccion .titulo {
+    font-size: 2.5rem;
+    padding: 1rem 0 1.5rem;
+}
+.introduccion .sinopsis {
+    font-size: 1.4rem;
+}
