@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let htmlPageNames = ['busquedas', 'categorias', 'peliculas', 'series', 'formulario', 'pelicula'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
+    favicon: "./src/images/static/favicon.png",
+    filename: `WarFilm/${name}.html`,
     template: `./html/${name}.html`, // relative path to the HTML files
     filename: `${name}.html`, // output HTML files
     chunks: [`${name}`] // respective JS files
@@ -33,8 +35,9 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: "./src/images/static/favicon.png",
       filename: "index.html",
-      title: 'Piano music generator',
+      title: 'WarFilms',
       template: './html/index.html',
       chunks: ['main']
     }),

@@ -276,7 +276,26 @@ var registro2 = document.getElementById("btn_registro2");
 
   });
 
+  const entrada = document.getElementById('mySearch');
 
+
+  if (entrada.value != "") {
+    const busquedas = document.getElementById('welcome').innerText = "Resultados de:  " + window.location.search.substring(1).split('=')[1].replace('+', ' ').trim();
+
+  }
+
+  const navs = document.querySelectorAll('.option');
+  const textCategory = document.querySelectorAll('.text_category');
+
+  textCategory.forEach(nav => {
+    nav.addEventListener('click', function (e) {
+      if (e.target.textContent!="" && !e.target.textContent.includes("%20") && !e.target.textContent.includes("undefined")) {
+        window.location.href = "./categorias.html?search=" + e.target.textContent;
+        console.log(e.target.textContent);
+      }
+     
+    })
+  })
 };
 
 getData(SEARCH_URL + nombre + "&" + API_KEY);

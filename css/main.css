@@ -60,8 +60,8 @@ body {
   background-color: rgb(31, 31, 31);
   width: 85%;
   position: relative;
-  margin-top: 18%;
-  height: 22vw;
+  margin-top: 20%;
+  height: 25vw;
   left: 50%;
   transform: translate(-50%, -50%);
   margin-bottom: -10%;
@@ -103,7 +103,7 @@ body {
 .mySlides img {
   display: flex;
   justify-content: center;
-  height: 22vw;
+  height: 25vw;
   width: 50vh;
   color: white;
   margin-left: -0.1%;

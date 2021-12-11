@@ -7,6 +7,8 @@ import "../css/footer.css";
 import "../css/login.css";
 import "../css/main.css";
 import "../css/navs.css";
+import "../css/mediaquerys.css";
+
 
 
 // Font Awesome 5 (Free)
@@ -351,7 +353,7 @@ function showData(data) {
 
     count = count + 1;
 
-    const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
+    const { title, poster_path, vote_average, genre_ids, backdrop_path,id } = movie;
 
     //carrusel2
 
@@ -368,7 +370,7 @@ function showData(data) {
       mainEl.innerHTML = `
       
       <a href="#">
-      <div class="poster">
+      <div class="poster"id="${id}">
         <img src="${URL_IMG + poster_path}" style="width: 100%" alt="Imagen portada">
       </div>
     </a>
@@ -376,7 +378,11 @@ function showData(data) {
         `;
 
       main.appendChild(mainEl);
-
+      document.getElementById(id).addEventListener('click', () => {
+        window.location.href = "./pelicula.html?id=" + id + "&title=" + title;
+        console.log(id);
+        
+      });
 
 
     }
