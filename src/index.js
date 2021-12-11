@@ -79,31 +79,7 @@ window.onload = function () {
 
   //Funcion para dar la vuelta a las tarjetas
 
-  let btn = document.querySelectorAll('.flip');
-  let btn2 = document.querySelectorAll('.flp');
-  let boton_count = 0;
-
-  btn.forEach(item => {
-    item.addEventListener('click', event => {
-      //event.preventDefault();
-      const cc = event.target.parentElement.parentElement;
-      cc.classList.toggle('flipped');
-      //console.log("mi boton",boton_count);
-      //if (boton_count==1) {
-
-      // cargarFrame(1);
-
-      // }
-    });
-  });
-
-  btn2.forEach(item => {
-    item.addEventListener('click', event => {
-      const cc = event.target.parentElement.parentElement;
-      cc.classList.toggle('flipped');
-    });
-  });
-
+ 
   //Funcion para mostrar menu lateral al dar click a un boton
 
   var contador = 1;
@@ -346,10 +322,15 @@ window.onload = function () {
   }
 
   const navs = document.querySelectorAll('.option');
-  navs.forEach(nav => {
+  const textCategory = document.querySelectorAll('.text_category');
+
+  textCategory.forEach(nav => {
     nav.addEventListener('click', function (e) {
-      window.location.href = "./categorias.html?search=" + e.target.textContent;
-      console.log(e.target.textContent);
+      if (e.target.textContent!="" && !e.target.textContent.includes("%20") && !e.target.textContent.includes("undefined")) {
+        window.location.href = "./categorias.html?search=" + e.target.textContent;
+        console.log(e.target.textContent);
+      }
+     
     })
   })
 
@@ -430,7 +411,7 @@ function showData(data) {
       car1El.innerHTML = `
 
         <div class="movie-card carrusel1">
-        <div class="delante">
+        <div class="delante" id="delante_${id}">
           <div class="movie-image"><img src="${URL_IMG + backdrop_path}" style="width: 100%" /></div>
           <h4 class="movie-title">${title}</h4>
           <div class="movie-rating">${vote_average}</div>
@@ -441,7 +422,7 @@ function showData(data) {
         <strong id="detras_${id}">
         ${overview}</strong>
           <br />
-          <button class="boton-card flp">Pelicula</button>
+          <button class="boton-card flp" id="detrasbtn_${id}">Pelicula</button>
         </div>
       </div>
 
@@ -454,8 +435,18 @@ function showData(data) {
       car1.appendChild(car1El);
 
 
-      document.getElementById(id).addEventListener("click", () => {
+      document.getElementById(id).addEventListener("click", event =>{
+        const cc = event.target.parentElement.parentElement;
+        cc.classList.toggle('flipped');
         getData4(SEARCH_URL_ID + id + "?" + API_KEY + "&append_to_response=videos", id);
+
+      });
+
+      document.getElementById("detrasbtn_"+id).addEventListener("click", event =>{
+        const cc = event.target.parentElement.parentElement;
+        cc.classList.toggle('flipped');
+        deleteFrame(id);
+
       });
     }
 
@@ -634,6 +625,12 @@ function cargarFrame(idKey, id) {
   document.getElementById("detras_"+id).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${idKey}" title="YouTube video player" frameborder="0" allow="accelerometer;
         autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 }
+function deleteFrame(id) {
+  console.log(id);
+  const myframe = document.getElementById("detras_"+id);
+  myframe.remove();
+
+}
 
 
 //Predict text search
@@ -704,7 +701,7 @@ function predictTexts(data) {
 
 
     textoPre.addEventListener('click', (e) => {
-
+      
       window.location.href = "./busquedas.html?search=" + e.target.textContent;
 
 

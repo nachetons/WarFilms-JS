@@ -275,10 +275,15 @@ window.onload = function () {
     
   }*/
   const navs = document.querySelectorAll('.option');
-  navs.forEach(nav => {
+  const textCategory = document.querySelectorAll('.text_category');
+
+  textCategory.forEach(nav => {
     nav.addEventListener('click', function (e) {
-      window.location.href = "./categorias.html?search=" + e.target.textContent;
-      console.log(e.target.textContent);
+      if (e.target.textContent!="" && !e.target.textContent.includes("%20") && !e.target.textContent.includes("undefined")) {
+        window.location.href = "./categorias.html?search=" + e.target.textContent;
+        console.log(e.target.textContent);
+      }
+     
     })
   })
 };
@@ -437,7 +442,7 @@ let count=0;
 
       count=count+1;
 
-      const { title, poster_path, overview } = movie;
+      const { title, poster_path, overview, id } = movie;
       const movieEl = document.createElement("div");
       movieEl.classList.add("movie");
 
@@ -448,7 +453,7 @@ let count=0;
           movieEl.innerHTML = `
           <img id="foto" src="${URL_IMG + poster_path}" style="width: 8%"/>
       
-        <div class="content_film">
+        <div class="content_film" id="${id}">
           <h3 class="titulo">${title}</h3>
           <p class="titulo-secundario">Sinopsis:</p>
           <p class="descripcion">${overview}</p>
@@ -461,9 +466,14 @@ let count=0;
 
       main.appendChild(movieEl);
       
-      
+      document.getElementById(id).addEventListener('click', () => {
+        window.location.href = "./pelicula.html?id=" + id + "&title=" + title;
+        console.log(id);
         
-      }
+      });
+    }
+  });
+
 
       //display title, poster_path, overview to 10 first elements of array of movie
         
@@ -474,7 +484,6 @@ let count=0;
     
 
     
-  })
 
   textoPre.addEventListener('click', (e) => {
 

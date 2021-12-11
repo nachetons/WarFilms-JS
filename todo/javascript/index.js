@@ -5,10 +5,15 @@
 window.onload = function(){
 
   const navs = document.querySelectorAll('.option');
-  navs.forEach(nav => {
-    nav.addEventListener('click', function(e){
-      window.location.href = "./categorias.html?search="+e.target.textContent;
-      console.log(e.target.textContent);
+  const textCategory = document.querySelectorAll('.text_category');
+
+  textCategory.forEach(nav => {
+    nav.addEventListener('click', function (e) {
+      if (e.target.textContent!="" && !e.target.textContent.includes("%20") && !e.target.textContent.includes("undefined")) {
+        window.location.href = "./categorias.html?search=" + e.target.textContent;
+        console.log(e.target.textContent);
+      }
+     
     })
   })
 

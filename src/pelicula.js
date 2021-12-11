@@ -1,5 +1,4 @@
 //import "../css/all.min.css";
-import "../css/busquedas.css";
 import "../css/carrusel.css";
 import "../css/categorias.css";
 //import "../css/fontawesome.min.css";
@@ -7,6 +6,9 @@ import "../css/footer.css";
 import "../css/login.css";
 import "../css/main.css";
 import "../css/navs.css";
+import "../css/pelicula.css";
+import "../css/mediaquerys.css";
+
 
 
 // Font Awesome 5 (Free)
@@ -21,55 +23,27 @@ library.add(fas, far, fab)
 
 dom.i2svg() 
 
-//Funcion para que espere el javascript a que este todo el html
-const busqueda = document.getElementById('titulos');
-const main = document.getElementById("list_pelis");
-main.classList.add("peliculas");
 
-//https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
+
 const API_KEY = 'api_key=cfe422613b250f702980a3bbf9e90716';
 const URL_BASE = 'https://api.themoviedb.org/3/';
 
-//Peliculas mas populares
-const API_URL_CATEGORY = URL_BASE + 'discover/movie?sort_by=popularity.desc&vote_count.gte=2000&'+API_KEY+'&with_genres=';
-console.log(API_URL_CATEGORY);
-const URL_IMG = "https://image.tmdb.org/t/p/w500";
+
 const SEARCH_URL = URL_BASE + 'search/movie?query=';
+const SEARCH_URL_ID = URL_BASE + 'movie/';
+
+const URL_IMG = "https://image.tmdb.org/t/p/w500";
+//Funcion para que espere el javascript a que este todo el html
+const main = document.getElementById("listas_pelis");
 
 
-const arrayMovies = {
-  "Action":28,
-  "Adventure":12,
-  "Animation":16,
-  "Comedy":35,
-  "Crime":80,
-  "Documentary":99,
-  "Drama":18,
-  "Family":10751,
-  "Fantasy":14,
-  "History":36,
-  "Horror":27,
-  "Music":10402,
-  "Mystery":9,
-  "Romance":10751,
-  "Thriller":53,
-  "War":10752,
-  "Action & Adventure":10759,
-  "Western":37
-};
+let busqueda = window.location.search.substring(1).split('=')[1].replace('+', ' ').trim();
+let nombre = window.location.search.substring(1).split('=')[2].replace('%20', ' ').trim();
 
-
-const url_category = window.location.search.substring(1).split('=')[1].replace('+', ' ').trim();
-busqueda.innerText = url_category;
-console.log(arrayMovies[url_category]);
-
+busqueda = busqueda.split('&')[0];
+console.log(nombre);
 
 window.onload = function(){
-
-
-
-  //Funcion para dar la vuelta a las tarjetas
-
 
 
 
@@ -286,6 +260,7 @@ var registro2 = document.getElementById("btn_registro2");
     
 
     //modal.style.visibility = "visible";
+ 
       
     
     modal.style.display = "block";
@@ -302,89 +277,115 @@ var registro2 = document.getElementById("btn_registro2");
   });
 
 
-//Funcion carrusel header
-
-/*for (let index = 0; index < 11; index++) {
-  var foto= document.getElementById("foto");
-  foto.src="../images/Pelis_grandes/"+index+".jpg";
-  
-}*/
-
-
-
-
-
-const navs = document.querySelectorAll('.option');
-  const textCategory = document.querySelectorAll('.text_category');
-
-  textCategory.forEach(nav => {
-    nav.addEventListener('click', function (e) {
-      if (e.target.textContent!="" && !e.target.textContent.includes("%20") && !e.target.textContent.includes("undefined")) {
-        window.location.href = "./categorias.html?search=" + e.target.textContent;
-        console.log(e.target.textContent);
-      }
-     
-    })
-  })
-
-
 };
 
+getData(SEARCH_URL + nombre + "&" + API_KEY);
 
-getData(API_URL_CATEGORY+arrayMovies[url_category]);
+//getData(SEARCH_URL + busqueda + "&" + API_KEY);
+
+//getData(SEARCH_URL_ID + busqueda + "?" + API_KEY + "&append_to_response=videos");
+//getData2(SEARCH_URL_ID + busqueda + "?" + API_KEY + "&append_to_response=videos");
+
+
+
 
 function getData(url) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
+
       showData(data.results);
+      //showData2(data.videos.results);
+    })
+    .catch(error => console.log(error));
+}
+function showData(data) {
+  main.innerHTML = '';
+
+  let count = 0;
+
+
+ 
+  data.forEach(movie => {
+    count++;
+    const { title, poster_path, overview, id } = movie;
+    const movieEl = document.createElement("div");
+    movieEl.classList.add("contenedor-pelicula");
+
+
+    if (count <= 1) {
+    const { original_title, overview, id, poster_path } = movie;
+
+    movieEl.innerHTML = `
+
+  <img id="foto" src="${URL_IMG + poster_path}" style="width: 35%"/>
+  <div class="content_film" id="${id}">
+    <h3 class="titulo">${title}</h3>
+    <p class="titulo-secundario">Sinopsis:</p>
+    <p class="descripcion">${overview}</p>
+    <p><strong id="mytrailer"></strong></p>
+
+  </div>
+    
+    
+    
+    `;   
+  
+
+main.appendChild(movieEl);
+    }
+
+
+  });
+  getData2(SEARCH_URL_ID + busqueda + "?" + API_KEY + "&append_to_response=videos");
+}
+//console.log(SEARCH_URL_ID + busqueda + "?" + API_KEY + "&append_to_response=videos");
+
+
+
+
+
+
+
+
+function getData2(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+
+      
+      showData2(data.videos.results);
     })
     .catch(error => console.log(error));
 }
 
-function showData(data) {
 
-  main.innerHTML = '';
+
+function showData2(data) {
+
   let count = 0;
 
   data.forEach(movie => {
+    console.log(movie);
+    const { key, type, site } = movie;
 
-    count = count + 1;
+    if (type == "Trailer" && site == "YouTube") {
+      count = count + 1;
+      if (count == 1) {
 
-    const { title, poster_path, vote_average, genre_ids, backdrop_path } = movie;
-
-    //carrusel2
-
-
-
-    const mainEl = document.createElement("div");
-  
-
-    
-    
-    
-    if (count <= 16) {
-
-      mainEl.innerHTML = `
-      
-      <a href="#">
-      <div class="poster">
-        <img src="${URL_IMG + poster_path}" style="width: 100%" alt="Imagen portada">
-      </div>
-    </a>
-
-        `;
-
-      main.appendChild(mainEl);
-
-
-
+        cargarFrame(key);
+      }
     }
-
-    //display title, poster_path, overview to 10 first elements of array of movie
-
-  })
+  });
 }
+
+
+function cargarFrame(idKey) {
+  console.log(idKey);
+  document.getElementById("mytrailer").innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${idKey}" title="YouTube video player" frameborder="0" allow="accelerometer;
+        autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+
 
 //Predict text search
 const entrada = document.getElementById("mySearch");
@@ -494,7 +495,6 @@ function clearPredict() {
   textoPre.style.display = "none";
 
 };
-
 
 
 

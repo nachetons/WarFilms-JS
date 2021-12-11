@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let htmlPageNames = ['busquedas', 'categorias', 'peliculas', 'series', 'formulario'];
+let htmlPageNames = ['busquedas', 'categorias', 'peliculas', 'series', 'formulario', 'pelicula'];
 let multipleHtmlPlugins = htmlPageNames.map(name => {
   return new HtmlWebpackPlugin({
     template: `./html/${name}.html`, // relative path to the HTML files
@@ -20,6 +20,7 @@ module.exports = {
     peliculas: './src/peliculas.js',
     series: './src/series.js',
     formulario: './src/formulario.js',
+    pelicula: './src/pelicula.js'
   },
   devtool: 'inline-source-map',
   output: {

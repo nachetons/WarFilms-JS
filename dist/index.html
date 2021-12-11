@@ -8,6 +8,8 @@
   <script defer src="main.js"></script></head>
 
   <body>
+
+
     <head>
 
 
@@ -28,13 +30,8 @@
         <input type="search" class="input-search" id="mySearch" placeholder="Search movies" name="search" onchange="predict()"autocomplete="off"/>
         <button class="boton-search" type="submit"><i class="fas fa-search"></i></button>
         <div id="textoPredict" class="textoPredict"></div>
-
       </form>
-
       <li><a href="#"><i style="width:auto;" class="fas fa-user" id="btn_login_nav" title="Portafolio"></i></a></li>
-
-     
-
     </ul>
   </nav>
   
@@ -42,71 +39,83 @@
   
     <div class="menu__side" id="menu_side">
       
-
+ 
+      
     <div class="options__menu">	
+
+
+      <a href="#">
+        <div class="option">
+          <i class="fas fa-bomb fa-2x" title="Action"></i>
+            <h4>Action</h4>
+        </div>
+    </a>
+
+
+      <a href="#">
+        <div class="option">
+          <i class="fas fa-running fa-2x" title="Adventure"></i>
+            <h4>Adventure</h4>
+        </div>
+    </a>
+
+
+    <a href="#">
+      <div class="option">
+        <i class="fab fa-d-and-d fa-2x" title="Animation"></i>
+        
+          <h4>Animation</h4>
+      </div>
+  </a>
 
         <a href="#">
           <div class="option">
-            <i class="fas fa-theater-masks fa-2x" title="Portafolio"></i>
-              <h4>Comedia</h4>
+            <i class="fas fa-theater-masks fa-2x" title="Comedy"></i>
+              <h4>Comedy</h4>
           </div>
       </a>
+
+
+      <a href="#">
+        <div class="option">
+          <i class="fas fa-user-secret fa-2x" title="Crime"></i>
+            <h4>Crime</h4>
+        </div>
+    </a>
+
+    <a href="#">
+      <div class="option">
+        <i class="fas fa-dragon fa-2x" title="Fantasy"></i>
+          <h4>Fantasy</h4>
+      </div>
+  </a>
+
+    <a href="#">
+      <div class="option">
+        <i class="fas fa-baby fa-2x" title="Family"></i>
+          <h4>Family</h4>
+      </div>
+  </a>
       
       <a href="#">
           <div class="option">
-            <i class="fas fa-dizzy fa-2x" title="Cursos"></i>
-              <h4>Terror</h4>
-          </div>
-      </a>
-
-      <a href="#">
-          <div class="option">
-            <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
-              <h4>Magia</h4>
-          </div>
-      </a>
-
-      <a href="#">
-          <div class="option">
-            <i class="fas fa-car fa-2x" title="Contacto"></i>
-              <h4>Coches</h4>
-          </div>
-      </a>
-
-      <a href="#">
-          <div class="option">
-            <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
-              <h4>Fantasia</h4>
+            <i class="fas fa-dizzy fa-2x" title="Horror"></i>
+              <h4>Horror</h4>
           </div>
       </a>
 
       <a href="#">
         <div class="option">
-          <i class="fas fa-fighter-jet fa-2x" title="Cursos"></i>
-            <h4>Guerra</h4>
+          <i class="fas fa-fighter-jet fa-2x" title="War"></i>
+            <h4>War</h4>
         </div>
     </a>
 
-    <a href="#">
-        <div class="option">
-          <i class="fas fa-hat-wizard fa-2x" title="Blog"></i>
-            <h4>Blog</h4>
-        </div>
-    </a>
+    
 
-    <a href="#">
-        <div class="option">
-          <i class="fas fa-car fa-2x" title="Contacto"></i>
-            <h4>Contacto</h4>
-        </div>
-    </a>
+ 
 
-    <a href="#">
-        <div class="option">
-          <i class="fas fa-dragon fa-2x" title="Nosotros"></i>
-            <h4>Nosotros</h4>
-        </div>
-    </a>
+ 
         
 </div>
 
@@ -125,6 +134,113 @@
     
 
     
+    <!-- Login -->
+
+<div class="all-modal">
+  <div id="id01" class="modal login">
+    
+    <form class="modal-content" id="form_content" action="#">
+      <div class="imgcontainer">
+        <span
+          onclick="document.getElementById('id01').style.display='none'"
+          id="close2"
+          title="Close Modal"
+          >×</span
+        >
+        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+        <br />
+        <span class="btn" id="btn_login">Login</span>
+          <span class="btn" id="btn_registro">Registro</span>
+      </div>
+  
+      <div class="container">
+        <label><b>Username</b></label>
+        <input
+          class="input-form"
+          type="text"
+          placeholder="Enter Username"
+          name="uname"
+          
+        />
+  
+        <label><b>Password</b></label>
+        <input
+          class="input-form"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          
+        />
+  
+        <button class="boton-form" type="submit">Login</button>
+        <input type="checkbox" checked="checked" /> Remember me
+      </div>
+  
+      <div class="container" style="background-color: #f1f1f1">
+        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+      </div>
+    </form>
+  </div>
+  
+  
+  <div id="id02" class="modal registro">
+    <form class="modal-content" id="form_content2" action="#">
+      <div class="imgcontainer">
+        <span
+          onclick="document.getElementById('id02').style.display='none'"
+          id="close"
+          title="Close Modal"
+          >×</span
+        >
+        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
+        <br />
+        <span class="btn" id="btn_login2">Login</span>
+        <span class="btn" id="btn_registro2">Registro</span>
+  
+      </div>
+  
+      <div class="container">
+        <label><b>Name</b></label>
+        <input
+          class="input-form"
+          type="text"
+          placeholder="Enter Name"
+          name="uname"
+          required
+        />
+  
+        <label><b>Email</b></label>
+        <input
+          class="input-form"
+          type="Email" placeholder="prueba@123.com"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+  
+        <label><b>Password</b></label>
+        <input
+          class="input-form"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+  
+        <button class="boton-form" type="submit">Registrarse</button>
+      </div>
+  
+      <div class="container" style="background-color: #f1f1f1">
+        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
+      </div>
+    </form>
+  </div>
+  
+  </div>
+  
+  
+  
+
 
     <!-- Header Section 
     <div class="container">
@@ -135,10 +251,10 @@
       </div>
     </div>
 -->
-    <div class="container" id="contenedor">
+    <div id="contenedor">
       <div id="pelis_header">
       <div class="mySlides fade">
-        <img id="foto" src="./images/static/big_1.jpg" style="width: 90%" />
+        <img id="foto" src="./images/static/1.jpg" style="width: 90%" />
         <div class="text_title">Batman</div>
         <div class="text">1</div>
       </div>
@@ -149,13 +265,12 @@
     
 
 <div class="container">
-  <br />
 
-  <h1>Estrenos</h1>
+  <h1>Mas populares</h1>
   <!--Carrusel 1-->
 
   <div class="freetowatch-cards">
-    <div class="slider" data-pause="false">
+    <div class="slider" id="carruseles1" data-pause="false">
       <!-- Card 1 -->
       <div class="movie-card carrusel1">
         <div class="delante">
@@ -314,6 +429,51 @@
       <div class="movie-card carrusel1">
         <div class="delante">
           <div class="movie-image"><img src="images/static/8.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+
+      <!-- Card 9 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+       <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
           <h4 class="movie-title">Venom</h4>
           <h6>Sep 28,2018</h6>
           <div class="movie-rating">83%</div>
@@ -337,12 +497,12 @@
   <br />
   <br />
 
-  <h1>Mas populares</h1>
+  <h1>Estrenos</h1>
 
   <!--Carusel 2-->
 
   <div class="freetowatch-cards">
-    <div class="slider2">
+    <div class="slider2" id="carruseles2">
       <!-- Card 1 -->
       <div class="movie-card carrusel2">
         <div class="delante">
@@ -501,6 +661,49 @@
       <div class="movie-card carrusel2">
         <div class="delante">
           <div class="movie-image"><img src="images/static/1.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+      <!-- Card 9 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+       <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
           <h4 class="movie-title">Venom</h4>
           <h6>Sep 28,2018</h6>
           <div class="movie-rating">83%</div>
@@ -528,7 +731,7 @@
   <!-- Carrusel 3 -->
 
   <div class="freetowatch-cards">
-    <div class="slider3">
+    <div class="slider3" id="carruseles3">
       <!-- Card 1 -->
       <div class="movie-card carrusel3">
         <div class="delante">
@@ -706,117 +909,54 @@
           <button class="boton-card flp">Pelicula</button>
         </div>
       </div>
+      <!-- Card 9 -->
+      <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+       <div class="movie-card carrusel1">
+        <div class="delante">
+          <div class="movie-image"><img src="images/static/7.jpg" /></div>
+          <h4 class="movie-title">Venom</h4>
+          <h6>Sep 28,2018</h6>
+          <div class="movie-rating">83%</div>
+          <button class="boton-card flip">Sinopsis</button>
+        </div>
+
+        <div class="detras">
+          <strong
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam
+            porro expedita culpa reiciendis corrupti repudiandae, fugit
+            voluptate accusamus quae, exercitationem placeat facere cumque
+            maxime saepe, molestias veniam illo dolorem.</strong
+          >
+          <br />
+          <button class="boton-card flp">Pelicula</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 
-    <!-- Login -->
-
-<div class="all-modal">
-  <div id="id01" class="modal login">
-    
-    <form class="modal-content" id="form_content" action="#">
-      <div class="imgcontainer">
-        <span
-          onclick="document.getElementById('id01').style.display='none'"
-          id="close2"
-          title="Close Modal"
-          >×</span
-        >
-        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
-        <br />
-        <span class="btn" id="btn_login">Login</span>
-          <span class="btn" id="btn_registro">Registro</span>
-      </div>
-  
-      <div class="container">
-        <label><b>Username</b></label>
-        <input
-          class="input-form"
-          type="text"
-          placeholder="Enter Username"
-          name="uname"
-          
-        />
-  
-        <label><b>Password</b></label>
-        <input
-          class="input-form"
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          
-        />
-  
-        <button class="boton-form" type="submit">Login</button>
-        <input type="checkbox" checked="checked" /> Remember me
-      </div>
-  
-      <div class="container" style="background-color: #f1f1f1">
-        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
-      </div>
-    </form>
-  </div>
-  
-  
-  <div id="id02" class="modal registro">
-    <form class="modal-content" id="form_content2" action="#">
-      <div class="imgcontainer">
-        <span
-          onclick="document.getElementById('id02').style.display='none'"
-          id="close"
-          title="Close Modal"
-          >×</span
-        >
-        <i class="fas fa-user fa-2x foto" title="Portafolio"></i>
-        <br />
-        <span class="btn" id="btn_login2">Login</span>
-        <span class="btn" id="btn_registro2">Registro</span>
-  
-      </div>
-  
-      <div class="container">
-        <label><b>Name</b></label>
-        <input
-          class="input-form"
-          type="text"
-          placeholder="Enter Name"
-          name="uname"
-          required
-        />
-  
-        <label><b>Email</b></label>
-        <input
-          class="input-form"
-          type="Email" placeholder="prueba@123.com"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
-  
-        <label><b>Password</b></label>
-        <input
-          class="input-form"
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
-  
-        <button class="boton-form" type="submit">Registrarse</button>
-      </div>
-  
-      <div class="container" style="background-color: #f1f1f1">
-        <!-- <span class="psw">Forgot <a href="#">password?</a></span>-->
-      </div>
-    </form>
-  </div>
-  
-  </div>
-  
-  
-  
 
     
 
@@ -861,17 +1001,13 @@
     </div>
   </div>
 </footer>
-</body>
-</html>
 
 
   
 
-    <script type="text/javascript" src="./javascript/index.js"></script>
     <script>
       var slideIndex = 0;
       let tiempocambio = 3000;
-      let xD = 0;
       showSlides();
       function showSlides() {
         
@@ -882,9 +1018,6 @@
        for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
         
-       
-         
-
 if (i==0) {
   
   tiempocambio=0;
@@ -894,7 +1027,6 @@ if (i==0) {
 }
         
        }
-
        slideIndex++;
        if(slideIndex > slides.length) {slideIndex = 1}
        slides[slideIndex-1].style.display = "block";
@@ -905,4 +1037,5 @@ if (i==0) {
     </script>
 
    
- 
+  </body>
+</html>

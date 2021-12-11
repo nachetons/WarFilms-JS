@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelicula</title>
+</head>
+<body>
+    <%= require('html-loader!./componentes/navs.html').default %>
+    <%= require('html-loader!./componentes/login.html').default %>
+
+    <div class="container" id="listas_pelis">
+        <div class="contenedor-pelicula">
+            <div class="poster">
+                <img src="../images/Pelis-pelicula/poster.jpg" alt="Poster película">
+            </div>
+            <div class="introduccion">
+                <p class="titulo" id="titulos">Venom</p>
+                <p class="sinopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt delectus soluta eos, modi beatae voluptates, aut sed ullam quis laborum vero maiores non veritatis. Ipsum quo quod ducimus cumque atque est aut ipsa veritatis. Sint aspernatur illo doloremque voluptatibus nesciunt dignissimos nemo pariatur totam minus architecto est tenetur, culpa quam sed nobis eius impedit quod, ratione corrupti reprehenderit esse sequi. Quos dolores sint sit modi harum inventore! Inventore dolores tempora odio vel? Beatae fugiat repellat ex id corporis laudantium cupiditate vero molestiae voluptas distinctio! A eos libero, nostrum eaque iste nemo repellat odit veritatis nam, dolorum error pariatur quae molestiae.
+                </p>
+            </div>
+        </div>
+        <div class="contenedor-comentarios">
+            <div class="comentario">
+                <div class="imagen-usuario">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= require('html-loader!./componentes/footer.html').default %>
+ 
+</body>
+</html>
