@@ -42,8 +42,7 @@ const API_URL_POP = URL_BASE + 'discover/movie?sort_by=popularity.desc&include_a
 const API_URL_NEW = URL_BASE + 'discover/movie?sort_by=popularity.desc&primary_release_date.lte=' + last3months + '&include_adult=false&include_video=false&page=1&' + API_KEY;
 
 //Peliculas mas valoradas
-const API_URL_RATED = URL_BASE + 'discover/movie?sort_by=popularity.desc&vote_count.gte=2000&include_adult=false&include_video=false&page=1&' + API_KEY;
-
+const API_URL_RATED = URL_BASE + 'discover/movie?sort_by=vote_average.desc&vote_count.gte=300&page=1&' + API_KEY;
 const SEARCH_URL = URL_BASE + 'search/movie?query=';
 const SEARCH_URL_ID = URL_BASE + 'movie/';
 
@@ -445,7 +444,7 @@ function showData(data) {
       document.getElementById("detrasbtn_"+id).addEventListener("click", event =>{
         const cc = event.target.parentElement.parentElement;
         cc.classList.toggle('flipped');
-        deleteFrame(id);
+        deleteFrame(id, overview);
 
       });
     }
@@ -498,7 +497,7 @@ function showData2(data) {
         <strong id="detras_${id}">
         ${overview}</strong>
           <br />
-          <button class="boton-card flp">Pelicula</button>
+          <button class="boton-card flp" id="detrasbtn_${id}">Pelicula</button>
         </div>
       </div>
 
@@ -507,8 +506,18 @@ function showData2(data) {
 
       car2.appendChild(car2El);
 
-      document.getElementById(id).addEventListener("click", () => {
+      document.getElementById(id).addEventListener("click", event =>{
+        const cc = event.target.parentElement.parentElement;
+        cc.classList.toggle('flipped');
         getData4(SEARCH_URL_ID + id + "?" + API_KEY + "&append_to_response=videos", id);
+
+      });
+
+      document.getElementById("detrasbtn_"+id).addEventListener("click", event =>{
+        const cc = event.target.parentElement.parentElement;
+        cc.classList.toggle('flipped');
+        deleteFrame(id, overview);
+
       });
 
     }
@@ -523,6 +532,7 @@ function getData3(url) {
     .then(response => response.json())
     .then(data => {
       showData3(data.results);
+      console.log(url);
     })
     .catch(error => console.log(error));
 }
@@ -560,7 +570,7 @@ function showData3(data) {
         <strong id="detras_${id}">
         ${overview}</strong>
           <br />
-          <button class="boton-card flp">Pelicula</button>
+          <button class="boton-card flp" id="detrasbtn_${id}">Pelicula</button>
         </div>
       </div>
 
@@ -568,8 +578,18 @@ function showData3(data) {
 
       car3.appendChild(car3El);
 
-      document.getElementById(id).addEventListener("click", () => {
+      document.getElementById(id).addEventListener("click", event =>{
+        const cc = event.target.parentElement.parentElement;
+        cc.classList.toggle('flipped');
         getData4(SEARCH_URL_ID + id + "?" + API_KEY + "&append_to_response=videos", id);
+
+      });
+
+      document.getElementById("detrasbtn_"+id).addEventListener("click", event =>{
+        const cc = event.target.parentElement.parentElement;
+        cc.classList.toggle('flipped');
+        deleteFrame(id, overview);
+
       });
 
     }
@@ -603,8 +623,22 @@ function showData4(data, ids) {
       count = count + 1;
       if (count == 1) {
         cargarFrame(key, ids);
-
         console.log(key);
+        count=0;
+      }
+    }else if (type == "Clip" && site == "YouTube") {
+      count = count + 1;
+      if (count == 1) {
+        cargarFrame(key, ids);
+        console.log(key);
+        count=0;
+      }
+    }else if (type == "Teaser" && site == "YouTube") {
+      count = count + 1;
+      if (count == 1) {
+        cargarFrame(key, ids);
+        console.log(key);
+        count=0;
       }
     }
 
@@ -625,10 +659,11 @@ function cargarFrame(idKey, id) {
   document.getElementById("detras_"+id).innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${idKey}" title="YouTube video player" frameborder="0" allow="accelerometer;
         autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 }
-function deleteFrame(id) {
+function deleteFrame(id, overview) {
   console.log(id);
   const myframe = document.getElementById("detras_"+id);
-  myframe.remove();
+  myframe.innerHTML = overview;
+
 
 }
 
