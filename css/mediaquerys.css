@@ -98,10 +98,18 @@
     .toggle {
       display: block;
     }
-  
-  
+    #contenedor{
+      margin-top: 17%;
+      height: 40vh;
 
+    }
+    .mySlides img {
+      height: 40vh;
     
+    }
+    .freetowatch-cards{
+      margin-left: 5rem;
+    }
   }
   @media (max-width: 1400px) {
     
@@ -111,6 +119,7 @@
     .boton-search{
         width: 4rem;
     }
+    
   }
   @media (max-width: 1280px) {
     .nav-img {
@@ -120,7 +129,9 @@
       width: 0;
       visibility: hidden;
     }
-    
+    .freetowatch-cards{
+      margin-left: 0rem;
+    }
   
     .menu_options {
       display: none;

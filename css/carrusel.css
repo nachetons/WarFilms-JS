@@ -8,6 +8,10 @@
   background-color: red;
   border-radius: 50%;
 }
+.container h1{
+  margin-left: 5rem;
+}
+
 
 .boton-card:hover {
   cursor: pointer;
